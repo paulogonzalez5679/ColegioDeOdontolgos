@@ -1,0 +1,21 @@
+.fas {
+    color: rgb(28, 169, 166);
+}
+.fa-user{
+    color: rgb(28, 169, 166);
+}
+.login{
+    color: #1D1D1B;
+}
+
+.login:hover{
+    color: rgb(28, 169, 166);
+}
+
+.btn-ingresar:hover{
+    background-color: rgb(28, 169, 166);
+}
+
+.logo {
+    width: 270px;
+}

@@ -1,0 +1,100 @@
+<div class="main-content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-md-12">
+        <div class="card">
+          <div class="header">
+            <div class="row">
+              <div class="col-md-12 text-right">
+                <button type="button" class="btn btn-info btn-fill" (click)="newCategory()" data-toggle="modal"
+                  data-target="#modalProduct">
+                  <i class="fa fa-plus"></i> Nueva Categoría
+                </button>
+              </div>
+            </div>
+            <hr>
+          </div>
+          <div class="content">
+            <div class="fresh-datatables table-responsive">
+              <table id="datatablesProduct" class="table table-striped table-no-bordered table-hover" cellspacing="0"
+                width="100%" style="width:100%">
+                <thead>
+                  <tr>
+                    <th>{{ dataTable.headerRow[0] }}</th>
+                    <th>{{ dataTable.headerRow[1] }}</th>
+                    <th>{{ dataTable.headerRow[2] }}</th>
+                    <th>{{ dataTable.headerRow[3] }}</th>
+                    <th>{{ dataTable.headerRow[4] }}</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr *ngFor="let category of arrayCategories; let i = index">
+                    <td>{{i+1}}</td>
+                    <td>{{category.id_category | slice:8}}</td>
+                    <td>{{category.nombre}}</td>
+                    <td>
+                      <button type="submit" class="btn btn-fill btn-primary btn-sm" (click)="selectCategory(category)"
+                        data-toggle="modal" data-target="#modalProduct">
+                        <i class="fa fa-edit"></i>
+                      </button>
+                    </td>
+                    <td>
+                      <button type="submit" class="btn btn-fill btn-danger btn-sm"
+                        (click)="deleteCategory(category.id_category)">
+                        <i class="fa fa-trash"></i>
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- modal product -->
+<div class="modal fade" id="modalProduct" tabindex="-1" role="dialog" aria-labelledby="modalProductLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+        <h4 class="modal-title" id="modalProductLabel">{{isEdit?'Editar Categoría':'Nueva Categoría'}}</h4>
+      </div>
+      <div class="modal-body">
+        <form #formProduct="ngForm" action="" class="form-horizontal"
+          (ngSubmit)='addCategory(formProduct.value, formProduct.valid)' novalidate action="/" method="get">
+          <div class="row">
+            <div class="col-sm-4">
+              <input type="text" readonly class="form-control" name="id_category" id="id_category" placeholder="ID"
+                [(ngModel)]="category.id_category" #id_category="ngModel" required pattern="">
+              <small [hidden]="id_category.valid || (id_category.pristine && !formProduct.submitted)"
+                class="text-danger">
+                Obligatorio</small>
+            </div>
+            <div class="col-sm-4">
+              <input type="text" class="form-control" name="nombre" id="nombre" placeholder="Nombre de la categoría"
+                [(ngModel)]="category.nombre" #nombre="ngModel" required pattern="">
+              <small [hidden]="nombre.valid || (nombre.pristine && !formProduct.submitted)" class="text-danger">
+                Obligatorio</small>
+            </div>
+            <div class="col-sm-4">
+              <button [disabled]='!formProduct.valid' type="submit" class="btn btn-fill btn-success btn-wd btn-block">
+                <i *ngIf="isEdit" class="fa fa-edit"></i>
+                <i *ngIf="!isEdit" class="fa fa-save"></i>
+                {{isEdit?'Editar':'Agregar'}}
+              </button>
+            </div>
+          </div>
+          <hr>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>

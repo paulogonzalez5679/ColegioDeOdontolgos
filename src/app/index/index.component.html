@@ -1,0 +1,965 @@
+<!--SECCION INICIO-->
+
+<!-- *** Navbar *** -->
+<section>
+  <div class="row row-w-100">
+    <div class="col-sm-12" style="padding: 0px !important; margin: 0px !important;">
+      <nav #pagesnavbar class="navbar navbar-primary navDimensiones">
+        <div class="container">
+          <div class="navbar-header" style="min-width: 100%;">
+            <button type="button" class="navbar-toggle" (click)="sidebarToggle()">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+          </div>
+          <div class="collapse navbar-collapse" style="margin-top: 0px !important;">
+            <ul class="nav navbar-nav  text-center">
+              <li data-toggle="modal" data-target="#modalLogin">
+                <img class="imgNav menu" src="../../assets/img/logo.png" alt="logo">
+              </li>
+              <li class="li-menu">
+                <a (click)="viewRouter('#inicio', 500)" class="menu opcMenu">INICIO</a>
+              </li>
+              <li class="li-menu">
+                <a (click)="viewRouter('#quienes', 700)" class="menu opcMenu">¿QUIÉNES SOMOS?</a>
+              </li>
+              <li class="li-menu">
+                <a (click)="viewRouter('#productos', 900)" class="menu opcMenu">EVENTOS</a>
+              </li>
+              <li class="li-menu">
+                <a (click)="viewRouter('#equipo', 1100)" class="menu opcMenu">DIRECTORIO</a>
+              </li>
+              <li class="li-menu">
+                <a (click)="viewRouter('#contactos', 1100)" class="menu opcMenu">CONTACTOS</a>
+              </li>
+              <li class="li-menu">
+                <a (click)="viewRouter('#contactos', 1100)" class="menu opcMenu">REGISTRATE</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </div>
+</section>
+<!-- *** /Navbar *** -->
+
+
+
+<!-- *** Home *** -->
+<section id="inicio" class="section-init">
+  <div class="row row-init row-w-100">
+    <div class="col-sm-12 col-md-4 col-lg-4">
+    </div>
+    <div class="col-sm-12 col-md-8 col-lg-8">
+      <div class="row">
+        <div class="col-sm-12 col-init">
+          <img class="imgLogo" data-aos="zoom-in" data-aos-duration="1500" src="../../assets/img/logo.png"
+            alt="logo">
+          <br>
+        </div>
+      </div>
+      <!-- <div class="textoInicial">
+        <p class="textInicio" data-aos="zoom-in" data-aos-duration="1500">
+          Contamos con una trayectoria de 34 años
+          dentro del mercado, en la comercialización
+          al por mayor y menor de equipos, reactivos
+          e insumos para diagnóstico.
+        </p>
+      </div> -->
+      <!-- <div class="row col-init-btn">
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <a (click)="viewRouter('#contactos', 2100)">
+            <button class="botonesInicio btn-block" data-aos="zoom-in" data-aos-duration="1500">CONTACTOS</button>
+          </a>
+        </div>
+        <div class="col-sm-6 col-md-4 col-lg-3">
+          <a (click)="viewRouter('#quienes', 900)">
+            <button class="botonesInicio btn-block" data-aos="zoom-in" data-aos-duration="1500">MÁS INFO</button>
+          </a>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col" style="padding-top: 70px; padding-bottom: 50px;">
+          <div class="row rectangulo">
+            <div class="col-sm-4 col-xs-4 text-right">
+              <a>
+                <img data-aos="zoom-in" data-aos-duration="1500" class="redesRectanguloFacebook"
+                  src="../../assets/img/Elementos-15.svg" alt="logo">
+              </a>
+            </div>
+            <div class="col-sm-4 col-xs-4 text-center">
+              <a>
+                <img data-aos="zoom-in" data-aos-duration="1500" class="redesRectanguloTwtitter"
+                  src="../../assets/img/Elementos-16.svg" alt="logo">
+              </a>
+            </div>
+            <div class="col-sm-4 col-xs-4 text-left">
+              <a>
+                <img data-aos="zoom-in" data-aos-duration="1500" class="redesRectanguloInstagram"
+                  src="../../assets/img/Elementos-17.svg" alt="logo">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div> -->
+    </div>
+    <div class="col-sm-12 col-md-4 col-lg-4">
+
+    </div>
+  </div>
+</section>
+<!-- *** /Home *** -->
+
+<!-- *** Quienes somos? *** -->
+<section id="quienes">
+  <div class="row row-w-100">
+    <div class="col-sm-5" style="padding: 0px;">
+      <div data-aos="fade-up" data-aos-duration="1500" class="rectangulo2 text-center" style="max-width: 100%;">
+        <h1 class="h4QuienesSomos">
+          ¿Quiénes Somos?
+        </h1>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- <div class="row row-w-100 quienesSomos" style="min-height: 100vh;">
+    <div class="col-sm-12 row-w-100">
+      <div class="row row-w-90">
+        <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-12 col-md-5 col-lg-5 diseñoQuienes">
+          <p class="tituloQuienesSomos">
+            REPRESENTACIÓNES
+            PEDRO ARANEDA FERRER E HIJOS CÍA.
+            LTDA.
+          </p>
+          <div class="text-center">
+            <img class="logoQuienesSomos" src="../../assets/img/Elementos-04.svg" alt="">
+          </div>
+        </div>
+        <div class="col-sm-12 col-md-7 col-lg-7">
+          <div data-aos="zoom-in" data-aos-duration="1500" class="row" class="quienesSomosDerecha">
+            <img class="esquinaSUPERIORQUIENES" src="../../assets/img/Elementos-06.svg" alt="">
+            <p class="textoQuienesSomos text-center">Cuenta con una trayectoria de 34 años dentro del mercado,
+              dedicándose a la comercialización al por mayor y menor de equipos,
+              reactivos e insumos para diagnóstico.</p>
+            <p class="textoQuienesSomos text-center">
+              La Empresa fue creada para satisfacer necesidades de laboratorios,
+              clínicas y hospitales, pues este sector no contaba con una carta
+              consolidada de proveedores de equipos, reactivos e insumos para
+              diagnóstico. A partir de dicha necesidad de este sector, nace
+              REPRESENTACIONES PEDRO ARANEDA FERRER E HIJOS CÍA. LTDA., la cual
+              permanentemente capacita a su recurso humano y renueva su
+              cartera de productos, ofreciendo a clientes y futuros clientes marcas
+              líderes en el mercado.
+            </p>
+            <p class="textoQuienesSomos text-center">
+              El personal calificado con el que cuenta la Empresa ofrece un servicio
+              personalizado y directo a sus clientes brindando productos líderes en
+              el mercado con altos estándares de calidad basados siempre en
+              innovación y tecnología.
+            </p>
+          </div>
+        </div>
+        <div class="col-sm-12">
+          <img class="esquinaINFERIORQUIENES" src="../../assets/img/Elementos-07.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </div> -->
+</section>
+<!-- *** Quienes somos? *** -->
+
+<!-- *** Mision valor valores *** -->
+<section class="quienesSomos2">
+  <div class="row row-w-90">
+
+    <div data-aos="zoom-in" data-aos-duration="1500" class="col-sm-12 col-md-6 col-lg-6 text-center">
+      <div class="fondoAzul">
+        <div class="fondoBlanco">
+          <img class="circulo" src="../../assets/img/Elementos-10.svg" alt="">
+          <p class="p-title-mision">MISIÓN</p>
+          <br><br>
+          <p class="text-center p-mision" *ngFor="let mission of mision | async trackBy: trackByFn">
+            {{mission.mision}}
+          </p>
+        </div>
+      </div>
+    </div>
+
+
+
+    <div data-aos="zoom-in" data-aos-duration="1500" class="col-sm-12 col-md-6 col-lg-6 text-center">
+      <div class="fondoAzul">
+        <div class="fondoBlanco">
+          <img class="circulo" src="../../assets/img/Elementos-11.svg" alt="">
+          <p class="p-title-mision">VISIÓN</p>
+          <br><br>
+          <p class="text-center p-mision">
+            Consolidarnos como la
+            empresa líder en el Austro con
+            el respaldo de aliados
+            estratégicos, diversificando la
+            cartera de productos y
+            servicios.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- *** Mision valor valores *** -->
+
+<!-- *** Titulo productos *** -->
+<section id="productos">
+  <div style="height: 75px;"></div>
+  <div data-aos="zoom-in" data-aos-duration="1500" class="row row-w-100">
+    <div class="col-sm-5" style="padding: 0px;">
+      <div class="rectangulo2 text-center" style="max-width: 100%;">
+        <h1 class="h4QuienesSomos">
+          EVENTOS
+        </h1>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- *** Titulo productos *** -->
+
+
+<!-- *** Productos *** -->
+<section>
+  <div class="row row-w-100">
+    <div class="col-sm-12 text-center">
+      <br><br>
+      <div class="row row-w-90">
+        <div class="col-xs-4 col-sm-4 col-md-2 col-lg-2 p-0" (click)="cambioMasvendido('todos')"
+          style="justify-content: center; align-items: center; align-content: center; justify-items: center;">
+          <div class="menu2 {{show=='todos'? 'menu-active' :''}}">
+            Todos
+          </div>
+        </div>
+        <!-- <div class="col-sm-6 col-md-2 col-lg-2 p-0" (click)="cambioMasvendido('Urianálisis')">
+          <div class="menu2 {{show=='Urianálisis'? 'menu-active' :''}}">
+            <a data-toggle="tab" class="text-center">
+              Urianálisis
+            </a>
+          </div>
+        </div> -->
+        <!-- <div class="col-sm-6 col-md-1 col-lg-1 p-0" (click)="cambioMasvendido('POC')">
+          <div class="menu2 {{show=='POC'? 'menu-active' :''}}">
+            <a data-toggle="tab" class="text-center">
+              POC
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-2 col-lg-2 p-0" (click)="cambioMasvendido('Gases y Electrolitos')">
+          <div class="menu2 {{show=='Gases y Electrolitos'? 'menu-active' :''}}">
+            <a data-toggle="tab" class="text-center">Gases y
+              Electrolitos
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-2 col-lg-2 p-0" (click)="cambioMasvendido('Coagulación')">
+          <div class="menu2 {{show=='Coagulación'? 'menu-active' :''}}">
+            <a data-toggle="tab" class="text-center">
+              Coagulación
+            </a>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-2 col-lg-2 p-0" (click)="cambioMasvendido('Hematología')">
+          <div class="menu2 {{show=='Hematología'? 'menu-active' :''}}">
+            <a data-toggle="tab" class="text-center">
+              Hematología
+            </a>
+          </div>
+        </div> -->
+        <div *ngFor="let category of arrayCategories" class="col-xs-4 col-sm-4 col-md-2 col-lg-2 p-0"
+          (click)="cambioMasvendido(category.nombre)">
+          <div class="menu2 {{show==category.nombre? 'menu-active' :''}}">
+            {{category.nombre}}
+          </div>
+        </div>
+      </div>
+      <div id="card-product" class="tab-pane fade in active container-fostrap">
+        <div class="content">
+          <div class="container">
+            <br>
+            <div class="row text-center">
+              <div>
+                <ng-container class="" *ngFor="let product of arrayProduct">
+                  <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-6 col-md-4 col-lg-4"
+                    *ngIf=" product.pro_categoria==show;">
+                    <div class="card card-product text-center">
+                      <div class="img-card" style="border-right: solid black;">
+                        <img style="margin-top:3rem; width: 50%;" src="{{product.pro_url}}"
+                          alt="{{product.pro_nombre}}">
+                        <div>
+                          <h4 class="producto text-center"> {{product.pro_nombre}} </h4>
+                          <p *ngIf="!isLink(product.pro_description)" class="productoTexto text-center"
+                            style="overflow-wrap: break-word;">
+                            <span [innerHTML]='product.pro_description | slice:0:60'></span>...
+
+                            <!-- {{product.pro_description | slice: 0:60}}... -->
+                          </p>
+                        </div>
+                        <div style="position: absolute; bottom: 10px; left: 38%">
+                          <a data-toggle="modal" data-target="#modalProduct"><button (click)="selectProdcut(product)"
+                              class="btn btnTexto" style="margin-bottom: 3rem;">Ver Más...</button></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-6 col-md-4 col-lg-4"
+                    *ngIf=" show=='todos'">
+                    <div class="card card-product text-center">
+                      <div class="img-card" style="border-right: solid black;">
+                        <img style="margin-top:3rem; width: 50%;" src="{{product.pro_url}}"
+                          alt="{{product.pro_nombre}}">
+                        <div>
+                          <h4 class="producto text-center"> {{product.pro_nombre}} </h4>
+                          <p *ngIf="!isLink(product.pro_description)&&product.pro_description!=' '"
+                            class="productoTexto text-center" style="overflow-wrap: break-word;">
+                            <span [innerHTML]='product.pro_description | slice:0:60'></span>...
+                            <!-- {{product.pro_description |slice: 0:60}}... -->
+                          </p>
+                        </div>
+                        <div style="position: absolute; bottom: 10px; left: 38%">
+                          <a data-toggle="modal" data-target="#modalProduct">
+                            <button (click)="selectProdcut(product)" class="btn btnTexto"
+                              style="margin-bottom: 3rem;">Ver Más...</button></a>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </ng-container>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- *** /Productos *** -->
+
+<!-- *** Empresas *** -->
+<section style="margin-top: 160px;">
+  <div class="row row-w-100" style="background-color: #1ca9a6;">
+    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+      <div class="row div-company">
+        <img class="img-company" src="../../assets/img/Elementos-18.svg" alt="maquina">
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+      <div class="row div-company">
+        <img class="img-company" src="../../assets/img/Elementos-19.svg" alt="maquina">
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+      <div class="row div-company">
+        <img class="img-company" src="../../assets/img/Elementos-20.svg" alt="maquina">
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+      <div class="row div-company">
+        <img class="img-company" src="../../assets/img/Elementos-21.svg" alt="maquina">
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+      <div class="row div-company">
+        <img class="img-company" src="../../assets/img/Elementos-22.svg" alt="maquina">
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+      <div class="row div-company">
+        <img class="img-company" src="../../assets/img/Elementos-23.svg" alt="maquina">
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+      <div class="row div-company">
+        <img class="img-company" src="../../assets/img/Elementos-24.svg" alt="maquina">
+      </div>
+    </div>
+    <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+      <div class="row div-company">
+        <img class="img-company" src="../../assets/img/Elementos-25.svg" alt="maquina">
+      </div>
+    </div>
+  </div>
+</section>
+<!-- *** /Empresas *** -->
+
+<!-- *** Servicios *** -->
+<!-- <section class="fondoservicio" id="servicios" style="padding-top: 160px;">
+  <div class="row row-w-100">
+    <div class="col-sm-5" style="padding: 0px;">
+      <div data-aos="zoom-in" data-aos-duration="1500" class="rectangulo2 text-center" style="max-width: 100%;">
+        <h1 class="h4QuienesSomos">
+          Servicios
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div class="row row-w-100">
+    <div class="col-sm-12">
+      <div class="row row-w-90">
+        <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-12 col-md-6 col-lg-6 serviciosRow-1">
+          <h2 class="titutuloServicio">ARANEDA</h2>
+          <h2 class="subtitutuloServicio"> sigue trabajando</h2>
+          <p class="textServicio">
+            Para ofrecer servicios de valor añadido que vayan
+            más allá de la venta y el suministro de equipos,
+            reactivos e insumos médicos para laboratorio clínico.
+          </p>
+          <button (click)="viewRouter('#contactos', 600)" class="btn botonServicio">CONTACTOS</button>
+        </div>
+        <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-12 col-md-6 col-lg-6">
+          <img class="logoServicios" src="../../assets/img/ImagenServicios.png" alt="logo">
+        </div>
+      </div>
+      <div class="row row-w-90">
+        <div class="col-sm-12">
+          <img class="esquina" src="../../assets/img/Elementos-26.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row row-w-100 row-service">
+    <div class="col-sm-12">
+      <div class="row row-w-90">
+        <div data-aos="zoom-in" data-aos-duration="1500" class="col-sm-12 col-md-6 col-lg-6">
+          <img class="logoServicios" src="../../assets/img/Servicio de Ingenieria.png" alt="logo">
+        </div>
+        <div data-aos="zoom-in" data-aos-duration="1500" class="col-sm-12 col-md-6 col-lg-6 serviciosRow-2">
+          <h2 class="titutuloServicio">Servicio de</h2>
+          <h2 class="titutuloServicio">Ingeniería</h2>
+          <ul class="text-left textServicio" style="list-style: none;">
+            <li style="margin-top: 13px;">– Asesoría técnica pre venta</li>
+            <li style="margin-top: 13px;">– Instalaciones, mantenimientos preventivos,correctivos, emergentes y
+              predictivos
+            </li>
+            <li style="margin-top: 13px;">– Servicio post venta personalizado</li>
+            <li style="margin-top: 13px;">– Descontaminación de equipos</li>
+            <li style="margin-top: 13px;">– Actualizaciones continuas de software</li>
+            <li style="margin-top: 13px;">– Servicio de soporte remoto</li>
+            <li style="margin-top: 13px;">– Servicio de soporte primer nivel 24 horas 1800110110</li>
+            <li style="margin-top: 13px;">– Servicio de soporte de segundo y tercer nivel.</li>
+          </ul>
+          <button (click)="viewRouter('#contactos', 600)" class="btn botonServicio">CONTACTOS</button>
+
+        </div>
+      </div>
+      <div class="row row-w-90">
+        <div class="col-sm-12">
+          <img class="esquina-2" src="../../assets/img/Elementos-27.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row row-w-100">
+    <div class="col-sm-12">
+      <div class="row row-w-90">
+        <div data-aos="zoom-in" data-aos-duration="1500" class="col-sm-12 col-md-6 col-lg-6 serviciosRow-3">
+          <h2 class="titutuloServicio">Servicio de</h2>
+          <h2 class="titutuloServicio">de aplicaciones</h2>
+          <ul class="textServicio">
+            <li class="li-services">– Asesoría integra pre venta y post venta</li>
+            <li class="li-services">– Servicio de calibraciones</li>
+            <li class="li-services">– Servicio de control de calidad</li>
+            <li class="li-services">– Capacitaciones en el manejo correcto de <br>instrumentos de laboratorio</li>
+            <li class="li-services">– Guiarles en el buen funcionamiento <br>de sus laboratorios</li>
+          </ul>
+          <button (click)="viewRouter('#contactos', 600)" class="btn botonServicio">CONTACTOS</button>
+
+        </div>
+        <div class="col-sm-12 col-md-6 col-lg-6">
+          <img data-aos="zoom-in" data-aos-duration="1500" class="logoServicios"
+            src="../../assets/img/Servicio de Aplicaciones.png" alt="logo">
+        </div>
+      </div>
+      <div class="row row-w-90">
+        <div class="col-sm-12">
+          <img class="esquina" src="../../assets/img/Elementos-26.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<br><br> -->
+<!-- *** /Servicios *** -->
+
+<!-- *** Equipo *** -->
+<section class="equipo" id="equipo">
+  <div class="row row-w-100">
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-5" style="padding: 0px;">
+      <div class="rectangulo2 text-center" style="max-width: 100%;">
+        <h1 class="h4QuienesSomos">
+          Nuestro equipo
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div class="row row-w-90 row-equipo">
+    <div data-aos="fade-up" data-aos-duration="1500" data-aos="zoom-in" class="col-sm-4 col-md-1 text-center">
+      <img class="iconoEquipo" src="../../assets/img/Elementos-35.svg" alt="Icono equipo">
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-8 col-md-5">
+      <ul class="ul-equipo">
+        <li class="nombreEquipo">LCDO. PEDRO ARANEDA</li>
+        <li class="numeroContacto">814911 Ext: 104</li>
+        <li class="emailContacto">pedro.araneda@pedroaraneda.net</li>
+        <li><span class="tituloContacto">GERENTE GENERAL</span></li>
+      </ul>
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-4 col-md-1 text-center">
+      <img class="iconoEquipo" src="../../assets/img/Elementos-36.svg" alt="Icono equipo">
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-8 col-md-5">
+      <ul class="ul-equipo">
+        <li class="nombreEquipo">LCDA. MBA. JOHANNA CORDERO</li>
+        <li class="numeroContacto">072814911 / 0987762269</li>
+        <li class="emailContacto">pedro.araneda@pedroaraneda.net</li>
+        <li> <span class="tituloContacto">COORDINADOR COMERCIAL</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row row-w-90 row-equipo">
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-4 col-md-1 text-center">
+      <img class="iconoEquipo" src="../../assets/img/Elementos-35.svg" alt="Icono equipo">
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-8 col-md-5">
+      <ul class="ul-equipo">
+        <li class="nombreEquipo">ING. ARMANDO BERNAL</li>
+        <li class="numeroContacto">072814911 / 0984158440</li>
+        <li class="emailContacto">armando.bernal@araneda.com.ec</li>
+        <li><span class="tituloContacto">COORDINADOR DE COMPRAS</span></li>
+      </ul>
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-4 col-md-1 text-center">
+      <img class="iconoEquipo" src="../../assets/img/Elementos-36.svg" alt="Icono equipo">
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-8 col-md-5">
+      <ul class="ul-equipo">
+        <li class="nombreEquipo">ING. PAOLA SUQUINAGUA</li>
+        <li class="numeroContacto">072814911 / 0969344319</li>
+        <li class="emailContacto">paola.suquinagua@araneda.com.ec</li>
+        <li> <span class="tituloContacto">FACTURADOR</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row row-w-90 row-equipo">
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-4 col-md-1 text-center">
+      <img class="iconoEquipo" src="../../assets/img/Elementos-36.svg" alt="Icono equipo">
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-8 col-md-5">
+      <ul class="ul-equipo">
+        <li class="nombreEquipo">TEC. SIST. XIMENA PAUCAR</li>
+        <li class="numeroContacto">072814911 / 0999099339</li>
+        <li class="emailContacto">ximena.paucar@araneda.com.ec</li>
+        <li> <span class="tituloContacto">COMPRAS PÚBLICAS</span></li>
+      </ul>
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-4 col-md-1 text-center">
+      <img class="iconoEquipo" src="../../assets/img/Elementos-36.svg" alt="Icono equipo">
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-8 col-md-5">
+      <ul class="ul-equipo">
+        <li class="nombreEquipo">DRA. MARÍA JOSÉ CAMPOVERDE</li>
+        <li class="numeroContacto">072814911 / 0968158603</li>
+        <li class="emailContacto" style="font-size: 15px;">mariajose.campoverde@araneda.com.ec</li>
+        <li><span class="tituloContacto">COORDINADOR DE LA CALIDADL</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row row-w-90 row-equipo">
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-4 col-md-1 text-center">
+      <img class="iconoEquipo" src="../../assets/img/Elementos-36.svg" alt="Icono equipo">
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-8 col-md-5">
+      <ul class="ul-equipo">
+        <li class="nombreEquipo">ING. CPA. EULALIA CUZCO</li>
+        <li class="numeroContacto">072814911 / 0968817095</li>
+        <li class="emailContacto">eulalia.cuzco@araneda.com.ec</li>
+        <li><span class="tituloContacto">CONTADOR</span></li>
+      </ul>
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-4 col-md-1 text-center">
+      <img class="iconoEquipo" src="../../assets/img/Elementos-36.svg" alt="Icono equipo">
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-8 col-md-5">
+      <ul class="ul-equipo">
+        <li class="nombreEquipo">ELIZABETH NAULA</li>
+        <li class="numeroContacto">072814911 / 0984736699</li>
+        <li class="emailContacto">eliza.naula@araneda.com.ec</li>
+        <li> <span class="tituloContacto">AUXILIAR CONTABLE</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row row-w-90 row-equipo">
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-4 col-md-1 text-center">
+      <img class="iconoEquipo" src="../../assets/img/Elementos-35.svg" alt="Icono equipo">
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-8 col-md-5">
+      <ul class="ul-equipo">
+        <li class="nombreEquipo">ING. DIEGO NARVÁEZ</li>
+        <li class="numeroContacto">072814911 / 0979785752</li>
+        <li class="emailContacto">pedro.araneda@pedroaraneda.net</li>
+        <li><span class="tituloContacto">INGENIERÍA - AZUAY</span></li>
+      </ul>
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-4 col-md-1 text-center">
+      <img class="iconoEquipo" src="../../assets/img/Elementos-35.svg" alt="Icono equipo">
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-8 col-md-5">
+      <ul class="ul-equipo">
+        <li class="nombreEquipo">ING. MARLON FEIJOO</li>
+        <li class="numeroContacto">072814911 / 0991705364</li>
+        <li class="emailContacto">marlon.feijoo@araneda.com.ec</li>
+        <li> <span class="tituloContacto">INGENIERÍA - ORO</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row row-w-90 row-equipo">
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-4 col-md-1 text-center">
+      <img class="iconoEquipo" src="../../assets/img/Elementos-35.svg" alt="Icono equipo">
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-8 col-md-5">
+      <ul class="ul-equipo">
+        <li class="nombreEquipo">JUAN PABLO ERAZO</li>
+        <li class="numeroContacto">072814911</li>
+        <li class="emailContacto">juan.erazo@pedroaraneda.net</li>
+        <li><span class="tituloContacto">INGENIERÍA - LOJA</span></li>
+      </ul>
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-4 col-md-1 text-center">
+      <img class="iconoEquipo" src="../../assets/img/Elementos-35.svg" alt="Icono equipo">
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-8 col-md-5">
+      <ul class="ul-equipo">
+        <li class="nombreEquipo">LIC.DAVID SÁNCHEZ</li>
+        <li class="numeroContacto">072814911 / 0991705364</li>
+        <li class="emailContacto">marlon.feijoo@araneda.com.ec</li>
+        <li> <span class="tituloContacto">INGENIERÍA - AZUAY/ORO</span></li>
+      </ul>
+    </div>
+  </div>
+  <div class="row row-w-90 row-equipo">
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-4 col-md-1 text-center">
+      <img class="iconoEquipo" src="../../assets/img/Elementos-35.svg" alt="Icono equipo">
+    </div>
+    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-8 col-md-5">
+      <ul class="ul-equipo">
+        <li class="nombreEquipo">LIC. ERIC CAPRILES</li>
+        <li class="numeroContacto">072814911</li>
+        <li class="emailContacto">juan.erazo@pedroaraneda.net</li>
+        <li><span class="tituloContacto">INGENIERÍA - LOJA</span></li>
+      </ul>
+    </div>
+    <div class="col-sm-4 col-md-1 text-center">
+      <!-- <img class="iconoEquipo" src="../../assets/img/Elementos-35.svg" alt="Icono equipo"> -->
+    </div>
+    <div class="col-sm-8 col-md-5">
+
+    </div>
+  </div>
+</section>
+<!-- *** /Equipo *** -->
+
+<!-- *** Contactos *** -->
+
+<br>
+<section id="contactos">
+  <div class="row row-w-100">
+    <div data-aos="zoom-in" data-aos-duration="1500" class="col-sm-5" style="padding: 0px;">
+      <div class="rectangulo2 text-center" style="max-width: 100%;">
+        <h1 class="h4QuienesSomos">
+          Contactos
+        </h1>
+      </div>
+    </div>
+  </div>
+  <div data-aos="fade-up" data-aos-duration="1500" class="row row-w-80 section-contac">
+    <div class="col-sm-12 col-md-5 col-lg-5">
+      <div class="row row-contact">
+        <div class="col-sm-3 col-md-3 text-center">
+          <img class="logoContactanos" src="../../assets/img/Elementos-28.svg" alt="logo">
+        </div>
+        <div class="col-sm-9 col-md-9">
+          <p class="textoContactanos">
+            Cornelio Merchán 7-95 y Jesús Dávila esq.
+          </p>
+        </div>
+      </div>
+      <div class="row row-contact">
+        <div class="col-sm-3 col-md-3 text-center">
+          <img class="logoContactanos" src="../../assets/img/Elementos-29.svg" alt="logo">
+        </div>
+        <div class="col-sm-9 col-md-9">
+          <p class="textoContactanos">
+            +593 (07) 2810 937
+            <br>
+            +593 99 555 2293
+          </p>
+        </div>
+      </div>
+      <div class="row row-contact">
+        <div class="col-sm-3 col-md-3 text-center">
+          <img class="logoContactanos" src="../../assets/img/Elementos-30.svg" alt="logo">
+        </div>
+        <div class="col-sm-9 col-md-9">
+          <p class="textoContactanos">
+            Lunes - Viernes
+            <br>
+            08h00 – 18h00 
+          </p>
+        </div>
+      </div>
+      <div class="row row-contact">
+        <div class="col-sm-3 col-md-3 text-center">
+          <img class="logoContactanos" src="../../assets/img/Elementos-31.svg" alt="logo">
+        </div>
+        <div class="col-sm-9 col-md-9">
+          <br>
+          <p class="textoContactanos">
+            
+            coaodont@hotmail.com
+          </p>
+        </div>
+      </div>
+      <div class="row row-contact">
+        <div class="col-xs-4 col-sm-4 text-center">
+          <a><img class="redesRectanguloFacebook " src="../../assets/img/Elementos-32.svg" alt="logo"></a>
+        </div>
+        <div class="col-xs-4 col-sm-4 text-center">
+          <a><img class="redesRectanguloTwtitter" src="../../assets/img/Elementos-33.svg" alt="logo"></a>
+        </div>
+        <div class="col-xs-4 col-sm-4 text-center">
+          <a><img class="redesRectanguloInstagram" src="../../assets/img/Elementos-34.svg" alt="logo"></a>
+        </div>
+      </div><br>
+    </div>
+    <div class="col-sm-12 col-md-7 col-lg-7">
+      <form #messajeForm="ngForm" novalidate (ngSubmit)="onSaveMessage(messajeForm.value, messajeForm.valid)">
+        <div class="row formularioGeneral">
+          <div class="col-sm-12">
+            <span class="text-left text-contactanos">ESCRÍBENOS</span>
+          </div>
+          <div class="col-sm-12 text-left col-contact" style="margin-top: 2rem;">
+            <div class="content content-form">
+              <div class="form-group" style="margin-bottom: 15px;">
+                <input type="text" name="message_name" required placeholder="Nombres"
+                  class="form-control formulario input-contact" [(ngModel)]="message.message_name" required
+                  #message_name="ngModel">
+                <small [hidden]="message_name.valid || (message_name.pristine && !messajeForm.submitted)"
+                  class="text-danger">
+                  Ingrese el nombre
+                </small>
+              </div>
+              <div class="form-group" style="margin-bottom: 15px;">
+                <input type="text" name="message_email" required placeholder="Email"
+                  class="formulario form-control input-contact" [(ngModel)]="message.message_email" required
+                  #message_email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
+                <small [hidden]="message_email.valid || (message_email.pristine && !messajeForm.submitted)"
+                  class="text-danger">
+                  Ingrese Email
+                </small>
+              </div>
+              <div class="form-group" style="margin-bottom: 15px;">
+                <input type="text" name="message_phone" placeholder="Teléfono" class="formulario form-control input-contact"
+                  [(ngModel)]="message.message_phone" required #message_phone="ngModel" pattern="">
+                <small [hidden]="message_phone.valid || (message_phone.pristine && !messajeForm.submitted)"
+                  class="text-danger">
+                  Ingrese el teléfono
+                </small>
+              </div>
+              <div class="form-group">
+                <textarea name="message_description" rows="5" cols="50" placeholder="Mensaje"
+                  class="formularioMensaje form-control input-contact" [(ngModel)]="message.message_description"
+                  required #message_description="ngModel"></textarea>
+                <small [hidden]="message_description.valid || (message_description.pristine && !messajeForm.submitted)"
+                  class="text-danger">
+                  Ingrese el mensaje
+                </small>
+              </div>
+            </div>
+          </div>
+        </div>
+        <br>
+        <div class="row">
+          <div class="col-sm-12 text-center">
+            <button type="submit" class="botonContactos">Enviar</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</section>
+<!-- *** /Contactos *** -->
+
+<!-- *** Ubicacion *** -->
+<section>
+  <div class="row row-w-90">
+    <div class="col-md-7">
+      <div class="mapa">
+        <div class="circulo2 text-center">
+          <img class="iconoMapa" src="../../assets/img/Elementos-40.svg" alt="">
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5">
+      <img class="esquinasuperiorMapa" src="../../assets/img/Elementos-06.svg" alt="">
+      <div class="div-content-map">
+        <div class="rectangulomapa text-center">
+          <p class="textoMapa">
+            Estamos ubicados
+            en la ciudad de Cuenca, contactanos y entérate de todo los beneficios
+            con los que podrás contar con nosotros.
+          </p>
+        </div>
+      </div>
+      <img class="esquinaINFERIORMapa" src="../../assets/img/Elementos-07.svg" alt="">
+    </div>
+    <br><br><br>
+
+  </div>
+
+</section>
+<!-- *** /Ubicacion *** -->
+
+
+<footer class="fondofooter">
+  <div class="row row-w-80 text-center">
+    <div class="col-sm-4">
+      <div class="row">
+        <div class="col-sm-6">
+          <h1 class="tituloFooter text-center">NOSOTROS</h1>
+        </div>
+        <div class="col-sm-6 text-center">
+          <div class="linea"></div>
+        </div>
+        <div class="row row-w-90">
+          <div class="col-sm-12">
+            <p class="text-left textoFooter">
+              Estamos ubicados
+            en la ciudad de Cuenca, contactanos y entérate de todo los beneficios
+            con los que podrás contar con nosotros.
+              <br>
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="row">
+        <div class="col-sm-6">
+          <h1 class="tituloFooter text-center">CONTACTO</h1>
+        </div>
+        <div class="col-sm-6 text-center">
+          <div class="linea"></div>
+        </div>
+      </div>
+      <div class="row row-w-90">
+        <div class="col-sm-6 col-md-4 col-lg-4 text-left footerSubtitulos">
+          Dirección:
+        </div>
+        <div class="col-sm-6 col-md-8 col-lg-8 text-left footerSubtitulos2">
+          Cornelio Merchán 7-95 y Jesús Dávila esq.
+        </div>
+      </div>
+      <br>
+      <div class="row row-w-90">
+        <div class="col-sm-6 col-md-4 col-lg-4 text-left footerSubtitulos">
+          Teléfono:
+        </div>
+        <div class="col-sm-6 col-md-8 col-lg-8 text-left footerSubtitulos2">
+          +593 (07) 2810 937
+          <br>
+          +593 99 555 2293
+        </div>
+      </div>
+      <br>
+      <div class="row row-w-90">
+        <div class="col-sm-6 col-md-4 col-lg-4 text-left footerSubtitulos">
+          Email:
+        </div>
+        <div class="col-sm-6 col-md-8 col-lg-8 text-left footerSubtitulos2">
+          coaodont@hotmail.com
+        </div>
+      </div>
+    </div>
+    <div class="col-sm-4">
+      <div class="row">
+        <div class="col-sm-8">
+          <h1 class="tituloFooter text-center">REDES SOCIALES</h1>
+        </div>
+        <div class="col-sm-4 text-center">
+          <div class="linea"></div>
+        </div>
+      </div>
+      <div class="row row-w-90">
+        <div class="col-sm-12">
+          <p class="text-justify textoFooter">
+            Síguenos en nuestras redes sociales
+          </p>
+        </div>
+      </div>
+      <div class="row row-w-90">
+        <div class="col-xs-2">
+          <img class="iconoFooter" src="../../assets/img/Elementos-37.svg" alt="">
+        </div>
+        <div class="col-xs-2">
+          <img class="iconoFooter" src="../../assets/img/Elementos-38.svg" alt="">
+        </div>
+        <div class="col-xs-2">
+          <img class="iconoFooter" src="../../assets/img/Elementos-39.svg" alt="">
+        </div>
+      </div>
+    </div>
+  </div>
+  <br><br>
+ 
+</footer>
+
+<!--MODAL PRODCUTOS-->
+<div class="modal fade" #modalProduct id="modalProduct" tabindex="-1" role="dialog"
+  aria-labelledby="modalSubCategoryLabel">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+            aria-hidden="true">&times;</span></button>
+        <h2 class="modal-title" id="modalSubCategoryLabel">{{product.pro_nombre}}</h2>
+      </div>
+      <div class="modal-body">
+        <div class="card mb-3 modalProd">
+          <div class="row no-gutters">
+            <div class="col-md-6 text-center">
+              <img class="imgProd" src="{{product.pro_url}}" alt="{{product.pro_nombre}}">
+            </div>
+            <div style="margin-left: 2rem;" class="col-md-11 text-center">
+              <div class="card-body">
+                <p *ngIf="!isLink(product.pro_description)" class="card-text text-justify">
+                  <span [innerHTML]='product.pro_description'></span>
+                  <!-- {{product.pro_description}} -->
+                </p>
+                <p *ngIf="isLink(product.pro_description)" class="card-text text-justify">
+                  <a href="{{product.pro_description}}" target="_blanck">
+                    Ver la descripción
+                  </a>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Cerrar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-modal-login></app-modal-login>

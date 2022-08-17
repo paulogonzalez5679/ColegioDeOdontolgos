@@ -1,0 +1,47 @@
+<!-- <div class="col-md-6 formularioGeneral">
+  <div class="sesion-contact text-center" style="max-width: 100%;">
+    <div class="container " style="max-width: 100%;">
+      <div class="row justify-content-center row-contact">
+        <div class="col-sm-12 col-contact">
+          <h2 class="text-left contactanos">ESCRÍBENOS</h2>
+        </div>
+        <div class="col-sm-12 text-left col-contact" style="margin-top: 2rem;">
+          <form #messajeForm="ngForm">
+            <div class="content content-form">
+              <div class="form-group">
+                <input class="forma" type="text" name="message_name" required placeholder="Nombre"
+                  class="form-control formulario input-contact" [(ngModel)]="message.message_name" required
+                  #message_name="ngModel">
+                <small [hidden]="message_name.valid || (message_name.pristine && !messajeForm.submitted)"
+                  class="text-danger">
+                  Ingrese el nombre
+                </small>
+              </div>
+              <div class="form-group">
+                <input type="text" name="message_email" required placeholder="Email"
+                  class="formulario form-control input-contact" [(ngModel)]="message.message_email" required
+                  #message_email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
+                <small [hidden]="message_email.valid || (message_email.pristine && !messajeForm.submitted)"
+                  class="text-danger">
+                  Ingrese Email
+                </small>
+              </div>
+              <div class="form-group">
+                <textarea name="message_description" rows="4" cols="50" placeholder="Mensaje"
+                  class="formularioMensaje form-control input-contact" [(ngModel)]="message.message_description"
+                  required #message_description="ngModel"></textarea>
+                <small
+                  [hidden]="message_description.valid || (message_description.pristine && !messajeForm.submitted)"
+                  class="text-danger">
+                  Ingrese el mensaje
+                </small>
+              </div>
+
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div> -->
