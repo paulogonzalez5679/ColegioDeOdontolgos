@@ -23,11 +23,14 @@ import { AngularFireStorageModule } from '@angular/fire/storage';
 import { MatSliderModule } from '@angular/material/slider';
 import { ModalLoginComponent } from './index/modal-login/modal-login.component';
 import { IndexComponent } from './index/index.component';
-
+import {MatCardModule} from '@angular/material/card';
+import {MatDialogModule, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 
 
 @NgModule({
     imports:      [
+        MatDialogModule,
+        MatCardModule,
         BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,

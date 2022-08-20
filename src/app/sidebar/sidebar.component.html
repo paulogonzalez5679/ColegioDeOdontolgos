@@ -25,7 +25,7 @@
     <ul class="nav">
         <li routerLinkActive="active" *ngFor="let menuitem of menuItems">
             <!--If is a single link-->
-            <a [routerLink]="[menuitem.path]" *ngIf="menuitem.type === 'link'">
+            <a (click)="redirect(menuitem.path)" *ngIf="menuitem.type === 'link'">
                 <i class="{{menuitem.icontype}}"></i>
                 <p>{{menuitem.title}}</p>
             </a>

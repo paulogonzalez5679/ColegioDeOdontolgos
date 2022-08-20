@@ -1,0 +1,45 @@
+<p>
+    <i class="pe-7s-plus" (click)="openDialog()" style="font-size: 30px;"></i> 
+</p>
+
+<div class="container">
+    <div class="col-lg-10">
+        <div class="row" style="margin-left: 5%;">
+            <!-- <a><img class="card-img-top" src="./assets/img/angular.jpg" alt="Card image cap"></a> -->
+            <div *ngFor="let presentation of list_cards" class="col-sm-12 col-md-12 col-lg-12">
+                <mat-card class="example-card" style="margin-top: 15px;">
+                    <mat-card-header>
+                        <mat-card-title>{{presentation.title}}</mat-card-title>
+                    </mat-card-header>
+                    <div [id]="presentation.id" class="carousel slide" data-ride="carousel" *ngIf="presentation.images.length>0">
+                       
+                        <div class="carousel-inner">
+                            <div class="item" *ngFor="let previa of presentation.images; let i = index"
+                            [ngClass]="{'active': i == 0 }" >
+                              <img [src]="previa.url" style="width: 90%;">
+                            </div>
+                        </div>
+                        <a class="left carousel-control" [href]="'#'+presentation.id" data-slide="prev">
+                          <span class="glyphicon glyphicon-chevron-left"></span>
+                          <span class="sr-only">Previous</span>
+                        </a>
+                        <a class="right carousel-control" [href]="'#'+presentation.id" data-slide="next">
+                          <span class="glyphicon glyphicon-chevron-right"></span>
+                          <span class="sr-only">Next</span>
+                        </a>
+                    </div>
+
+                    <mat-card-content>
+                        <p>
+                            {{presentation.description}}
+                        </p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button (click)="editEvent(presentation)">Editar</button>
+                        <button mat-button (click)="deleteEvent(presentation)">Eliminar</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

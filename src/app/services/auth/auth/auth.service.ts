@@ -27,8 +27,9 @@ export class AuthService {
         password
       );
       $("#modalLogin").modal("hide");
-      this.router.navigate(['/']);
+      this.router.navigate(['/admin']);
       console.log("Accedio");
+
       
     } catch (error) {
       if (error.code == "auth/wrong-password") {

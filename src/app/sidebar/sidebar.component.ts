@@ -6,6 +6,7 @@ import {
   AfterContentInit,
 } from "@angular/core";
 import { AuthService } from "app/services/auth/auth/auth.service";
+import {Router} from '@angular/router';
 
 declare var $: any;
 //Metadata
@@ -32,11 +33,17 @@ export const ROUTES: RouteInfo[] = [
   //   icontype: "pe-7s-home",
   // },
   // {
-  //   path: "/products",
-  //   title: "Mis productos",
-  //   type: "link",
-  //   icontype: "pe-7s-box2",
+  //   path: '/events-custom',
+  //   title: 'Eventosss',
+  //   type: 'link',
+  //   icontype: 'pe-7s-mail',
   // },
+  {
+    path: "/events",
+    title: "Eventos",
+    type: "link",
+    icontype: "pe-7s-box2",
+  },
   {
     path: "/message",
     title: "Mensajes",
@@ -54,7 +61,7 @@ export class SidebarComponent {
   public menuItems: any[];
   infoUser: any;
 
-  constructor(public authSvc: AuthService) {}
+  constructor(public authSvc: AuthService, private router: Router) {}
 
   isNotMobileMenu() {
     if ($(window).width() > 991) {
@@ -99,4 +106,9 @@ export class SidebarComponent {
   async logout() {
     await this.authSvc.logout();
   }
+
+  redirect(route: string) {
+      this.router.navigate([`/admin/${route}`]);
+  }
 }
+

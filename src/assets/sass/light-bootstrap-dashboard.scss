@@ -69,3 +69,9 @@
 // Responsive adjustments
 @import "lbd/responsive";
 @import "lbd/tabs-navs-pagination";
+
+
+body {
+    background: rgb(2,0,36);
+    background: linear-gradient(180deg, rgba(2,0,36,1) 22%, rgba(9,9,121,1) 57%, rgba(0,212,255,1) 100%);
+}

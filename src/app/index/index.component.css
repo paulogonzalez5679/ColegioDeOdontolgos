@@ -101,7 +101,7 @@
 .section-init {
   position: relative;
   top: -100px;
-  min-height: 80vh;
+  /* min-height: 80vh; */
 }
 .col-init {
   margin-left: 4rem;
@@ -1828,4 +1828,17 @@
 @media (max-width: 360px) {
 }
 @media (max-width: 300px) {
+}
+
+#myCarousel{
+ margin-top: 10%;
+ max-height: 400px;
+}
+
+.redux-img{
+  max-height: 400px;
+}
+
+body{
+  background-color: #000000 !important;
 }

@@ -19,6 +19,7 @@ import { AuthService } from "app/services/auth/auth/auth.service";
 import { CategoriesService } from "app/services/categories/categories.service";
 import { DatesService } from "app/services/dates/dates.service";
 import { MessageService } from "app/services/message/message.service";
+import { EventsService } from 'app/modules/events/events.service';
 
 declare var $: any;
 
@@ -49,6 +50,7 @@ export class IndexComponent implements OnInit {
 
   mision: Observable<any[]>;
   vision: Observable<any[]>;
+  list_cards=[];
 
   constructor(
     private router: Router,
@@ -60,6 +62,7 @@ export class IndexComponent implements OnInit {
     private authService: AuthService,
     private datesService: DatesService,
     private messageService: MessageService,
+    private readonly eventsService: EventsService,
   ) {
     this.sidebarVisible = false;
   }
@@ -75,6 +78,10 @@ export class IndexComponent implements OnInit {
     
     //COLEGIO DE ODONTOLOGOS
     this.getMision();
+    this.eventsService.getEvents().subscribe(events => {
+      console.log(events);
+      this.list_cards = events;
+  });
   }
   selectProdcut(product: Product) {
     this.product = product;

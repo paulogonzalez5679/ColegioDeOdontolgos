@@ -6,7 +6,7 @@ export const AppRoutes: Routes = [
   { path: "index", component: IndexComponent },
   { path: "", component: IndexComponent },
   {
-    path: "",
+    path: "admin",
     component: AdminLayoutComponent,
     children: [
       {
@@ -14,12 +14,16 @@ export const AppRoutes: Routes = [
         loadChildren: "./modules/categories/categories.module#CategoriesModule",
       },
       {
-        path: "products",
-        loadChildren: "./modules/products/products.module#ProductsModule",
+        path: "events",
+        loadChildren: "./modules/events-admin/events-admin.module#EventsAdminModule",
       },
       {
         path: "message",
         loadChildren: "./modules/message/message.module#MessageModule",
+      },
+      {
+        path: 'events-custom',
+        loadChildren: './modules/events/events.module#EventsModule',
       },
     ],
   },
