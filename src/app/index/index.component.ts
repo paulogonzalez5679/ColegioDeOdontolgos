@@ -20,6 +20,8 @@ import { CategoriesService } from "app/services/categories/categories.service";
 import { DatesService } from "app/services/dates/dates.service";
 import { MessageService } from "app/services/message/message.service";
 import { EventsService } from 'app/modules/events/events.service';
+import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { DetailEventComponent } from "./detail-event/detail-event.component";
 
 declare var $: any;
 
@@ -63,6 +65,7 @@ export class IndexComponent implements OnInit {
     private datesService: DatesService,
     private messageService: MessageService,
     private readonly eventsService: EventsService,
+    public dialog: MatDialog
   ) {
     this.sidebarVisible = false;
   }
@@ -83,6 +86,15 @@ export class IndexComponent implements OnInit {
       this.list_cards = events;
   });
   }
+  
+  viewEvent(event:Event): void {
+    const dialogRef = this.dialog.open(DetailEventComponent, {
+      width: '550px',
+      height: '500px',
+      data: event,
+    });
+  }
+
   selectProdcut(product: Product) {
     this.product = product;
   }

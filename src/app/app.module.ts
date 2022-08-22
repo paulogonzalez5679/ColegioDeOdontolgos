@@ -25,10 +25,13 @@ import { ModalLoginComponent } from './index/modal-login/modal-login.component';
 import { IndexComponent } from './index/index.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-
+import { CommonModule } from '@angular/common';  
+import { BrowserModule } from '@angular/platform-browser';
 
 @NgModule({
     imports:      [
+        CommonModule,
+        BrowserModule,
         MatDialogModule,
         MatCardModule,
         BrowserAnimationsModule,

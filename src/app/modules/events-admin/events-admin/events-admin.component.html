@@ -6,17 +6,17 @@
     <div class="col-lg-10">
         <div class="row" style="margin-left: 5%;">
             <!-- <a><img class="card-img-top" src="./assets/img/angular.jpg" alt="Card image cap"></a> -->
-            <div *ngFor="let presentation of list_cards" class="col-sm-12 col-md-12 col-lg-12">
+            <div *ngFor="let presentation of list_cards" class="col-sm-12 col-md-12 col-lg-4">
                 <mat-card class="example-card" style="margin-top: 15px;">
                     <mat-card-header>
                         <mat-card-title>{{presentation.title}}</mat-card-title>
                     </mat-card-header>
-                    <div [id]="presentation.id" class="carousel slide" data-ride="carousel" *ngIf="presentation.images.length>0">
+                    <!-- <div [id]="presentation.id" class="carousel slide" data-ride="carousel" *ngIf="presentation.images.length>0">
                        
                         <div class="carousel-inner">
                             <div class="item" *ngFor="let previa of presentation.images; let i = index"
                             [ngClass]="{'active': i == 0 }" >
-                              <img [src]="previa.url" style="width: 90%;">
+                              <img [src]="previa.url" style="width: 100%;">
                             </div>
                         </div>
                         <a class="left carousel-control" [href]="'#'+presentation.id" data-slide="prev">
@@ -33,7 +33,7 @@
                         <p>
                             {{presentation.description}}
                         </p>
-                    </mat-card-content>
+                    </mat-card-content> -->
                     <mat-card-actions>
                         <button mat-button (click)="editEvent(presentation)">Editar</button>
                         <button mat-button (click)="deleteEvent(presentation)">Eliminar</button>

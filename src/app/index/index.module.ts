@@ -6,12 +6,15 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { IndexComponent } from './index.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { ModalLoginComponent } from './modal-login/modal-login.component';
+import { DetailEventComponent } from './detail-event/detail-event.component';
 
 
 const routes: Routes = [{ path: "", component: IndexComponent }];
 
 @NgModule({
-  declarations: [],
+  
+  declarations: [IndexModule, DetailEventComponent, ModalLoginComponent],
+
   imports: [
     CommonModule,
     MatSliderModule,
@@ -23,5 +26,7 @@ const routes: Routes = [{ path: "", component: IndexComponent }];
     // CarritoComponent
 
   ]
+  
+  
 })
 export class IndexModule { }

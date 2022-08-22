@@ -171,7 +171,9 @@
   width: 40px;
 }
 .rectangulo2 {
-  background: rgb(28, 169, 166);
+  /* background: rgb(28, 169, 166); */
+  background: rgb(174,134,37);
+  background: linear-gradient(90deg, rgba(174,134,37,1) 0%, rgba(247,239,138,1) 33%, rgba(210,172,71,1) 81%);
 }
 .rectangulo3 {
   width: 50rem;
@@ -194,6 +196,7 @@
   background-repeat: no-repeat;
 }
 .h4QuienesSomos {
+  -webkit-text-stroke: 0.9px black;
   color: #ffffff;
   font-family: "Nobile";
   font-weight: bold;
@@ -357,6 +360,7 @@
   margin-left: 7% !important;
 }
 .p-title-mision {
+  color: #fff;
   position: relative;
   top: 70px !important;
   margin-left: 5rem;
@@ -366,6 +370,7 @@
   font-style: normal;
 }
 .p-mision {
+  color: #fff;
   margin-top: 80px;
   margin-left: 2rem;
   margin-right: 2rem;
@@ -396,7 +401,9 @@
 }
 .fondoAzul {
   min-height: 40vh;
-  background-color: rgb(28, 169, 166);
+  /* background-color: rgb(28, 169, 166); */
+  background: rgb(174,134,37);
+  background: linear-gradient(180deg, rgba(174,134,37,1) 0%, rgba(247,239,138,1) 33%, rgba(210,172,71,1) 81%);
   border-radius: 126px 0px 119px 0px;
   -moz-border-radius: 126px 0px 119px 0px;
   -webkit-border-radius: 126px 0px 119px 0px;
@@ -412,7 +419,7 @@
   position: relative;
   top: 3rem;
   right: 3rem;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(20, 18, 13);
   border-radius: 126px 0px 91px 0px;
   -moz-border-radius: 126px 0px 91px 0px;
   -webkit-border-radius: 126px 0px 91px 0px;
@@ -699,7 +706,7 @@
   font-family: "PoppinsR";
   font-style: normal;
   font-size: 18px;
-  color: black;
+  color: rgb(255, 255, 255);
 }
 .section-contac {
   margin-top: 60px;
@@ -803,11 +810,14 @@
   width: 50%;
 }
 .tituloContacto {
-  background-color: rgb(28, 169, 166);
+  /* background-color: rgb(28, 169, 166); */
+  background: rgb(174,134,37);
+  background: linear-gradient(90deg, rgba(174,134,37,1) 0%, rgba(247,239,138,1) 33%, rgba(210,172,71,1) 81%);
   font-family: "Poppins";
   font-weight: bold;
   font-style: normal;
   color: #ffffff;
+  -webkit-text-stroke: 0.9px black;
   font-size: 20px;
   padding-left: 1rem;
   padding-right: 1rem;
