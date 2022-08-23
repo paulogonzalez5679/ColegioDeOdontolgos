@@ -25,13 +25,15 @@ import { ModalLoginComponent } from './index/modal-login/modal-login.component';
 import { IndexComponent } from './index/index.component';
 import {MatCardModule} from '@angular/material/card';
 import {MatDialogModule, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
-import { CommonModule } from '@angular/common';  
-import { BrowserModule } from '@angular/platform-browser';
+import { ListEventsComponent } from './modules/list-events/list-events/list-events.component';
+import { DetailEventComponent } from './modules/detail-event/detail-event/detail-event.component';
+import { DetailEventModule } from './modules/detail-event/detail-event.module';
+import { ListEventsModule } from './modules/list-events/list-events.module';
 
 @NgModule({
     imports:      [
-        CommonModule,
-        BrowserModule,
+        DetailEventModule,
+        ListEventsModule,
         MatDialogModule,
         MatCardModule,
         BrowserAnimationsModule,

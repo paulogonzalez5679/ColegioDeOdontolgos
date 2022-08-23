@@ -29,8 +29,7 @@ export class EventsAdminComponent implements OnInit {
   openDialog(): void {
     const dialogRef = this.dialog.open(DialogOverviewComponent, {
       width: '550px',
-      height: '500px',
-      data: {name: this.name, animal: this.animal},
+      height: '500px'
     });
 
     dialogRef.afterClosed().subscribe(result => {

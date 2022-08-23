@@ -6,7 +6,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { IndexComponent } from './index.component';
 import { BrowserModule } from '@angular/platform-browser';
 import { ModalLoginComponent } from './modal-login/modal-login.component';
-import { DetailEventComponent } from './detail-event/detail-event.component';
+import { DetailEventComponent } from 'app/modules/detail-event/detail-event/detail-event.component';
 
 
 const routes: Routes = [{ path: "", component: IndexComponent }];

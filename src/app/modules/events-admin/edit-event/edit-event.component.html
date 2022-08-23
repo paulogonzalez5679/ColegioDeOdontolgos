@@ -1,4 +1,4 @@
-<h1 mat-dialog-title>Agregar un evento</h1>
+<h1 mat-dialog-title>Editar un evento</h1>
 <div mat-dialog-content>
   
     <div id="myCarousel" class="carousel slide" data-ride="carousel" *ngIf="event.images.length>0">
@@ -7,6 +7,10 @@
           <div class="item" *ngFor="let previa of event.images; let i = index"
           [ngClass]="{'active': i == 0 }" >
             <img [src]="previa.url" class="d-block w-100">
+            <div style="margin-left: 25%;">
+              <input style="margin-top: 10px; margin-bottom: 15px;" accept=".jpg,.jpeg,.png,.svg" type="file" (change)="updateImage(previa.id,$event,event.images);aux(event.images)"/>
+              <button mat-button (click)="deleteImage(previa.id)">Borrar</button>
+            </div>
           </div>
       </div>
     
@@ -24,7 +28,8 @@
       
     </div>
     <br>
-    <input style="margin-top: 10px; margin-bottom: 15px;" multiple type="file" (change)="setFiles($event)"/>
+    <p>Agregar imagenes</p>
+    <input style="margin-top: 10px; margin-bottom: 15px;" multiple accept=".jpg,.jpeg,.png,.svg" type="file" (change)="addFiles($event,event.images)"/>
     <br>
     <mat-form-field appearance="fill">
       <p>Titulo <input  matInput [(ngModel)]="event.title" style="margin-top: 10px; margin-bottom: 15px;"></p>

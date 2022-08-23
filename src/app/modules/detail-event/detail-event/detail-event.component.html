@@ -1,0 +1,32 @@
+<mat-card class="example-card" style="margin-top: 15px;">
+    <mat-card-header>
+        <mat-card-title>{{event.title}}</mat-card-title>
+    </mat-card-header>
+    <div [id]="event.id+'detail'" class="carousel slide" data-ride="carousel" *ngIf="event.images.length>0">
+      
+        <div class="carousel-inner" style="max-height: 150px;">
+            <div class="item" *ngFor="let previa of event.images; let i = index"
+            [ngClass]="{'active': i == 0 }" >
+              <img [src]="previa.url" style="width: 100%;">
+            </div>
+        </div>
+        <div  *ngIf="event.images.length>1">
+          <a class="left carousel-control" [href]="'#'+event.id+'detail'" data-slide="prev">
+            <span class="glyphicon glyphicon-chevron-left"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" [href]="'#'+event.id+'detail'" data-slide="next">
+            <span class="glyphicon glyphicon-chevron-right"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+        
+    </div>
+
+    <mat-card-content>
+        <p>
+            {{event.description}}
+        </p>
+    </mat-card-content>
+
+</mat-card>
