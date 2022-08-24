@@ -21,9 +21,17 @@ export class EventsService {
         return this.db.collection<Event>('eventos').doc<Event>(id).valueChanges();
     }
 
-    public createEvent(event: Event) {
-        const id = uuidv4();
+    public getImgEventById(id: string): Observable<any[]> {
+        return this.db.collection('imagenesEventos', ref => ref.where('idEvent', '==', id)).valueChanges();
+    }
+
+    public createEvent(id: string, event: Event) {
         return this.db.collection<Event>('eventos').doc(id).set({...event, id});
+    }
+
+    public createImagesEvent(eventImage: EventImage) {
+        const id = uuidv4();
+        return this.db.collection<EventImage>('imagenesEventos').doc(id).set({...eventImage, id});
     }
 
     public async updateEvent(id: string, event: Event) {
@@ -32,6 +40,10 @@ export class EventsService {
 
     public deleteEvent(id: string) {
         return this.db.collection<Event>('eventos').doc<Event>(id).delete();
+    }
+
+    public deleteImagesEvent(id: string) {
+        return this.db.collection('imagenesEventos').doc<Event>(id).delete();
     }
 
     public deleteAllEvents() {

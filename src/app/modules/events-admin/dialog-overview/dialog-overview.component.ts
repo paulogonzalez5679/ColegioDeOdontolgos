@@ -1,8 +1,9 @@
 import {Component, Inject} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import {EventsAdminComponent } from '../events-admin/events-admin.component';
-import { Event } from 'app/modules/events/event.interface';
+import { Event, EventImage } from 'app/modules/events/event.interface';
 import { EventsService } from 'app/modules/events/events.service';
+import {v4 as uuidv4} from 'uuid';
 
 @Component({
   selector: 'app-dialog-overview',
@@ -11,7 +12,9 @@ import { EventsService } from 'app/modules/events/events.service';
 })
 export class DialogOverviewComponent{
   
-  event : Event={images:[], title:'', description:''}
+  event : Event={title:'', description:''}
+  eventImage : EventImage={idImage:'',idEvent:'', url:''};
+  imagenes = []
 
   constructor(
     public dialogRef: MatDialogRef<EventsAdminComponent>,
@@ -24,15 +27,24 @@ export class DialogOverviewComponent{
 
   setFiles(event) {
       this.eventsService.uploadImages(event.target.files).then((urls) => {
-          this.event.images = urls;
+          this.imagenes = urls;
     }).catch((e) => alert(e.message));
   }
 
   submit() {
     const numEvento = Math.floor(Math.random() * 100);
     this.dialogRef.close();
-    return this.eventsService.createEvent(this.event).then(
-      () => alert('Guardado')).catch((e) => alert(e.message));
+    let id = uuidv4();
+    this.eventsService.createEvent(id, this.event).then(
+      () => console.log('evento guardado')).catch((e) => alert(e.message));
+    
+    this.imagenes.forEach((img) => {
+      this.eventImage={idEvent:id, idImage:img.id,url:img.url};
+      this.eventsService.createImagesEvent({idEvent:id, idImage:img.id,url:img.url}).then(
+        () => console.log('imagen evento guardado')).catch((e) => alert(e.message));
+    });
+    
+      
   }
 
 }

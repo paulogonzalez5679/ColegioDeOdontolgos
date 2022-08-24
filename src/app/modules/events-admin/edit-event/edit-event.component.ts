@@ -18,8 +18,15 @@ export class EditEventComponent implements OnInit {
   private readonly eventsService: EventsService) { }
   
   // imagenes = Observable
+  imagenes:any;
 
   ngOnInit(): void {
+    console.log(this.event.id);
+    this.imagenes=this.eventsService.getImgEventById(this.event.id);
+    // console.log(this.imagenes);
+    this.imagenes.subscribe(e => {
+      console.log(e); // how to access the data //only returns an array of object
+    });
   }
 
   onNoClick(): void {
@@ -28,7 +35,7 @@ export class EditEventComponent implements OnInit {
 
   setFiles(event) {
       this.eventsService.uploadImages(event.target.files).then((urls) => {
-          this.event.images = urls;
+          this.imagenes = urls;
     }).catch((e) => alert(e.message));
   }
 
@@ -43,14 +50,14 @@ export class EditEventComponent implements OnInit {
     this.eventsService.updateImages(event.target.files,idImgRempl).then((urls) => { 
       for (let o in imagenes) {
         if (imagenes[o].id === idImgRempl) {
-          imagenes[o] = urls[0];
+          imagenes[o] = urls[0].url;
           // imagenes.unshift(urls[0]);
           // imagenes=imagenes.filter( ob => ob.id !== idImgRempl);
         }
       }
       // imagenes=imagenes.reverse();
-      this.event.images = imagenes;
-      console.log(this.event.images);
+      this.imagenes = imagenes;
+      console.log(this.imagenes);
     }).catch((e) => alert(e.message));
 
   }
@@ -61,23 +68,23 @@ export class EditEventComponent implements OnInit {
       for (let o  in urls) {
         imagenes.push(urls[o]);
       }
-      this.event.images = imagenes;
+      this.imagenes = imagenes;
       // console.log(this.event.images);
     }).catch((e) => alert(e.message));
   }
 
-  deleteImage(idImage, imagenes) {
+  deleteImage(imagen) {
     // console.log(imagenes);
     // imagenes=imagenes.slice(1, 3);
     // imagenes=imagenes.reverse();
-    imagenes=imagenes.filter( (ob) => ob.id !== idImage);
-    imagenes=imagenes.reverse();
+    // imagenes=imagenes.filter( (ob) => ob.id !== idImage);
     // imagenes=imagenes.reverse();
-    // imagenes=imagenes;
-    // console.log(imagenes);
-    this.event.images = imagenes;
-
-    this.eventsService.deleteImageById(idImage);
+    // // imagenes=imagenes.reverse();
+    // // imagenes=imagenes;
+    // // console.log(imagenes);
+    // this.imagenes = imagenes;
+    this.eventsService.deleteImagesEvent(imagen.id)   
+    this.eventsService.deleteImageById(imagen.idImage);
     
   }
 

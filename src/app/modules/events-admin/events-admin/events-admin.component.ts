@@ -51,15 +51,19 @@ export class EventsAdminComponent implements OnInit {
     });
   }
 
-  deleteImage(imagenes) {
-    imagenes.forEach(element => {
-      // console.log(element.id);
-      this.eventsService.deleteImageById(element.id);
+  deleteImage(evento) {
+    let imagenes=this.eventsService.getImgEventById(evento.id);
+    imagenes.subscribe(e => {
+       e.forEach(element => {
+        this.eventsService.deleteImagesEvent(element.id)   
+        this.eventsService.deleteImageById(element.idImage);
+       });
     });
   }
 
+
   deleteEvent(evento) {
-      this.deleteImage(evento.images)
+      this.deleteImage(evento)
       return this.eventsService.deleteEvent(evento.id).then(() => alert('Eliminado')).catch((e) => alert(e.message));
   }
 

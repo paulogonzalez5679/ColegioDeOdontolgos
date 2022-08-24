@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {EventsService} from '../events.service';
 import {Event} from '../event.interface';
+import {v4 as uuidv4} from 'uuid';
 
 @Component({
     selector: 'app-events',
@@ -30,8 +31,8 @@ export class EventsComponent implements OnInit {
 
     submit() {
         const numEvento = Math.floor(Math.random() * 100);
-        return this.eventsService.createEvent({
-            images: [{id: 'imagen1', url: 'url'}, {id: 'imagen2', url: 'url2'}],
+        let id = uuidv4();
+        return this.eventsService.createEvent(id,{
             title: `Evento ${numEvento}`,
             description: 'Descripcion del evento 1'
         }).then(() => alert('Guardado')).catch((e) => alert(e.message));

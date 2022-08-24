@@ -1,21 +1,21 @@
 <h1 mat-dialog-title>Editar un evento</h1>
 <div mat-dialog-content>
   
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" *ngIf="event.images.length>0">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" >
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
-          <div class="item" *ngFor="let previa of event.images; let i = index"
+          <div class="item" *ngFor="let previa of imagenes | async; let i = index"
           [ngClass]="{'active': i == 0 }" >
             <img [src]="previa.url" class="d-block w-100">
             <div style="margin-left: 25%;">
               <input style="margin-top: 10px; margin-bottom: 15px;" accept=".jpg,.jpeg,.png,.svg" type="file" (change)="updateImage(previa.id,$event,event.images);aux(event.images)"/>
-              <button mat-button (click)="deleteImage(previa.id)">Borrar</button>
+              <button mat-button (click)="deleteImage(previa)">Borrar</button>
             </div>
           </div>
       </div>
     
       <!-- Left and right controls -->
-      <div *ngIf="event.images.length>1">
+      <div>
         <a class="left carousel-control" href="#myCarousel" data-slide="prev">
           <span class="glyphicon glyphicon-chevron-left"></span>
           <span class="sr-only">Previous</span>

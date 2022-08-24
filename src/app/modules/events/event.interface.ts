@@ -2,10 +2,11 @@ export interface Event {
     id?: string;
     title?: string;
     description?: string;
-    images?: EventImage[];
 }
 
 export interface EventImage {
-    id: string;
+    id?: string;
+    idEvent: string;
+    idImage: string;
     url: string;
 }
