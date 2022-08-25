@@ -53,6 +53,7 @@ export class IndexComponent implements OnInit {
   mision: Observable<any[]>;
   vision: Observable<any[]>;
   list_cards=[];
+  imagenes:any;
 
   constructor(
     private router: Router,
@@ -64,12 +65,14 @@ export class IndexComponent implements OnInit {
     private authService: AuthService,
     private datesService: DatesService,
     private messageService: MessageService,
-    public dialog: MatDialog
+    public dialog: MatDialog,
+    private readonly eventsService: EventsService
   ) {
     this.sidebarVisible = false;
   }
 
   ngOnInit(): void {
+    this.imagenes=this.eventsService.getImgEvent();
     this.getProducts();
     this.getCategories();
     this.arrayProductCart = [];

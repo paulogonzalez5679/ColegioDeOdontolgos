@@ -25,6 +25,10 @@ export class EventsService {
         return this.db.collection('imagenesEventos', ref => ref.where('idEvent', '==', id)).valueChanges();
     }
 
+    public getImgEvent(): Observable<any[]> {
+        return this.db.collection('imagenesEventos').valueChanges();
+    }
+
     public createEvent(id: string, event: Event) {
         return this.db.collection<Event>('eventos').doc(id).set({...event, id});
     }
