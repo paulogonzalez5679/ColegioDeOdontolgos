@@ -55,6 +55,8 @@ export class IndexComponent implements OnInit {
   list_cards=[];
   imagenes:any;
 
+  registrationFlag=false;
+
   constructor(
     private router: Router,
     location: Location,
@@ -179,6 +181,7 @@ export class IndexComponent implements OnInit {
   }
 
   public viewRouter(opt: string, time: number) {
+    this.registrationFlag=false;
     var body = document.getElementsByTagName("body")[0];
     this.toggleButton.classList.remove("toggled");
     this.sidebarVisible = false;
@@ -243,5 +246,10 @@ export class IndexComponent implements OnInit {
   getVision()
   {
     this.vision= this.ProductService.getVision();
+  }
+
+  redirectRegistration() {
+    this.registrationFlag=true;
+    // this.router.navigate([`/registration`]);
   }
 }

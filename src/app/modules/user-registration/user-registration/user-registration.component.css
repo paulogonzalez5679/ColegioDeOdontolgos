@@ -1,0 +1,58 @@
+.formularioGeneral {
+    padding-left: 5rem;
+    padding-right: 5rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    background: rgb(174,134,37);
+    background: linear-gradient(180deg, rgba(174,134,37,1) 0%, rgba(247,239,138,1) 15%, rgba(210,172,71,1) 81%);
+    border-radius: 8px 8px 8px 8px;
+    -moz-border-radius: 8px 8px 8px 8px;
+    -webkit-border-radius: 8px 8px 8px 8px;
+  }
+
+  .text-contactanos {
+    font-family: "Poppins";
+    font-weight: 300;
+    font-style: normal;
+    font-size: 25px;
+    color: #ffffff;
+  }
+
+  .section-init {
+    position: relative;
+    top: -100px;
+    /* min-height: 80vh; */
+  }
+
+  .row-w-100 {
+    max-width: 100% !important;
+    margin: 0 auto;
+  }
+
+  .row-w-60 {
+    max-width: 60% !important;
+    margin: 0 auto;
+    margin-bottom: 5%;
+  }
+
+  .section-contac {
+    margin-top: 60px;
+  }
+
+
+  .botonContactos {
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    background-color: rgb(20, 18, 13);
+    border: solid #000000 1px;
+    color: #ffffff;
+    margin-top: 2rem;
+    width: 180px;
+    height: 50px;
+    font-family: "Poppins";
+    font-weight: bold;
+    font-style: normal;
+    font-size: 20px;
+    margin: 0 auto;
+  }

@@ -8,6 +8,7 @@ import { EventsService } from 'app/modules/events/events.service';
   templateUrl: './list-events.component.html',
   styleUrls: ['./list-events.component.css']
 })
+
 export class ListEventsComponent implements OnInit {
   
   list_cards:any;

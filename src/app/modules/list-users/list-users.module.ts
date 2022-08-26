@@ -3,13 +3,12 @@ import { CommonModule } from '@angular/common';
 //import { MessageComponent } from './message/message.component';
 import { RouterModule, Routes } from '@angular/router';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { MessageComponent } from './message/message.component'
+import { ListUsersComponent } from './list-users/list-users.component';
 
-const routes: Routes = [{ path: "", component:  MessageComponent}];
-
+const routes: Routes = [{ path: "", component:  ListUsersComponent}];
 
 @NgModule({
-  declarations: [MessageComponent],
+  declarations: [ListUsersComponent],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
@@ -17,4 +16,4 @@ const routes: Routes = [{ path: "", component:  MessageComponent}];
     ReactiveFormsModule
   ]
 })
-export class MessageModule { }
+export class ListUsersModule { }

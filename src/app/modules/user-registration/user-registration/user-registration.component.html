@@ -1,0 +1,60 @@
+<div _ngcontent-npf-c107=""  class="row row-w-60 section-contac">
+  <div class="col-sm-12 col-md-12 col-lg-12">
+    <form #messajeForm="ngForm" novalidate (ngSubmit)="onSaveUser(messajeForm.value, messajeForm.valid)">
+      <div class="row formularioGeneral">
+        <div class="col-sm-12">
+          <span class="text-left text-contactanos">ESCRÍBENOS</span>
+        </div>
+        <div class="col-sm-12 text-left col-contact" style="margin-top: 2rem;">
+          <div class="content content-form">
+            <div class="form-group" style="margin-bottom: 15px;">
+              <input type="text" name="user_name" required placeholder="Nombres"
+                class="form-control formulario input-contact" [(ngModel)]="user.user_name" required
+                #user_name="ngModel">
+              <small [hidden]="user_name.valid || (user_name.pristine && !messajeForm.submitted)"
+                class="text-danger">
+                Ingrese su Nombre
+              </small>
+            </div>
+  
+            <div class="form-group" style="margin-bottom: 15px;">
+              <input type="text" name="user_lastname" required placeholder="Apellidos"
+                class="form-control formulario input-contact" [(ngModel)]="user.user_lastname" required
+                #user_lastname="ngModel">
+              <small [hidden]="user_lastname.valid || (user_lastname.pristine && !messajeForm.submitted)"
+                class="text-danger">
+                Ingrese su Apellido
+              </small>
+            </div>
+  
+            <div class="form-group" style="margin-bottom: 15px;">
+              <input type="text" name="user_email" required placeholder="Email"
+                class="formulario form-control input-contact" [(ngModel)]="user.user_email" required
+                #user_email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
+              <small [hidden]="user_email.valid || (user_email.pristine && !messajeForm.submitted)"
+                class="text-danger">
+                Ingrese  un Email valido
+              </small>
+            </div>
+  
+            <div class="form-group" style="margin-bottom: 15px;">
+              <input type="text" name="user_phone" placeholder="Teléfono" class="formulario form-control input-contact"
+                [(ngModel)]="user.user_phone" required #user_phone="ngModel" pattern="^((\\+91-?)|0)?[0-9]{9}$" maxlength="10">
+              <small [hidden]="user_phone.valid || (user_phone.pristine && !messajeForm.submitted)"
+                class="text-danger">
+                Ingrese un número de teléfono valido
+              </small>
+            </div>
+            <br>
+            <div class="row">
+              <div class="col-sm-12 text-center">
+                <button  mat-button type="submit" class="botonContactos">Aceptar</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+     
+    </form>
+  </div>
+</div>

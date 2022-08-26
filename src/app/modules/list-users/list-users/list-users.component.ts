@@ -1,52 +1,56 @@
 import { Component, OnInit } from '@angular/core';
+import { UserService } from 'app/services/user/user.service';
+
 export interface DataTable {
   headerRow: string[];
   footerRow?: string[];
   dataRows: string[][];
 }
-declare var $: any;
-/** SERVICE */
-import { MessageService } from 'app/services/message/message.service';
-@Component({
-  selector: 'app-message',
-  templateUrl: './message.component.html',
-  styleUrls: ['./message.component.css']
-})
 
-export class MessageComponent implements OnInit {
+declare var $: any;
+
+@Component({
+  selector: 'app-list-users',
+  templateUrl: './list-users.component.html',
+  styleUrls: ['./list-users.component.css']
+})
+export class ListUsersComponent implements OnInit {
+
   public dataTable: DataTable;
-  public arrayMessages: Array<Message> = [];
+  public arrayUsers: Array<User> = [];
   public tablaDatos;
-  constructor(private messageService:MessageService ) { }
+
+  constructor(private userService:UserService) { }
 
   ngOnInit(): void {
     this.dataTable = {
       headerRow: [
         "#",
-        "FECHA",
-        "HORA",
-        "EMAIL",
         "NOMBRE",
-        "DESCRIPCIÓN",
-        "TELÉFONO"
+        "APELLIDO",
+        "EMAIL",
+        "TELEFONO"
       ],
       dataRows: [],
     };
-    this.getMessage();
+
+    this.getUser();
   }
 
-  public getMessage() {
-    this.messageService.getMessages().subscribe(m => {
-      this.arrayMessages = m;
+  public getUser() {
+    this.userService.getUsers().subscribe(m => {
+      // console.log(m);
+      this.arrayUsers = m;
     })
+
     this.initDataTable()
   }
 
   public initDataTable() {
     let aaa = this.tablaDatos;
-    $("#datatablesMessajes").DataTable().destroy();
+    $("#datatablesUsers").DataTable().destroy();
     setTimeout(function () {
-      aaa = $("#datatablesMessajes").DataTable({
+      aaa = $("#datatablesUsers").DataTable({
         retrieve: true,
         paging: true,
         ordering: true,

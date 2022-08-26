@@ -29,9 +29,11 @@ import { ListEventsComponent } from './modules/list-events/list-events/list-even
 import { DetailEventComponent } from './modules/detail-event/detail-event/detail-event.component';
 import { DetailEventModule } from './modules/detail-event/detail-event.module';
 import { ListEventsModule } from './modules/list-events/list-events.module';
+import { UserRegistrationModule } from './modules/user-registration/user-registration.module';
 
 @NgModule({
     imports:      [
+        UserRegistrationModule,
         DetailEventModule,
         ListEventsModule,
         MatDialogModule,

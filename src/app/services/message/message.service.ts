@@ -19,6 +19,7 @@ export class MessageService {
   public getMessages() {
     return this.firestore.collection('message', ref => ref.orderBy('message_id', 'desc')).valueChanges();
   }
+  
   public getDenuncias() {
     return this.firestore.collection('comment_complaint').valueChanges();
   }
