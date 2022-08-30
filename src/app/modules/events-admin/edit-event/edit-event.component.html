@@ -8,7 +8,7 @@
           [ngClass]="{'active': i == 0 }" >
             <img [src]="previa.url" class="d-block w-100">
             <div style="margin-left: 25%;">
-              <input style="margin-top: 10px; margin-bottom: 15px;" accept=".jpg,.jpeg,.png,.svg" type="file" (change)="updateImage(previa.id,$event,event.images);aux(event.images)"/>
+              <input style="margin-top: 10px; margin-bottom: 15px;" accept=".jpg,.jpeg,.png,.svg" type="file" (change)="updateImage(previa.id,previa.idImage,$event);"/>
               <button mat-button (click)="deleteImage(previa)">Borrar</button>
             </div>
           </div>

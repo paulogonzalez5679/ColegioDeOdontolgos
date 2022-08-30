@@ -27,6 +27,14 @@ export const AppRoutes: Routes = [
         path: 'users',
         loadChildren: './modules/list-users/list-users.module#ListUsersModule',
       },
+      {
+        path: 'carrusel',
+        loadChildren: './modules/admin-carrusel/admin-carrusel.module#AdminCarruselModule',
+      },
+      {
+        path: 'mision-vision',
+        loadChildren: './modules/mision-vision/mision-vision.module#MisionVisionModule',
+      },
     ],
   },
 ];

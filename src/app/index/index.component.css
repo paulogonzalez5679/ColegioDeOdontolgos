@@ -1841,12 +1841,13 @@
 }
 
 #myCarousel{
- margin-top: 10%;
- max-height: 400px;
+ margin-top: 5%;
+ height: 700px !important;
 }
 
 .redux-img{
-  max-height: 400px;
+  height: 700px !important;
+  width: 1800px !important;
 }
 
 body{

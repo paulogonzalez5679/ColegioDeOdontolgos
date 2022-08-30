@@ -45,6 +45,12 @@ export const ROUTES: RouteInfo[] = [
     icontype: "pe-7s-box2",
   },
   {
+    path: "/carrusel",
+    title: "Carrusel",
+    type: "link",
+    icontype: "pe-7s-box2",
+  },
+  {
     path: "/users",
     title: "Usuarios Registrados",
     type: "link",
@@ -53,6 +59,12 @@ export const ROUTES: RouteInfo[] = [
   {
     path: "/message",
     title: "Mensajes",
+    type: "link",
+    icontype: "pe-7s-mail",
+  },
+  {
+    path: "/mision-vision",
+    title: "Mision y Vision",
     type: "link",
     icontype: "pe-7s-mail",
   },

@@ -59,16 +59,9 @@
               <div id="myCarousel" class="carousel slide" data-ride="carousel">
                 <!-- Wrapper for slides -->
                 <div class="carousel-inner">
-                  <div class="item active redux-img">
-                    <img src="./assets/img/angular.jpg" alt="Chania">
-                  </div>
-              
-                  <div class="item redux-img">
-                    <img src="./assets/img/react.jpg" alt="Chicago">
-                  </div>
-              
-                  <div class="item redux-img">
-                    <img src="./assets/img/vue.jpg" alt="New York">
+                  <div class="item" *ngFor="let previa of imagenesCarrusel | async; let i = index"
+                    [ngClass]="{'active': i == 0 }" >
+                      <img  class="redux-img" [src]="previa.url">
                   </div>
                 </div>
               
@@ -84,50 +77,6 @@
               </div>
           </div>
         </div>
-        <!-- <div class="textoInicial">
-          <p class="textInicio" data-aos="zoom-in" data-aos-duration="1500">
-            Contamos con una trayectoria de 34 años
-            dentro del mercado, en la comercialización
-            al por mayor y menor de equipos, reactivos
-            e insumos para diagnóstico.
-          </p>
-        </div> -->
-        <!-- <div class="row col-init-btn">
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <a (click)="viewRouter('#contactos', 2100)">
-              <button class="botonesInicio btn-block" data-aos="zoom-in" data-aos-duration="1500">CONTACTOS</button>
-            </a>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <a (click)="viewRouter('#quienes', 900)">
-              <button class="botonesInicio btn-block" data-aos="zoom-in" data-aos-duration="1500">MÁS INFO</button>
-            </a>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col" style="padding-top: 70px; padding-bottom: 50px;">
-            <div class="row rectangulo">
-              <div class="col-sm-4 col-xs-4 text-right">
-                <a>
-                  <img data-aos="zoom-in" data-aos-duration="1500" class="redesRectanguloFacebook"
-                    src="../../assets/img/Elementos-15.svg" alt="logo">
-                </a>
-              </div>
-              <div class="col-sm-4 col-xs-4 text-center">
-                <a>
-                  <img data-aos="zoom-in" data-aos-duration="1500" class="redesRectanguloTwtitter"
-                    src="../../assets/img/Elementos-16.svg" alt="logo">
-                </a>
-              </div>
-              <div class="col-sm-4 col-xs-4 text-left">
-                <a>
-                  <img data-aos="zoom-in" data-aos-duration="1500" class="redesRectanguloInstagram"
-                    src="../../assets/img/Elementos-17.svg" alt="logo">
-                </a>
-              </div>
-            </div>
-          </div>
-        </div> -->
       </div>
       <div class="col-sm-12 col-md-4 col-lg-4">
 
@@ -147,52 +96,6 @@
         </div>
       </div>
     </div>
-
-
-
-    <!-- <div class="row row-w-100 quienesSomos" style="min-height: 100vh;">
-      <div class="col-sm-12 row-w-100">
-        <div class="row row-w-90">
-          <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-12 col-md-5 col-lg-5 diseñoQuienes">
-            <p class="tituloQuienesSomos">
-              REPRESENTACIÓNES
-              PEDRO ARANEDA FERRER E HIJOS CÍA.
-              LTDA.
-            </p>
-            <div class="text-center">
-              <img class="logoQuienesSomos" src="../../assets/img/Elementos-04.svg" alt="">
-            </div>
-          </div>
-          <div class="col-sm-12 col-md-7 col-lg-7">
-            <div data-aos="zoom-in" data-aos-duration="1500" class="row" class="quienesSomosDerecha">
-              <img class="esquinaSUPERIORQUIENES" src="../../assets/img/Elementos-06.svg" alt="">
-              <p class="textoQuienesSomos text-center">Cuenta con una trayectoria de 34 años dentro del mercado,
-                dedicándose a la comercialización al por mayor y menor de equipos,
-                reactivos e insumos para diagnóstico.</p>
-              <p class="textoQuienesSomos text-center">
-                La Empresa fue creada para satisfacer necesidades de laboratorios,
-                clínicas y hospitales, pues este sector no contaba con una carta
-                consolidada de proveedores de equipos, reactivos e insumos para
-                diagnóstico. A partir de dicha necesidad de este sector, nace
-                REPRESENTACIONES PEDRO ARANEDA FERRER E HIJOS CÍA. LTDA., la cual
-                permanentemente capacita a su recurso humano y renueva su
-                cartera de productos, ofreciendo a clientes y futuros clientes marcas
-                líderes en el mercado.
-              </p>
-              <p class="textoQuienesSomos text-center">
-                El personal calificado con el que cuenta la Empresa ofrece un servicio
-                personalizado y directo a sus clientes brindando productos líderes en
-                el mercado con altos estándares de calidad basados siempre en
-                innovación y tecnología.
-              </p>
-            </div>
-          </div>
-          <div class="col-sm-12">
-            <img class="esquinaINFERIORQUIENES" src="../../assets/img/Elementos-07.svg" alt="">
-          </div>
-        </div>
-      </div>
-    </div> -->
   </section>
   <!-- *** Quienes somos? *** -->
 
@@ -221,13 +124,8 @@
             <img class="circulo" src="../../assets/img/Elementos-11.svg" alt="">
             <p class="p-title-mision">VISIÓN</p>
             <br><br>
-            <p class="text-center p-mision">
-              Consolidarnos como la
-              empresa líder en el Austro con
-              el respaldo de aliados
-              estratégicos, diversificando la
-              cartera de productos y
-              servicios.
+            <p class="text-center p-mision" *ngFor="let vision of vision | async trackBy: trackByFn">
+              {{vision.vision}}
             </p>
           </div>
         </div>
@@ -258,105 +156,7 @@
       <div class="col-sm-12 text-center">
         <br><br>
         <div class="row row-w-100">
-        <app-list-events></app-list-events>
-          <!-- <div class="col-sm-6 col-md-2 col-lg-2 p-0" (click)="cambioMasvendido('Urianálisis')">
-            <div class="menu2 {{show=='Urianálisis'? 'menu-active' :''}}">
-              <a data-toggle="tab" class="text-center">
-                Urianálisis
-              </a>
-            </div>
-          </div> -->
-          <!-- <div class="col-sm-6 col-md-1 col-lg-1 p-0" (click)="cambioMasvendido('POC')">
-            <div class="menu2 {{show=='POC'? 'menu-active' :''}}">
-              <a data-toggle="tab" class="text-center">
-                POC
-              </a>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-2 col-lg-2 p-0" (click)="cambioMasvendido('Gases y Electrolitos')">
-            <div class="menu2 {{show=='Gases y Electrolitos'? 'menu-active' :''}}">
-              <a data-toggle="tab" class="text-center">Gases y
-                Electrolitos
-              </a>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-2 col-lg-2 p-0" (click)="cambioMasvendido('Coagulación')">
-            <div class="menu2 {{show=='Coagulación'? 'menu-active' :''}}">
-              <a data-toggle="tab" class="text-center">
-                Coagulación
-              </a>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-2 col-lg-2 p-0" (click)="cambioMasvendido('Hematología')">
-            <div class="menu2 {{show=='Hematología'? 'menu-active' :''}}">
-              <a data-toggle="tab" class="text-center">
-                Hematología
-              </a>
-            </div>
-          </div> -->
-          <div *ngFor="let category of arrayCategories" class="col-xs-4 col-sm-4 col-md-2 col-lg-2 p-0"
-            (click)="cambioMasvendido(category.nombre)">
-            <div class="menu2 {{show==category.nombre? 'menu-active' :''}}">
-              {{category.nombre}}
-            </div>
-          </div>
-        </div>
-        <div id="card-product" class="tab-pane fade in active container-fostrap">
-          <div class="content">
-            <div class="container">
-              <br>
-              <div class="row text-center">
-                <div>
-                  <ng-container class="" *ngFor="let product of arrayProduct">
-                    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-6 col-md-4 col-lg-4"
-                      *ngIf=" product.pro_categoria==show;">
-                      <div class="card card-product text-center">
-                        <div class="img-card" style="border-right: solid black;">
-                          <img style="margin-top:3rem; width: 50%;" src="{{product.pro_url}}"
-                            alt="{{product.pro_nombre}}">
-                          <div>
-                            <h4 class="producto text-center"> {{product.pro_nombre}} </h4>
-                            <p *ngIf="!isLink(product.pro_description)" class="productoTexto text-center"
-                              style="overflow-wrap: break-word;">
-                              <span [innerHTML]='product.pro_description | slice:0:60'></span>...
-
-                              <!-- {{product.pro_description | slice: 0:60}}... -->
-                            </p>
-                          </div>
-                          <div style="position: absolute; bottom: 10px; left: 38%">
-                            <a data-toggle="modal" data-target="#modalProduct"><button (click)="selectProdcut(product)"
-                                class="btn btnTexto" style="margin-bottom: 3rem;">Ver Más...</button></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                    <div data-aos="fade-up" data-aos-duration="1500" class="col-sm-6 col-md-4 col-lg-4"
-                      *ngIf=" show=='todos'">
-                      <div class="card card-product text-center">
-                        <div class="img-card" style="border-right: solid black;">
-                          <img style="margin-top:3rem; width: 50%;" src="{{product.pro_url}}"
-                            alt="{{product.pro_nombre}}">
-                          <div>
-                            <h4 class="producto text-center"> {{product.pro_nombre}} </h4>
-                            <p *ngIf="!isLink(product.pro_description)&&product.pro_description!=' '"
-                              class="productoTexto text-center" style="overflow-wrap: break-word;">
-                              <span [innerHTML]='product.pro_description | slice:0:60'></span>...
-                              <!-- {{product.pro_description |slice: 0:60}}... -->
-                            </p>
-                          </div>
-                          <div style="position: absolute; bottom: 10px; left: 38%">
-                            <a data-toggle="modal" data-target="#modalProduct">
-                              <button (click)="selectProdcut(product)" class="btn btnTexto"
-                                style="margin-bottom: 3rem;">Ver Más...</button></a>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </ng-container>
-                </div>
-              </div>
-            </div>
-          </div>
+          <app-list-events></app-list-events>
         </div>
       </div>
     </div>
@@ -815,12 +615,7 @@
       </div>
     </div>
   </section>
-</div>
-<div *ngIf="registrationFlag==true">
-  <app-user-registration></app-user-registration>
-</div>
-
-<!-- *** /Contactos *** -->
+  <!-- *** /Contactos *** -->
 
 <!-- *** Ubicacion *** -->
 <section>
@@ -946,43 +741,48 @@
  
 </footer>
 
-<!--MODAL PRODCUTOS-->
-<div class="modal fade" #modalProduct id="modalProduct" tabindex="-1" role="dialog"
-  aria-labelledby="modalSubCategoryLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
-            aria-hidden="true">&times;</span></button>
-        <h2 class="modal-title" id="modalSubCategoryLabel">{{product.pro_nombre}}</h2>
-      </div>
-      <div class="modal-body">
-        <div class="card mb-3 modalProd">
-          <div class="row no-gutters">
-            <div class="col-md-6 text-center">
-              <img class="imgProd" src="{{product.pro_url}}" alt="{{product.pro_nombre}}">
-            </div>
-            <div style="margin-left: 2rem;" class="col-md-11 text-center">
-              <div class="card-body">
-                <p *ngIf="!isLink(product.pro_description)" class="card-text text-justify">
-                  <span [innerHTML]='product.pro_description'></span>
-                  <!-- {{product.pro_description}} -->
-                </p>
-                <p *ngIf="isLink(product.pro_description)" class="card-text text-justify">
-                  <a href="{{product.pro_description}}" target="_blanck">
-                    Ver la descripción
-                  </a>
-                </p>
+  <!--MODAL PRODCUTOS-->
+  <div class="modal fade" #modalProduct id="modalProduct" tabindex="-1" role="dialog"
+    aria-labelledby="modalSubCategoryLabel">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+              aria-hidden="true">&times;</span></button>
+          <h2 class="modal-title" id="modalSubCategoryLabel">{{product.pro_nombre}}</h2>
+        </div>
+        <div class="modal-body">
+          <div class="card mb-3 modalProd">
+            <div class="row no-gutters">
+              <div class="col-md-6 text-center">
+                <img class="imgProd" src="{{product.pro_url}}" alt="{{product.pro_nombre}}">
+              </div>
+              <div style="margin-left: 2rem;" class="col-md-11 text-center">
+                <div class="card-body">
+                  <p *ngIf="!isLink(product.pro_description)" class="card-text text-justify">
+                    <span [innerHTML]='product.pro_description'></span>
+                    <!-- {{product.pro_description}} -->
+                  </p>
+                  <p *ngIf="isLink(product.pro_description)" class="card-text text-justify">
+                    <a href="{{product.pro_description}}" target="_blanck">
+                      Ver la descripción
+                    </a>
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Cerrar</button>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default btn-simple" data-dismiss="modal">Cerrar</button>
+        </div>
       </div>
     </div>
   </div>
+
+  <app-modal-login></app-modal-login>
+</div>
+<div *ngIf="registrationFlag==true">
+  <app-user-registration></app-user-registration>
 </div>
 
-<app-modal-login></app-modal-login>

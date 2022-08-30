@@ -81,29 +81,23 @@ export class EventsService {
         return this.storage.ref(`Eventos/${id}`).delete().toPromise();
     }
 
-    public async updateImages(actual, idAntigua): Promise<EventImage[]> {
+    // public async updateImages(idEvent, idAntigua, event){
+    //     // console.log(idEvent);
+    //     // console.log(idAntigua);
+    //     // console.log(event);
+    //     this.uploadImages(event.target.files).then((urls) => {
+    //             console.log(urls);
+    //         //     urls.forEach((img) => {
+    //         //     let eventImage={idEvent:event.id, idImage:img.id,url:img.url};
+    //         //     console.log(eventImage);
+    //         //     this.createImagesEvent(eventImage).then(
+    //         //     () => console.log('imagen evento guardado')).catch((e) => alert(e.message));
+    //         // });
+    //     });
         
-        let urls = [];
-
-        await new Promise((resolve, reject) => {
-            for (const file of actual) {
-                const id = uuidv4();
-                const filePath = `Eventos/${id}`;
-                const task = this.storage.upload(filePath, file);
-                task.then((t) => {
-                    t.ref.getDownloadURL().then((url) => {
-                        urls.push({url, id});
-                        if (urls.length === actual.length) {
-                            resolve(urls);
-                        }
-                    });
-                }).catch((e) => reject(e));
-            }
-        });
-
-        this.deleteImageById(idAntigua)
-
-        return urls;
+    //     // console.log(idAntigua);
+    //     // this.deleteImagesEvent(idEvent)   
+    //     // this.deleteImageById(idAntigua);
         
-    }
+    // }
 }

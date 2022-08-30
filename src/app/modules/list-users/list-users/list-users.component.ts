@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'app/services/user/user.service';
+import * as XLSX from 'xlsx';
 
 export interface DataTable {
   headerRow: string[];
@@ -67,6 +68,17 @@ export class ListUsersComponent implements OnInit {
         },
       });
     }, 10);
+  }
+
+  name = 'ExcelSheet.xlsx';
+  exportToExcel(): void {
+    let element = document.getElementById('datatablesUsers');
+    const worksheet: XLSX.WorkSheet = XLSX.utils.table_to_sheet(element);
+
+    const book: XLSX.WorkBook = XLSX.utils.book_new();
+    XLSX.utils.book_append_sheet(book, worksheet, 'Sheet1');
+
+    XLSX.writeFile(book, this.name);
   }
 
 }

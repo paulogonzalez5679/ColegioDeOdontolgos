@@ -1,0 +1,24 @@
+<div>
+    <button mat-button onclick="document.getElementById('addFile').click()">Agregar imagen</button>
+    <input id="addFile" style="visibility:hidden;" type="file"  multiple accept=".jpg,.jpeg,.png,.svg" (change)="setFiles($event)">
+</div>
+
+<div class="container">
+    <div class="col-lg-10">
+        <div class="row" style="margin-left: 5%;">
+            <!-- <a><img class="card-img-top" src="./assets/img/angular.jpg" alt="Card image cap"></a> -->
+            <div *ngFor="let imagenCarrusel of imagenesCarrusel | async" class="col-sm-12 col-md-12 col-lg-4">
+                <mat-card class="example-card" style="margin-top: 15px;">
+                    <img [src]="imagenCarrusel.url">
+                    <mat-card-actions>
+                        <div>
+                            <input #editar style="visibility:hidden;" type="file" accept=".jpg,.jpeg,.png,.svg" (change)="editImage(imagenCarrusel, $event)">
+                            <button mat-button (click)="editar.click()">Editar</button>
+                            <button mat-button (click)="deleteImage(imagenCarrusel)">Eliminar</button>
+                        </div>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

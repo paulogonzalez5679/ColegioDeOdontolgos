@@ -43,8 +43,6 @@ export class DialogOverviewComponent{
       this.eventsService.createImagesEvent({idEvent:id, idImage:img.id,url:img.url}).then(
         () => console.log('imagen evento guardado')).catch((e) => alert(e.message));
     });
-    
-      
   }
 
 }

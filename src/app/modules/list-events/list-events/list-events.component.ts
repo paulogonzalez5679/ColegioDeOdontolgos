@@ -44,14 +44,12 @@ export class ListEventsComponent implements OnInit {
         
       });
     });
-    
-
   }
 
   viewEvent(event:Event): void {
     const dialogRef = this.dialog.open(DetailEventComponent, {
-      width: 'max-content',
-      height: 'max-content',
+      width: '700px',
+      height: '700px',
       data: event,
     });
   }

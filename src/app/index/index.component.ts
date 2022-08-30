@@ -22,6 +22,7 @@ import { MessageService } from "app/services/message/message.service";
 import { EventsService } from 'app/modules/events/events.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { DetailEventComponent } from "app/modules/detail-event/detail-event/detail-event.component";
+import { CarruselService } from "app/services/carrusel/carrusel.service";
 
 declare var $: any;
 
@@ -57,6 +58,8 @@ export class IndexComponent implements OnInit {
 
   registrationFlag=false;
 
+  imagenesCarrusel:any;
+
   constructor(
     private router: Router,
     location: Location,
@@ -68,7 +71,8 @@ export class IndexComponent implements OnInit {
     private datesService: DatesService,
     private messageService: MessageService,
     public dialog: MatDialog,
-    private readonly eventsService: EventsService
+    private readonly eventsService: EventsService,
+    private readonly carruselService: CarruselService
   ) {
     this.sidebarVisible = false;
   }
@@ -85,6 +89,9 @@ export class IndexComponent implements OnInit {
     
     //COLEGIO DE ODONTOLOGOS
     this.getMision();
+    this.getVision();
+    
+    this.imagenesCarrusel=this.carruselService.getImgCarrusel();
     
   }
   
