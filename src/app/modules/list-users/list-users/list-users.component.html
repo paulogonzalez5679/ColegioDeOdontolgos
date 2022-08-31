@@ -15,6 +15,10 @@
                                         <th class="text-center">{{ dataTable.headerRow[2] }}</th>
                                         <th class="text-center">{{ dataTable.headerRow[3] }}</th>
                                         <th class="text-center">{{ dataTable.headerRow[4] }}</th>
+                                        <th class="text-center">{{ dataTable.headerRow[5] }}</th>
+                                        <th class="text-center">{{ dataTable.headerRow[6] }}</th>
+                                        <th class="text-center">{{ dataTable.headerRow[7] }}</th>
+                                        <th class="text-center">{{ dataTable.headerRow[8] }}</th>
                                     </tr>
                                 </thead>
                                 <tbody id="tBodyCountry">
@@ -22,8 +26,12 @@
                                         <td>{{i+1}}</td>
                                         <td class="text-center">{{user.user_name}}</td>
                                         <td class="text-center">{{user.user_lastname}}</td>
+                                        <td class="text-center">{{user.user_ci}}</td>
                                         <td class="text-center">{{user.user_email}}</td>
-                                        <td class="text-center">{{user.user_phone}}</td>                                      
+                                        <td class="text-center">{{user.user_phone}}</td>
+                                        <td class="text-center">{{user.user_direction}}</td>   
+                                        <td class="text-center">{{user.user_rol}}</td>   
+                                        <td class="text-center">{{user.user_pay}}</td>                                      
                                     </tr>
                                 </tbody>
                             </table>

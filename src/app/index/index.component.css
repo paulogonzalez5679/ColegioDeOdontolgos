@@ -49,6 +49,10 @@
   max-width: 100% !important;
   margin: 0 auto;
 }
+.row-w-60 {
+  max-width: 60% !important;
+  margin: 0 auto;
+}
 .row-w-80 {
   max-width: 80% !important;
   margin: 0 auto;

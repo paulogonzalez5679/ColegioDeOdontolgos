@@ -3,19 +3,28 @@
     padding-right: 5rem;
     padding-top: 2rem;
     padding-bottom: 2rem;
-    background: rgb(174,134,37);
-    background: linear-gradient(180deg, rgba(174,134,37,1) 0%, rgba(247,239,138,1) 15%, rgba(210,172,71,1) 81%);
+    background-color: rgb(20, 18, 13);
+    /* background: rgb(174,134,37);
+    background: linear-gradient(180deg, rgba(174,134,37,1) 0%, rgba(247,239,138,1) 15%, rgba(210,172,71,1) 81%); */
     border-radius: 8px 8px 8px 8px;
     -moz-border-radius: 8px 8px 8px 8px;
     -webkit-border-radius: 8px 8px 8px 8px;
   }
 
-  .text-contactanos {
+  .text-registro {
     font-family: "Poppins";
     font-weight: 300;
     font-style: normal;
     font-size: 25px;
     color: #ffffff;
+  }
+
+  .text-rol {
+    font-family: "Poppins";
+    font-weight: 300;
+    font-style: normal;
+    font-size: 15px;
+    color: #000000;
   }
 
   .section-init {
@@ -30,21 +39,21 @@
   }
 
   .row-w-60 {
-    max-width: 60% !important;
+    max-width: 55% !important;
     margin: 0 auto;
     margin-bottom: 5%;
   }
 
   .section-contac {
-    margin-top: 60px;
+    margin-top: 55px;
   }
 
 
-  .botonContactos {
+  .botonRegistrar {
     border-radius: 50px;
     -moz-border-radius: 50px;
     -webkit-border-radius: 50px;
-    background-color: rgb(20, 18, 13);
+    background-color: #3792A7;
     border: solid #000000 1px;
     color: #ffffff;
     margin-top: 2rem;
@@ -56,3 +65,26 @@
     font-size: 20px;
     margin: 0 auto;
   }
+
+  .izqForm{
+    float: left;
+    width: 47%;
+  }
+
+  .derForm{
+    float: left;
+    margin-left: 5%;
+    width: 47%;
+  }
+
+  .text-registro{
+    margin-top: 2% !important;
+  }
+
+  .bordeado{
+    max-height: 50px;
+    background: rgb(174,134,37);
+    background: linear-gradient(180deg, rgba(174,134,37,1) 0%, rgba(247,239,138,1) 33%, rgba(210,172,71,1) 81%);
+  }
+
+  

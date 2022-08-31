@@ -78,6 +78,8 @@ export class IndexComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.imagenesCarrusel=this.carruselService.getImgCarrusel();
+    
     this.imagenes=this.eventsService.getImgEvent();
     this.getProducts();
     this.getCategories();
@@ -91,7 +93,7 @@ export class IndexComponent implements OnInit {
     this.getMision();
     this.getVision();
     
-    this.imagenesCarrusel=this.carruselService.getImgCarrusel();
+    
     
   }
   

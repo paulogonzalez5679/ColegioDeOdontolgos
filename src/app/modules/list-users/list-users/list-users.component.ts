@@ -29,8 +29,12 @@ export class ListUsersComponent implements OnInit {
         "#",
         "NOMBRE",
         "APELLIDO",
+        "CEDULA",
         "EMAIL",
-        "TELEFONO"
+        "TELEFONO",
+        "DIRECCION",
+        "ROL",
+        "PAGO"
       ],
       dataRows: [],
     };

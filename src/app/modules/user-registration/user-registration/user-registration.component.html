@@ -1,54 +1,119 @@
 <div _ngcontent-npf-c107=""  class="row row-w-60 section-contac">
   <div class="col-sm-12 col-md-12 col-lg-12">
     <form #messajeForm="ngForm" novalidate (ngSubmit)="onSaveUser(messajeForm.value, messajeForm.valid)">
+      <div class="col-sm-12 text-registro">
+        <span class="text-left text-registro">Registro</span>
+      </div>
       <div class="row formularioGeneral">
-        <div class="col-sm-12">
-          <span class="text-left text-contactanos">Registro</span>
-        </div>
-        <div class="col-sm-12 text-left col-contact" style="margin-top: 2rem;">
-          <div class="content content-form">
-            <div class="form-group" style="margin-bottom: 15px;">
-              <input type="text" name="user_name" required placeholder="Nombres"
-                class="form-control formulario input-contact" [(ngModel)]="user.user_name" required
-                #user_name="ngModel">
-              <small [hidden]="user_name.valid || (user_name.pristine && !messajeForm.submitted)"
-                class="text-danger">
-                Ingrese su Nombre
-              </small>
+        <div style="margin-top: 5rem;">
+          <div class="izqForm">
+            <div class="content content-form">
+              <div class=" bordeado " style="margin-bottom: 15px;">
+                <div class="form-group" style="padding: 2%;">
+                  <input type="text" name="user_name" required placeholder="Nombres"
+                    class="form-control formulario input-contact" [(ngModel)]="user.user_name" required
+                    #user_name="ngModel">
+                  <small [hidden]="user_name.valid || (user_name.pristine && !messajeForm.submitted)"
+                    class="text-danger">
+                    Ingrese su Nombre
+                  </small>
+                </div>
+              </div>
+    
+              <div class="form-group bordeado" style="margin-bottom: 15px;">
+                <div class="form-group" style="padding: 2%;">
+                  <input type="text" name="user_lastname" required placeholder="Apellidos"
+                    class="form-control formulario input-contact" [(ngModel)]="user.user_lastname" required
+                    #user_lastname="ngModel">
+                  <small [hidden]="user_lastname.valid || (user_lastname.pristine && !messajeForm.submitted)"
+                    class="text-danger">
+                    Ingrese su Apellido
+                  </small>
+                </div>
+              </div>
+  
+              <div class="form-group bordeado" style="margin-bottom: 15px;">
+                <div class="form-group" style="padding: 2%;">
+                  <input placeholder="Cedula" 
+                  name="user_ci"
+                  class="formulario form-control input-contact" 
+                  type="text" [(ngModel)]="user.user_ci" 
+                  required #user_ci="ngModel"
+                  onkeypress="return /[0-9]|\./i.test(event.key)" maxlength="10"
+                  (change)="validadorDeCedula()"/>
+                  <small [hidden]="(user_ci.valid || (user_ci.pristine && !messajeForm.submitted) ) && validador"
+                    class="text-danger">
+                    Ingrese una cedula valida
+                  </small>
+                </div>
+                <!-- <small *ngIf="!validador" class="text-danger">Cedula Invalida</small> -->
+              </div>
+    
+              <div class="form-group bordeado" style="margin-bottom: 15px;">
+                <div class="form-group" style="padding: 2%;">
+                  <input type="text" name="user_email" required placeholder="E-Mail"
+                    class="formulario form-control input-contact" [(ngModel)]="user.user_email" required
+                    #user_email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
+                  <small [hidden]="user_email.valid || (user_email.pristine && !messajeForm.submitted)"
+                    class="text-danger">
+                    Ingrese  un Email valido
+                  </small>
+                </div>
+              </div>
+          </div>
+          </div>
+          <div class="derForm">
+            <div class="form-group bordeado" style="margin-bottom: 15px;">
+              <div class="form-group" style="padding: 2%;">
+                <input placeholder="Teléfono" 
+                  name="user_phone"
+                  class="formulario form-control input-contact" 
+                  type="text" [(ngModel)]="user.user_phone" 
+                  required #user_phone="ngModel" pattern="^((\\+91-?)|0)?[0-9]{9}$" 
+                  onkeypress="return /[0-9]|\./i.test(event.key)" maxlength="10"/>
+                  <small [hidden]="user_phone.valid || (user_phone.pristine && !messajeForm.submitted)"
+                    class="text-danger">
+                    Ingrese un número de teléfono valido
+                  </small>
+              </div>
             </div>
   
-            <div class="form-group" style="margin-bottom: 15px;">
-              <input type="text" name="user_lastname" required placeholder="Apellidos"
-                class="form-control formulario input-contact" [(ngModel)]="user.user_lastname" required
-                #user_lastname="ngModel">
-              <small [hidden]="user_lastname.valid || (user_lastname.pristine && !messajeForm.submitted)"
-                class="text-danger">
-                Ingrese su Apellido
-              </small>
+            <div class="form-group bordeado" style="margin-bottom: 15px;">
+              <div class="form-group" style="padding: 2%;">
+                <input type="text" name="user_direction" required placeholder="Dirección"
+                  class="form-control formulario input-contact" [(ngModel)]="user.user_direction" required
+                  #user_direction="ngModel">
+                <small [hidden]="user_direction.valid || (user_direction.pristine && !messajeForm.submitted)"
+                  class="text-danger">
+                  Ingrese su Dirección
+                </small>
+              </div>
+              
+            </div>
+            <div class="form-group bordeado" style="margin-bottom: 15px;">
+              <div class="form-group" style="padding: 2%;">
+                <label class="text-left text-rol">Ocupación</label>
+                <select class="btn-group bootstrap-select dropup" 
+                  name="ocupacion"
+                  [(ngModel)]="selected" #ocupacion="ngModel" 
+                  style="margin-left: 2%; width: 55%; height: 100%;" 
+                  (change)="validarSeleccion()">
+                  <option value="Estudiante">Estudiante</option>
+                  <option value="Profecional externo">Profesional externo</option>
+                  <option value="Profecional asociado">Profesional asociado</option>
+                </select>
+                <br>
+                <small [hidden]="(ocupacion.valid || (ocupacion.pristine && !messajeForm.submitted) ) && seleccionado"
+                    class="text-danger">
+                    Seleccione una ocupación
+                </small>
+              </div>
             </div>
   
-            <div class="form-group" style="margin-bottom: 15px;">
-              <input type="text" name="user_email" required placeholder="Email"
-                class="formulario form-control input-contact" [(ngModel)]="user.user_email" required
-                #user_email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
-              <small [hidden]="user_email.valid || (user_email.pristine && !messajeForm.submitted)"
-                class="text-danger">
-                Ingrese  un Email valido
-              </small>
-            </div>
-  
-            <div class="form-group" style="margin-bottom: 15px;">
-              <input type="text" name="user_phone" placeholder="Teléfono" class="formulario form-control input-contact"
-                [(ngModel)]="user.user_phone" required #user_phone="ngModel" pattern="^((\\+91-?)|0)?[0-9]{9}$" maxlength="10">
-              <small [hidden]="user_phone.valid || (user_phone.pristine && !messajeForm.submitted)"
-                class="text-danger">
-                Ingrese un número de teléfono valido
-              </small>
-            </div>
             <br>
             <div class="row">
               <div class="col-sm-12 text-center">
-                <button  mat-button type="submit" class="botonContactos">Aceptar</button>
+                <button  mat-button type="submit" class="botonRegistrar">Aceptar</button>
               </div>
             </div>
           </div>

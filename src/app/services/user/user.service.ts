@@ -21,4 +21,7 @@ export class UserService {
     return this.db.collection('usuarios').valueChanges();
   }
   
+  public getUserByCI(id: string): Observable<any[]> {
+    return this.db.collection('usuarios', ref => ref.where('user_ci', '==', id)).valueChanges();
+  }
 }
