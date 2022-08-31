@@ -242,6 +242,8 @@
 }
 .iconoEquipo {
   width: 115px;
+  height: 115px;
+  border-radius: 50%;
 }
 .ul-equipo {
   list-style: none;
@@ -776,6 +778,7 @@
   background-image: url("../../assets/img/FondoNuestroEquipo.jpg");
   margin-top: 80px;
   padding-top: 80px;
+  margin-bottom: 80px;
   background-repeat: no-repeat;
   background-size: cover;
 }
