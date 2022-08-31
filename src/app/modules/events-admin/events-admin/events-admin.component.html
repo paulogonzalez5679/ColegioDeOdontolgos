@@ -8,9 +8,9 @@
             <!-- <a><img class="card-img-top" src="./assets/img/angular.jpg" alt="Card image cap"></a> -->
             <div *ngFor="let presentation of list_cards" class="col-sm-12 col-md-12 col-lg-4">
                 <mat-card class="example-card" style="margin-top: 15px;">
-                    <mat-card-header>
-                        <mat-card-title>{{presentation.title}}</mat-card-title>
-                    </mat-card-header>
+                    <div class="module line-clamp">
+                        <mat-card-title class="titulos">{{presentation.title}}</mat-card-title>
+                    </div>
                     <mat-card-actions>
                         <button mat-button (click)="editEvent(presentation)">Editar</button>
                         <button mat-button (click)="deleteEvent(presentation)">Eliminar</button>

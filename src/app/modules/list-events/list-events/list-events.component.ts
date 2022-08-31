@@ -47,13 +47,12 @@ export class ListEventsComponent implements OnInit {
   }
 
   viewEvent(event:Event): void {
-    const dialogRef = this.dialog.open(DetailEventComponent, {
+    this.dialog.open(DetailEventComponent, {
       width: '700px',
       height: '700px',
       data: event,
+      panelClass: 'my-class'
     });
   }
-
-
 
 }

@@ -446,6 +446,7 @@
   -o-box-shadow: 10px -10px rgba(0, 0, 0, 0.6);
   border-radius: 100px;
 }
+
 .fondoAzul2 {
   height: 75.5vh;
   background-color: rgb(28, 169, 166);
@@ -1856,4 +1857,10 @@
 
 body{
   background-color: #000000 !important;
+}
+
+mat-dialog-container{
+  background: rgb(174,134,37) !important;
+  background: linear-gradient(180deg, rgba(174,134,37,1) 0%, rgba(247,239,138,1) 33%, rgba(210,172,71,1) 81%) !important;
+  /* Other CSS Styles */
 }

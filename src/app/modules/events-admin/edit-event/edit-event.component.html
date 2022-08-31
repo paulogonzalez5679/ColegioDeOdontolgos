@@ -8,8 +8,9 @@
           [ngClass]="{'active': i == 0 }" >
             <img [src]="previa.url" class="d-block w-100">
             <div style="margin-left: 25%;">
-              <input style="margin-top: 10px; margin-bottom: 15px;" accept=".jpg,.jpeg,.png,.svg" type="file" (change)="updateImage(previa.id,previa.idImage,$event);"/>
-              <button mat-button (click)="deleteImage(previa)">Borrar</button>
+                <input #editar style="visibility:hidden;" type="file" accept=".jpg,.jpeg,.png,.svg" (change)="updateImage(previa.id,previa.idImage,$event);">
+                <button mat-button (click)="editar.click()">Editar</button>
+                <button mat-button (click)="deleteImage(previa)">Eliminar</button>
             </div>
           </div>
       </div>
@@ -31,11 +32,11 @@
     <p>Agregar imagenes</p>
     <input style="margin-top: 10px; margin-bottom: 15px;" multiple accept=".jpg,.jpeg,.png,.svg" type="file" (change)="addFiles($event,event.images)"/>
     <br>
-    <mat-form-field appearance="fill">
+    <mat-form-field style="width: 100%;">
       <p>Titulo <input  matInput [(ngModel)]="event.title" style="margin-top: 10px; margin-bottom: 15px;"></p>
     </mat-form-field>
     <br>
-    <mat-form-field appearance="fill">
+    <mat-form-field style="width: 100%;">
       <p>Descripcion <textarea  matInput [(ngModel)]="event.description" style="margin-top: 10px; margin-bottom: 15px;"></textarea></p>
     </mat-form-field>
 </div>
