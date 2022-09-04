@@ -1,0 +1,26 @@
+<p>
+    <i class="pe-7s-plus" (click)="addMember()" style="font-size: 40px;"></i>
+</p>
+
+<div class="container">
+    <div class="col-lg-10">
+        <div class="row" style="margin-left: 5%;">
+            <!-- <a><img class="card-img-top" src="./assets/img/angular.jpg" alt="Card image cap"></a> -->
+            <div *ngFor="let member of team | async" class="col-sm-12 col-md-12 col-lg-4">
+                <mat-card class="example-card" style="margin-top: 15px;">
+                    <mat-card-title class="titulos">{{member.team_name}}</mat-card-title>
+                    <mat-card-content *ngFor="let image of member.imagen">
+                        <img [src]="image.url" style="margin-top: 2%; margin-bottom: 3%;">
+                        <p>Cargo: {{member.team_position}}</p>
+                        <p>Contactos: {{member.team_contact}}</p>
+                        <p>Correcto: {{member.team_email}}</p>
+                    </mat-card-content>
+                    <mat-card-actions>
+                        <button mat-button (click)="editMember(member)">Editar</button>
+                        <button mat-button (click)="deleteMember(member)">Eliminar</button>
+                    </mat-card-actions>
+                </mat-card>
+            </div>
+        </div>
+    </div>
+</div>

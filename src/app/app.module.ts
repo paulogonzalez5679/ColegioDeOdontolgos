@@ -30,9 +30,11 @@ import { DetailEventComponent } from './modules/detail-event/detail-event/detail
 import { DetailEventModule } from './modules/detail-event/detail-event.module';
 import { ListEventsModule } from './modules/list-events/list-events.module';
 import { UserRegistrationModule } from './modules/user-registration/user-registration.module';
+import { ListTeamModule } from './modules/list-team/list-team.module';
 
 @NgModule({
     imports:      [
+        ListTeamModule,
         UserRegistrationModule,
         DetailEventModule,
         ListEventsModule,

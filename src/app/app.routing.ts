@@ -28,6 +28,10 @@ export const AppRoutes: Routes = [
         loadChildren: './modules/list-users/list-users.module#ListUsersModule',
       },
       {
+        path: 'team',
+        loadChildren: './modules/team/team.module#TeamModule',
+      },
+      {
         path: 'carrusel',
         loadChildren: './modules/admin-carrusel/admin-carrusel.module#AdminCarruselModule',
       },

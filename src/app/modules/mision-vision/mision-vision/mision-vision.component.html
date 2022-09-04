@@ -1,1 +1,41 @@
-<p>mision-vision works!</p>
+
+<div class="container">
+    <div *ngFor="let mision of mision" style="margin-right: 5%; width: 40%; float: left;">
+        <mat-card class="example-card dorado" style="margin-top: 15px;">
+            <mat-card-header>
+                <mat-card-title class="titulos">Mision</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <textarea  matInput [(ngModel)]="mision.mision" 
+                style="margin-top: 10px; margin-bottom: 15px; width: 100%; height: 100px;"  
+                [disabled]="!editMisionFlag"></textarea>
+            </mat-card-content>
+            <div *ngIf="!editMisionFlag">
+                <button mat-button (click)="btnActualizarMision()">Actualizar</button>
+            </div>
+            <div *ngIf="editMisionFlag">
+                <button mat-button (click)="updateMision(mision)">Aceptar</button>
+                <button mat-button (click)="cancelUpdateMision()">Cancelar</button>
+            </div>
+        </mat-card>
+    </div>
+    <div *ngFor="let vision of vision" style="width: 40%; float: left;">
+        <mat-card class="example-card dorado" style="margin-top: 15px;">
+            <mat-card-header>
+                <mat-card-title class="titulos">Vision</mat-card-title>
+            </mat-card-header>
+            <mat-card-content>
+                <textarea  matInput [(ngModel)]="vision.vision" 
+                style="margin-top: 10px; margin-bottom: 15px; width: 100%; height: 100px;"  
+                [disabled]="!editVisionFlag"></textarea>
+            </mat-card-content>
+            <div *ngIf="!editVisionFlag">
+                <button mat-button (click)="btnActualizarVision()">Actualizar</button>
+            </div>
+            <div *ngIf="editVisionFlag">
+                <button mat-button (click)="updateVision(vision)">Aceptar</button>
+                <button mat-button (click)="cancelUpdateVision()">Cancelar</button>
+            </div>
+        </mat-card>
+    </div>
+</div>

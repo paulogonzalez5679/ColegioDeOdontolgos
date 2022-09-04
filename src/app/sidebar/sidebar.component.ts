@@ -57,6 +57,12 @@ export const ROUTES: RouteInfo[] = [
     icontype: "pe-7s-box2",
   },
   {
+    path: "/team",
+    title: "Equipo",
+    type: "link",
+    icontype: "pe-7s-box2",
+  },
+  {
     path: "/message",
     title: "Mensajes",
     type: "link",

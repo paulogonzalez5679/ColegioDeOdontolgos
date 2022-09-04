@@ -24,12 +24,7 @@ export class EditEventComponent implements OnInit {
   imagenes:any;
 
   ngOnInit(): void {
-    console.log(this.event.id);
     this.imagenes=this.eventsService.getImgEventById(this.event.id);
-    // console.log(this.imagenes);
-    // this.imagenes.subscribe(e => {
-    //   console.log(e); // how to access the data //only returns an array of object
-    // });
   }
 
   onNoClick(): void {
@@ -62,9 +57,6 @@ export class EditEventComponent implements OnInit {
 
     this.eventsService.deleteImagesEvent(id)   
     this.eventsService.deleteImageById(idImgRempl);
-
-    // this.eventsService.updateImages(event.target.files,idImgRempl).then((urls) => { 
-    // }).catch((e) => alert(e.message));
 
   }
 

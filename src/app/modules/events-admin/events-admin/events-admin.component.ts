@@ -12,7 +12,6 @@ import { EditEventComponent } from '../edit-event/edit-event.component';
 
 export class EventsAdminComponent implements OnInit {
 
-  animal: string;
   name: string;
   list_cards=[];
 
@@ -31,11 +30,6 @@ export class EventsAdminComponent implements OnInit {
       width: '550px',
       height: '500px'
     });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
-    });
   }
 
   editEvent(event:Event): void {
@@ -43,11 +37,6 @@ export class EventsAdminComponent implements OnInit {
       width: '550px',
       height: '500px',
       data: event,
-    });
-
-    dialogRef.afterClosed().subscribe(result => {
-      console.log('The dialog was closed');
-      this.animal = result;
     });
   }
 
