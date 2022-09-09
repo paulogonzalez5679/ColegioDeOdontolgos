@@ -46,8 +46,8 @@ export class EventsService {
         return this.db.collection<Event>('eventos').doc<Event>(id).delete();
     }
 
-    public deleteImagesEvent(id: string) {
-        return this.db.collection('imagenesEventos').doc<Event>(id).delete();
+    async deleteImagesEvent(id: string) {
+        await this.db.collection('imagenesEventos').doc<Event>(id).delete();
     }
 
     public deleteAllEvents() {
@@ -77,8 +77,8 @@ export class EventsService {
         });
     }
 
-    public deleteImageById(id: string) {
-        return this.storage.ref(`Eventos/${id}`).delete().toPromise();
+    async deleteImageById(id: string) {
+        await this.storage.ref(`Eventos/${id}`).delete().toPromise();
     }
 
     // public async updateImages(idEvent, idAntigua, event){

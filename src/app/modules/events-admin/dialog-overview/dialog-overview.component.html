@@ -1,12 +1,12 @@
 <h1 mat-dialog-title>Agregar un evento</h1>
 <div mat-dialog-content>
   
-    <div id="myCarousel" class="carousel slide" data-ride="carousel" *ngIf="imagenes.length>0">
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" >
       <!-- Wrapper for slides -->
       <div class="carousel-inner">
-          <div class="item" *ngFor="let previa of imagenes; let i = index"
+          <div class="item" *ngFor="let previa of previsualizacion; let i = index"
           [ngClass]="{'active': i == 0 }" >
-            <img [src]="previa.url" class="d-block w-100">
+            <img [src]="previa" class="d-block w-100">
           </div>
       </div>
     

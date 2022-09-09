@@ -3,9 +3,9 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="card">
+                    <button mat-button (click)="exportToExcel()" style="float: right;">Export to Excel</button>
                     <div class="content">
                         <div class="fresh-datatables ScrollTable">
-                            <button (click)="exportToExcel()" style="float: right;">Export to Excel</button>
                             <table id="datatablesUsers" class="table table-striped table-no-bordered table-hover table-responsive"
                                 cellspacing="0" width="100%" style="width:100%;">
                                 <thead>

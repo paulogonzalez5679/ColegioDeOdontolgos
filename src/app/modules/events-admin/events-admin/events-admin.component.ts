@@ -1,5 +1,6 @@
 import {Component, Inject, OnInit} from '@angular/core';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
+import { EventImage } from 'app/modules/events/event.interface';
 import { EventsService } from 'app/modules/events/events.service';
 import { DialogOverviewComponent } from '../dialog-overview/dialog-overview.component';
 import { EditEventComponent } from '../edit-event/edit-event.component';
@@ -14,6 +15,7 @@ export class EventsAdminComponent implements OnInit {
 
   name: string;
   list_cards=[];
+  listaObj: EventImage[] = [];
 
   constructor(public dialog: MatDialog, private readonly eventsService: EventsService) {
   }
@@ -40,20 +42,27 @@ export class EventsAdminComponent implements OnInit {
     });
   }
 
-  deleteImage(evento) {
-    let imagenes=this.eventsService.getImgEventById(evento.id);
-    imagenes.subscribe(e => {
-       e.forEach(element => {
-        this.eventsService.deleteImagesEvent(element.id)   
-        this.eventsService.deleteImageById(element.idImage);
-       });
+  async getlistImages(evento) {
+    const imagenes=this.eventsService.getImgEventById(evento.id);
+    await imagenes.subscribe(e => {
+      this.deleteImage(e);
     });
   }
 
+  deleteImage(lista) {
+    this.listaObj=lista;
+    lista.forEach(async element => {
+      await this.eventsService.deleteImagesEvent(element.id);
+    });
+
+    try{
+      this.eventsService.deleteImagesEvent(lista[0].id);
+    }catch(e){};
+  }
 
   deleteEvent(evento) {
-      this.deleteImage(evento)
-      return this.eventsService.deleteEvent(evento.id).then(() => alert('Eliminado')).catch((e) => alert(e.message));
+      this.getlistImages(evento).then(() => { console.log("hola")});
+      this.eventsService.deleteEvent(evento.id);
   }
 
 }
