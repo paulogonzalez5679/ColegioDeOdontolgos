@@ -87,4 +87,13 @@
     background: linear-gradient(180deg, rgba(174,134,37,1) 0%, rgba(247,239,138,1) 33%, rgba(210,172,71,1) 81%);
   }
 
-  
+  .card-form {
+    padding: 2rem;
+  }
+
+  .text-info {
+    font-family: "Poppins";
+    font-weight: 300;
+    font-size: 18px;
+    color: #ffffff;
+  }
