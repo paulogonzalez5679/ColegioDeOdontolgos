@@ -57,14 +57,18 @@ export class UserRegistrationComponent implements OnInit {
   */
   onSaveUser(user: User, valid: boolean) {
     if (valid && this.validador) {
-      user.user_rol = this.selected;
-      if (this.selected == 'Estudiante') {
-        user.user_pay = 20;
-      } else if (this.selected == 'Profecional externo') {
-        user.user_pay = 30;
-      } else if (this.selected == 'Profecional asociado') {
-        user.user_pay = 10;
+
+      user.user_rol=this.selected;
+      if(this.selected=='Estudiante' || this.selected=='Auxialiar o técnicos de odontología'){
+        user.user_pay=70;
+      }else if(this.selected=='Odontólogo rural'){
+        user.user_pay=90;
+      }else if(this.selected=='Odontólogo agremiado a la FOE'){
+        user.user_pay=110;
+      }else if(this.selected=='Odontólogo no agremiado a la FOE' || this.selected=='Odontólogo extranjero'){
+        user.user_pay=140;
       }
+
       user.user_id = uuidv4();
       this.userService.createUser(user).then(() => {
         swal("OK", "Su registro a sido extoso", "success");

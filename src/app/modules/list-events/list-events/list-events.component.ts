@@ -51,7 +51,7 @@ export class ListEventsComponent implements OnInit {
       width: '700px',
       height: '700px',
       data: event,
-      panelClass: 'my-class'
+      panelClass: 'events-class'
     });
   }
 

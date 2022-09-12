@@ -97,3 +97,15 @@
     font-size: 18px;
     color: #ffffff;
   }
+  .container{
+    max-width: 1500px;
+  }
+
+  img{
+    max-width: 100%;
+  }
+
+  .registro{
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }

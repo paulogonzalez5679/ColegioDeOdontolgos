@@ -1,0 +1,22 @@
+#imgPromo{
+    width: 25rem;
+    height: 45rem;
+    margin-left: 12%;
+}
+
+.botonRegistrar {
+    border-radius: 50px;
+    -moz-border-radius: 50px;
+    -webkit-border-radius: 50px;
+    background-color: #3792A7;
+    border: solid #000000 1px;
+    color: #ffffff;
+    margin-top: 2rem;
+    width: 180px;
+    height: 50px;
+    font-family: "Poppins";
+    font-weight: bold;
+    font-style: normal;
+    font-size: 20px;
+    margin: 0 auto;
+}
