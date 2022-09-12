@@ -20,15 +20,15 @@ export class UserRegistrationComponent implements OnInit {
   public roles: Array<Rol> = [
     {
       opt: 'Estudiante',
-      value: 5.00,
+      value: 20.00,
     },
     {
       opt: 'Profesional externo',
-      value: 10.00,
+      value: 30.00,
     },
     {
       opt: 'Profesional asociado',
-      value: 15.00,
+      value: 10.00,
     },
   ]
 
@@ -60,14 +60,14 @@ export class UserRegistrationComponent implements OnInit {
       user.user_rol = this.selected;
       if (this.selected == 'Estudiante') {
         user.user_pay = 20;
-      } else if (this.selected == 'Profecional externo') {
+      } else if (this.selected == 'Profesional externo') {
         user.user_pay = 30;
-      } else if (this.selected == 'Profecional asociado') {
+      } else if (this.selected == 'Profesional asociado') {
         user.user_pay = 10;
       }
       user.user_id = uuidv4();
       this.userService.createUser(user).then(() => {
-        swal("OK", "Su registro a sido extoso", "success");
+        swal("OK", "Su registro ha sido extoso", "success");
         this.user = {
           user_id: '',
           user_name: '',
@@ -145,18 +145,23 @@ export class UserRegistrationComponent implements OnInit {
   }
 
   public async InitPaymentWhitPayphone(user: User, valid: boolean) {
-    this.showPpButton = false;
+    // if (valid) {
+      this.showPpButton = false;
 
-    setTimeout(async () => {
-      this.showPpButton = true;
       setTimeout(async () => {
-        var idd = new Date().getTime();
-        console.log(this.rolSelected.value);
-        var response = await archivePayment.InitPaymentWhitPayphone(
-          (this.rolSelected.value * 100), idd, idd,
-        );
-      }, 200);
-    }, 100);
+        this.showPpButton = true;
+        setTimeout(async () => {
+          var idd = new Date().getTime();
+          console.log(this.rolSelected.value);
+          var response = await archivePayment.InitPaymentWhitPayphone(
+            (this.rolSelected.value * 100), idd, idd,
+          );
+          console.log('*** response ***');
+          console.log(response);
+          
+        }, 200);
+      }, 100);
+    // }
   }
 }
 

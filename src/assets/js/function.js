@@ -44,6 +44,7 @@ export function InitPaymentWhitPayphone(total, id, order_transaccion_id) {
           }).then(function (value) {
               console.log('*** Respuesta de payphone despues de pagar ***');
               console.log(value);
+              return value;
               // ***AQUI***
               // var ref = firestore.collection("orders").doc(order_transaccion_id).collection('payment').doc(id.toString());
               // ref.set(
@@ -61,11 +62,11 @@ export function InitPaymentWhitPayphone(total, id, order_transaccion_id) {
               //     console.log(e);
               // });
           }).catch(function (err) {
-              console.log('*** Respuesta ERROR de payphoone despues de pagar ***');
+              console.log('*** Respuesta ERROR de payphone despues de pagar ***');
               console.log(err);
+              return '*** Respuesta de payphoone ***' + err;
+
           });
       }
   }).render('#pp-button');
-
-  return '*** Respuesta de payphoone ***'
 }
