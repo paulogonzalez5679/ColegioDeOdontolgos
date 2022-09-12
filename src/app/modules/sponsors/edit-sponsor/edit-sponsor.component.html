@@ -1,0 +1,15 @@
+<div id="fondo">
+  <h1 mat-dialog-title>Editar</h1>
+  <div mat-dialog-content>
+      <img [src]="previsualizacion" class="iconoEquipo">
+      <input style="margin-top: 10px; margin-bottom: 15px;" accept=".jpg,.jpeg,.png,.svg" type="file" (change)="capturarFile($event)"/>
+      <br>
+      <mat-form-field style="width: 100%;">
+        <p>Url <input  matInput [(ngModel)]="sponsor.sponsor_url" style="margin-top: 10px; margin-bottom: 15px;"></p>
+      </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">Cancelar</button>
+    <button mat-button (click)="editSponsor()">Cargar</button>
+  </div>
+</div>

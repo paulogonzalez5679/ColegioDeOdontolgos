@@ -46,6 +46,12 @@
 </section>
 <!-- *** /Navbar *** -->
 
+<section id="registro">
+  <div *ngIf="registrationFlag==true">
+    <app-user-registration></app-user-registration>
+  </div>
+</section>
+
 <div *ngIf="registrationFlag==false">
   
   <!-- *** Home *** -->
@@ -164,7 +170,7 @@
   <!-- *** Titulo productos *** -->
   <section id="productos">
     <div style="height: 75px;"></div>
-    <div data-aos="zoom-in" data-aos-duration="1500" class="row row-w-100">
+    <div data-aos="fade-up" data-aos-duration="1500" class="row row-w-100">
       <div class="col-sm-5" style="padding: 0px;">
         <div class="rectangulo2 text-center" style="max-width: 100%;">
           <h1 class="h4QuienesSomos">
@@ -179,7 +185,7 @@
 
   <!-- *** Productos *** -->
   <section>
-    <div class="row row-w-100">
+    <div data-aos="fade-up" data-aos-duration="1500" class="row row-w-100">
       <div class="col-sm-12 text-center">
         <br><br>
         <div class="row row-w-100">
@@ -193,44 +199,9 @@
   <!-- *** Empresas *** -->
   <section style="margin-top: 160px;">
     <div class="row row-w-100" style="background-color: #000000;">
-      <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-        <div class="row div-company">
-          <img class="img-company" src="../../assets/img/Elementos-18.svg" alt="maquina">
-        </div>
-      </div>
-      <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-        <div class="row div-company">
-          <img class="img-company" src="../../assets/img/Elementos-19.svg" alt="maquina">
-        </div>
-      </div>
-      <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-        <div class="row div-company">
-          <img class="img-company" src="../../assets/img/Elementos-20.svg" alt="maquina">
-        </div>
-      </div>
-      <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-        <div class="row div-company">
-          <img class="img-company" src="../../assets/img/Elementos-21.svg" alt="maquina">
-        </div>
-      </div>
-      <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-        <div class="row div-company">
-          <img class="img-company" src="../../assets/img/Elementos-22.svg" alt="maquina">
-        </div>
-      </div>
-      <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-        <div class="row div-company">
-          <img class="img-company" src="../../assets/img/Elementos-23.svg" alt="maquina">
-        </div>
-      </div>
-      <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-        <div class="row div-company">
-          <img class="img-company" src="../../assets/img/Elementos-24.svg" alt="maquina">
-        </div>
-      </div>
-      <div class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
-        <div class="row div-company">
-          <img class="img-company" src="../../assets/img/Elementos-25.svg" alt="maquina">
+      <div *ngFor="let sponsor of sponsors | async" class="col-xs-6 col-sm-3 col-md-3 col-lg-3">
+        <div *ngFor="let imagen of sponsor.imagen" class="row div-company">
+          <a [href]="sponsor.sponsor_url" target="_blank"><img class="img-company" [src]="imagen.url"></a>
         </div>
       </div>
     </div>
@@ -764,7 +735,5 @@
 
   <app-modal-login></app-modal-login>
 </div>
-<div *ngIf="registrationFlag==true">
-  <app-user-registration></app-user-registration>
-</div>
+
 

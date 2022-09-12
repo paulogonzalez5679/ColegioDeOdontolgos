@@ -1,26 +1,26 @@
 import { Component, Inject, OnInit } from '@angular/core';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
 import { DomSanitizer } from '@angular/platform-browser';
-import { TeamService } from 'app/services/team/team.service';
-import { TeamComponent } from '../team/team.component';
+import { SponsorService } from 'app/services/sponsor/sponsor.service';
+import { SponsorsComponent } from '../sponsors/sponsors.component';
 
 @Component({
-  selector: 'app-edit-team',
-  templateUrl: './edit-team.component.html',
-  styleUrls: ['./edit-team.component.css']
+  selector: 'app-edit-sponsor',
+  templateUrl: './edit-sponsor.component.html',
+  styleUrls: ['./edit-sponsor.component.css']
 })
-export class EditTeamComponent implements OnInit {
+export class EditSponsorComponent implements OnInit {
 
   public foto: any;
   public previsualizacion: any;
 
-  constructor(public dialogRef: MatDialogRef<TeamComponent>,
-    @Inject(MAT_DIALOG_DATA) public member: Team,
+  constructor(public dialogRef: MatDialogRef<SponsorsComponent>,
+    @Inject(MAT_DIALOG_DATA) public sponsor: Sponsor,
     private sanitizer: DomSanitizer,
-    private readonly teamService: TeamService,) { }
+    private readonly sponsorService: SponsorService) { }
 
   ngOnInit(): void {
-    this.previsualizacion = this.member.imagen[0].url;
+    this.previsualizacion = this.sponsor.imagen[0].url;
   }
 
   capturarFile($event): any {
@@ -53,16 +53,17 @@ export class EditTeamComponent implements OnInit {
     }
   })
 
-  editMember(): void {
+  editSponsor(): void {
     if(this.foto != undefined){
-      this.teamService.uploadImages(this.foto).then((urls) => {
-        this.teamService.deleteImageMember(this.member.imagen[0].id);
-        this.member.imagen = urls;
-        this.teamService.updateMember(this.member);
+      this.sponsorService.uploadImages(this.foto).then((urls) => {
+        this.sponsorService.deleteImageSponsor(this.sponsor.imagen[0].id);
+        this.sponsor.imagen = urls;
+        console.log(this.sponsor);
+        this.sponsorService.updateSponsor(this.sponsor);
       });
     }
     else{
-      this.teamService.updateMember(this.member);
+      this.sponsorService.updateSponsor(this.sponsor);
     }
     this.foto=undefined;
     
@@ -72,5 +73,6 @@ export class EditTeamComponent implements OnInit {
   onNoClick(): void {
     this.dialogRef.close();
   }
+  
 
 }

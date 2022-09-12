@@ -13,7 +13,7 @@ import {
 } from "@angular/common";
 import { ProductService } from "../services/product/product.service";
 import { Observable } from "rxjs";
-import { Router } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import swal from "sweetalert2";
 import { AuthService } from "app/services/auth/auth/auth.service";
 import { CategoriesService } from "app/services/categories/categories.service";
@@ -23,6 +23,8 @@ import { EventsService } from 'app/modules/events/events.service';
 import {MatDialog, MatDialogRef, MAT_DIALOG_DATA} from '@angular/material/dialog';
 import { DetailEventComponent } from "app/modules/detail-event/detail-event/detail-event.component";
 import { CarruselService } from "app/services/carrusel/carrusel.service";
+import { InitPromoComponent } from "app/modules/init-promo/init-promo/init-promo.component";
+import { SponsorService } from "app/services/sponsor/sponsor.service";
 
 declare var $: any;
 
@@ -55,6 +57,7 @@ export class IndexComponent implements OnInit {
   vision: Observable<any[]>;
   list_cards=[];
   imagenes:any;
+  sponsors:any;
 
   registrationFlag=false;
 
@@ -72,7 +75,9 @@ export class IndexComponent implements OnInit {
     private messageService: MessageService,
     public dialog: MatDialog,
     private readonly eventsService: EventsService,
-    private readonly carruselService: CarruselService
+    private readonly carruselService: CarruselService,
+    private rutaActiva: ActivatedRoute,
+    private readonly sponsorService: SponsorService
   ) {
     this.sidebarVisible = false;
   }
@@ -92,9 +97,20 @@ export class IndexComponent implements OnInit {
     //COLEGIO DE ODONTOLOGOS
     this.getMision();
     this.getVision();
-    
-    
-    
+    this.promo();
+    this.getSponsors();
+
+
+    //se obtiene el parametro de true o false para mostrar el modal de registro
+    this.rutaActiva.queryParams
+      .filter(params => params.registro)
+      .subscribe(params => {
+        console.log(params.registro); 
+        if (params.registro){
+          this.redirectRegistration();
+        }
+      }
+    );
   }
   
   
@@ -190,6 +206,7 @@ export class IndexComponent implements OnInit {
   }
 
   public viewRouter(opt: string, time: number) {
+    this.router.navigate([``]);
     this.registrationFlag=false;
     var body = document.getElementsByTagName("body")[0];
     this.toggleButton.classList.remove("toggled");
@@ -247,18 +264,30 @@ export class IndexComponent implements OnInit {
   }
 
   //COLEGIO DE ODONTOLOGOS METODOS
-  getMision()
-  {
+  getMision(){
     this.mision = this.ProductService.getMision();
   }
 
-  getVision()
-  {
+  getVision(){
     this.vision= this.ProductService.getVision();
   }
 
+  getSponsors(){
+    this.sponsors= this.sponsorService.getSponsor();
+  }
+
   redirectRegistration() {
+    
     this.registrationFlag=true;
+    // this.viewRouter('#registro', 500)
     // this.router.navigate([`/registration`]);
+  }
+
+  promo(): void {
+    const dialogRef = this.dialog.open(InitPromoComponent, {
+      width: '370px',
+      height: '550px',
+      panelClass: 'promo-dialog'
+    });
   }
 }

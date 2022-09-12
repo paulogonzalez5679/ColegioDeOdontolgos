@@ -32,6 +32,10 @@ export const AppRoutes: Routes = [
         loadChildren: './modules/team/team.module#TeamModule',
       },
       {
+        path: 'sponsors',
+        loadChildren: './modules/sponsors/sponsors.module#SponsorsModule',
+      },
+      {
         path: 'carrusel',
         loadChildren: './modules/admin-carrusel/admin-carrusel.module#AdminCarruselModule',
       },
