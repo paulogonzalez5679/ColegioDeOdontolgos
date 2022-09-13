@@ -76,16 +76,20 @@
   color: #7d7d82;
   font-size: 18px;
 }
+
 .opc:hover {
   color: #ffc009;
 }
+
 .opcMenu:hover {
   background-color: rgb(28, 169, 166);
   color: #ffffff;
 }
+
 .row-init {
   min-height: 80vh;
 }
+
 .nav-bar {
   clear: both;
   clear: left;

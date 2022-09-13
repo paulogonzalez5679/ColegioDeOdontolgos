@@ -1,3 +1,11 @@
+<div class="container">
+  <div style="margin: 2%;">
+    <img src="../../assets/img/pagina1Pdf.png">
+  </div>
+  <div style="margin: 2%;">
+    <img src="../../assets/img/pagina2PDF.png">
+  </div>
+</div>
 <div _ngcontent-npf-c107=""  class="row row-w-60 section-contac">
   <div class="col-sm-12 col-md-12 col-lg-12">
     <form #messajeForm="ngForm" novalidate (ngSubmit)="InitPaymentWhitPayphone(messajeForm.value, messajeForm.valid)">
@@ -60,7 +68,7 @@
                   </small>
                 </div>
               </div>
-          </div>
+            </div>
           </div>
           <div class="derForm">
             <div class="form-group bordeado" style="margin-bottom: 15px;">
@@ -99,6 +107,12 @@
                   style="margin-left: 2%; width: 55%; height: 100%;" 
                   (change)="validarSeleccion()">
                   <option *ngFor="let item of roles" [value]="item.opt">{{item.opt}}</option>
+                  <option value="Estudiante">Estudiante</option>
+                  <option value="Auxialiar o técnicos de odontología">Auxialiar o técnicos de odontología</option>
+                  <option value="Odontólogo rural">Odontólogo rural</option>
+                  <option value="Odontólogo agremiado a la FOE">Odontólogo agremiado a la FOE</option>
+                  <option value="Odontólogo no agremiado a la FOE">Odontólogo no agremiado a la FOE</option>
+                  <option value="Odontólogo extranjero">Odontólogo extranjero</option>
                 </select>
                 <br>
                 <small [hidden]="(ocupacion.valid || (ocupacion.pristine && !messajeForm.submitted) ) && seleccionado"
@@ -115,10 +129,10 @@
           </div>
         </div>
 
-        
+
         <div *ngIf="showPpButton; else elseBlock"> <hr>
           <p class="text-center text-info">
-            Para finalizar el registro por favor realice el pago correspondiente a: 
+            Para finalizar el registro por favor realice el pago correspondiente a:
             ${{rolSelected.value}}
           </p>
 
@@ -131,7 +145,7 @@
       </div>
     </form>
 
-    <!-- *** Form Payphone *** --> 
-    
+    <!-- *** Form Payphone *** -->
+
   </div>
 </div>

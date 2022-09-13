@@ -4,6 +4,7 @@ import { Subscription } from 'rxjs/Subscription';
 import { LocationStrategy, PlatformLocation, Location } from '@angular/common';
 import 'rxjs/add/operator/filter';
 import { NavbarComponent } from '../../shared/navbar/navbar.component';
+import { AuthService } from 'app/services/auth/auth/auth.service';
 
 declare var $: any;
 
@@ -22,11 +23,17 @@ export class AdminLayoutComponent implements OnInit {
 
     @ViewChild('sidebar') sidebar;
     @ViewChild(NavbarComponent) navbar: NavbarComponent;
-    constructor( private router: Router, location:Location ) {
+    constructor( private router: Router, location:Location, private authservice: AuthService) {
       this.location = location;
     }
 
     ngOnInit() {
+        this.authservice.getCurrentUser().subscribe(user => {
+            if (user==null) {
+                this.redirigir();
+            }
+        });
+       
       const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
       const elemSidebar = <HTMLElement>document.querySelector('.sidebar .sidebar-wrapper');
 
@@ -68,5 +75,9 @@ export class AdminLayoutComponent implements OnInit {
         else {
             return false;
         }
+    }
+
+    redirigir(){
+        this.router.navigate([``]);
     }
 }

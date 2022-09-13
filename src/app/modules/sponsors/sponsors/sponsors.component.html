@@ -1,0 +1,16 @@
+
+<i class="pe-7s-plus" (click)="addSponsor()" style="font-size: 40px;"></i>
+
+<div class="container">
+            <!-- <a><img class="card-img-top" src="./assets/img/angular.jpg" alt="Card image cap"></a> -->
+            <div *ngFor="let sponsor of sponsor | async">
+                <mat-card>
+                    <mat-card-content *ngFor="let image of sponsor.imagen">
+                        <img class="img-company" [src]="image.url" style="margin-top: 2%; margin-bottom: 3%;">
+                        <p>URL: {{sponsor.sponsor_url}}</p>
+                    </mat-card-content>
+                </mat-card>
+                <button mat-button (click)="editMember(sponsor)">Editar</button>
+                <button mat-button (click)="deleteMember(sponsor)">Eliminar</button>
+            </div>
+</div>
