@@ -59,7 +59,7 @@ export class MisionVisionComponent implements OnInit {
       this.mision=data;
     });
     this.editMisionFlag=false;
-    console.log(this.mision);
+    // console.log(this.mision);
   }
 
   cancelUpdateVision(){

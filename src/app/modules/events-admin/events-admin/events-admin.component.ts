@@ -22,7 +22,7 @@ export class EventsAdminComponent implements OnInit {
 
   ngOnInit(): void {
       this.eventsService.getEvents().subscribe(events => {
-          console.log(events);
+          // console.log(events);
           this.list_cards = events;
       });
   }
@@ -61,7 +61,7 @@ export class EventsAdminComponent implements OnInit {
   }
 
   deleteEvent(evento) {
-      this.getlistImages(evento).then(() => { console.log("hola")});
+      this.getlistImages(evento);
       this.eventsService.deleteEvent(evento.id);
   }
 

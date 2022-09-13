@@ -140,5 +140,6 @@ export class SidebarComponent {
   redirect(route: string) {
       this.router.navigate([`/admin/${route}`]);
   }
+  
 }
 

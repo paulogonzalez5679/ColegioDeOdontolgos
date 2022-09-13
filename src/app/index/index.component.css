@@ -892,13 +892,27 @@
   right: 30px;
   top: 40px;
 }
-.esquinaINFERIORMapa {
-  width: 40vh !important;
-  z-index: 2000;
-  position: absolute;
-  left: 30px;
-  bottom: -20px;
+
+@media only screen and (max-width: 2000px)  and (min-width: 1080px) {
+  .esquinaINFERIORMapa {
+    width: 40vh !important;
+    z-index: 2000;
+    position: absolute;
+    left: 30px;
+    bottom: -90px;
+  }
 }
+
+@media only screen and (max-width: 1080px){
+  .esquinaINFERIORMapa {
+    width: 40vh !important;
+    z-index: 2000;
+    position: absolute;
+    left: 30px;
+    bottom: -10px;
+  }
+}
+
 .esquinaINFERIORQUIENES {
   width: 40vh !important;
   z-index: 2000;

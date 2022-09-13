@@ -31,7 +31,7 @@ export class ListEventsComponent implements OnInit {
         this.imagenes.subscribe(e => {
           e.forEach(image => {
             if (element.id == image.idEvent){
-              console.log(element.id+' '+image.idEvent);
+              // console.log(element.id+' '+image.idEvent);
               nuevo_objeto.images.push(image);
               // console.log(this.nuevo_objeto.images);
             }

@@ -97,7 +97,7 @@ export class UserRegistrationComponent implements OnInit {
         cedulaCorrecta = false;
     }
     
-    console.log(cedulaCorrecta);
+    // console.log(cedulaCorrecta);
     if (cedulaCorrecta==true) {
       let ob;
       let consulta=this.userService.getUserByCI(cedula).subscribe(data=>{ 

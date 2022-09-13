@@ -1,9 +1,9 @@
-<div class="row row-w-90 row-equipo">
+<div class="row row-w-90 row-equipo container">
     <div *ngFor="let member of team | async" style="margin: 2%;" data-aos="fade-up" data-aos-duration="1500">
-        <div *ngFor="let image of member.imagen"  data-aos="zoom-in" class="col-sm-4 col-md-1 text-center">
+        <div *ngFor="let image of member.imagen"  data-aos="zoom-in" class="imagen">
             <img class="iconoEquipo" [src]="image.url" alt="Icono equipo">
         </div>
-        <div class="col-sm-8 col-md-5">
+        <div class="datos col-sm-8 col-md-5">
             <ul class="ul-equipo">
                 <li class="nombreEquipo">{{member.team_name}}</li>
                 <li class="numeroContacto">{{member.team_contact}}</li>
