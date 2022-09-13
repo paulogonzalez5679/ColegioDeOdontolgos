@@ -86,9 +86,7 @@
   color: #ffffff;
 }
 
-.row-init {
-  min-height: 80vh;
-}
+
 
 .nav-bar {
   clear: both;
@@ -518,9 +516,11 @@
 .p-0 {
   padding: 0px !important;
 }
+
 .img-company {
   width: 130px;
 }
+
 .div-company {
   display: flex;
   justify-content: center;
@@ -1856,15 +1856,42 @@
 @media (max-width: 300px) {
 }
 
-#myCarousel{
- margin-top: 5%;
- height: 700px !important;
+@media only screen and (max-width: 2000px)  and (min-width: 800px) {
+
+  #myCarousel{
+    margin-top: 5%;
+    height: 700px !important;
+  }
+
+  .redux-img{
+    height: 700px !important;
+    width: 1800px !important;
+  }
+
+  .row-init {
+    min-height: 80vh;
+  }
 }
 
-.redux-img{
-  height: 700px !important;
-  width: 1800px !important;
+@media only screen and (max-width: 800px) { 
+
+  #myCarousel{
+    margin-top: 5%;
+    height: 400px !important;
+  }
+
+  .redux-img{
+    height: 400px !important;
+    width: 1800px !important;
+  }
+
+  .row-init {
+    min-height: 50vh;
+  }
 }
+
+
+
 
 body{
   background-color: #000000 !important;
