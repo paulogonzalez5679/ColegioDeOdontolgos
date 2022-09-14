@@ -28,7 +28,7 @@ export class AuthService {
       );
       $("#modalLogin").modal("hide");
       this.router.navigate(['/admin']);
-      console.log("Accedio");
+      // console.log("Accedio");
 
       
     } catch (error) {

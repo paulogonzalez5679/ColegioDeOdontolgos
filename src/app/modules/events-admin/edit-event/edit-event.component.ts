@@ -42,16 +42,15 @@ export class EditEventComponent implements OnInit {
   }
 
   updateImage(id,idImgRempl,event){
-    console.log(id);
-    console.log(idImgRempl);
+    // console.log(id);
+    // console.log(idImgRempl);
     
     this.eventsService.uploadImages(event.target.files).then((urls) => {
       this.imgs = urls;
       this.imgs.forEach((img) => {
         this.eventImage={idEvent:this.event.id, idImage:img.id,url:img.url};
-        console.log(this.eventImage);
-        this.eventsService.createImagesEvent(this.eventImage).then(
-          () => console.log('imagen evento guardado')).catch((e) => alert(e.message));
+        // console.log(this.eventImage);
+        this.eventsService.createImagesEvent(this.eventImage);
       });
     }).catch((e) => alert(e.message));
 
@@ -66,9 +65,8 @@ export class EditEventComponent implements OnInit {
       this.imgs = urls;
       this.imgs.forEach((img) => {
         this.eventImage={idEvent:this.event.id, idImage:img.id,url:img.url};
-        console.log(this.eventImage);
-        this.eventsService.createImagesEvent(this.eventImage).then(
-          () => console.log('imagen evento guardado')).catch((e) => alert(e.message));
+        // console.log(this.eventImage);
+        this.eventsService.createImagesEvent(this.eventImage);
       });
     }).catch((e) => alert(e.message));
 

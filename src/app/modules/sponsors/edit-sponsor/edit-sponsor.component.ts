@@ -58,7 +58,7 @@ export class EditSponsorComponent implements OnInit {
       this.sponsorService.uploadImages(this.foto).then((urls) => {
         this.sponsorService.deleteImageSponsor(this.sponsor.imagen[0].id);
         this.sponsor.imagen = urls;
-        console.log(this.sponsor);
+        // console.log(this.sponsor);
         this.sponsorService.updateSponsor(this.sponsor);
       });
     }

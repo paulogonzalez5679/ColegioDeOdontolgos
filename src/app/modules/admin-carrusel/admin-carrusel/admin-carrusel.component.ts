@@ -24,8 +24,7 @@ export class AdminCarruselComponent implements OnInit {
     this.carruselService.uploadCarruselImages(event.target.files).then((urls) => {
         this.urlsFirebase = urls;
         this.urlsFirebase.forEach((img) => {
-          this.carruselService.createImagesCarrusel({id:id, idImagen:img.id, url:img.url}).then(
-            () => console.log('imagen evento guardado')).catch((e) => alert(e.message));
+          this.carruselService.createImagesCarrusel({id:id, idImagen:img.id, url:img.url});
         });
     }).catch((e) => alert(e.message));
   }
@@ -34,8 +33,7 @@ export class AdminCarruselComponent implements OnInit {
     // console.log(imagenes.idImagen);
     this.carruselService.deleteImageStorageCarruselById(imagenes.idImagen);
 
-    this.carruselService.deleteImagesCarrusel(imagenes.id).then(
-        () => console.log('imagen evento eliminado')).catch((e) => alert(e.message));
+    this.carruselService.deleteImagesCarrusel(imagenes.id);
   };
 
   editImage(imagenCarrusel,event){
@@ -44,9 +42,8 @@ export class AdminCarruselComponent implements OnInit {
         this.urlsFirebase = urls;
         this.urlsFirebase.forEach((img) => {
           this.carruselService.deleteImageStorageCarruselById(imagenCarrusel.idImagen)
-          console.log(this.urlsFirebase);
-          this.carruselService.updateImagenCarrucel(imagenCarrusel.id, {id:imagenCarrusel.id, idImagen:img.id, url:img.url}).then(
-          () => console.log('imagen evento guardado')).catch((e) => alert(e.message));
+          // console.log(this.urlsFirebase);
+          this.carruselService.updateImagenCarrucel(imagenCarrusel.id, {id:imagenCarrusel.id, idImagen:img.id, url:img.url});
         });
     }).catch((e) => alert(e.message));
   }

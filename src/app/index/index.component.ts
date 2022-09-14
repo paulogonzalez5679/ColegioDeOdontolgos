@@ -105,7 +105,7 @@ export class IndexComponent implements OnInit {
     this.rutaActiva.queryParams
       .filter(params => params.registro)
       .subscribe(params => {
-        console.log(params.registro); 
+        // console.log(params.registro); 
         if (params.registro){
           this.redirectRegistration();
         }

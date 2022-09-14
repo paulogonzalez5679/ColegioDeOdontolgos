@@ -33,7 +33,7 @@ export class DialogOverviewComponent{
   setFiles($event): any {
     this.foto=$event.target.files;
     const archivoCapturado = $event.target.files
-    console.log(archivoCapturado);
+    // console.log(archivoCapturado);
     Array.from(archivoCapturado).forEach((file) => {
       // console.log(file);
       this.extraerBase64(file).then((imagen: any) => {
@@ -72,13 +72,11 @@ export class DialogOverviewComponent{
       const numEvento = Math.floor(Math.random() * 100);
       this.dialogRef.close();
       let id = uuidv4();
-      this.eventsService.createEvent(id, this.event).then(
-        () => console.log('evento guardado')).catch((e) => alert(e.message));
+      this.eventsService.createEvent(id, this.event);
       
       this.imagenes.forEach((img) => {
         this.eventImage={idEvent:id, idImage:img.id,url:img.url};
-        this.eventsService.createImagesEvent({idEvent:id, idImage:img.id,url:img.url}).then(
-          () => console.log('imagen evento guardado')).catch((e) => alert(e.message));
+        this.eventsService.createImagesEvent({idEvent:id, idImage:img.id,url:img.url});
       });
     }).catch((e) => alert(e.message));
 
