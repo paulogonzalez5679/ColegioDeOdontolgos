@@ -30,7 +30,7 @@
     </div>
     <br>
     <p>Agregar imagenes</p>
-    <input style="margin-top: 10px; margin-bottom: 15px;" multiple accept=".jpg,.jpeg,.png,.svg" type="file" (change)="addFiles($event,event.images)"/>
+    <input style="margin-top: 10px; margin-bottom: 15px;" multiple accept=".jpg,.jpeg,.png,.svg" type="file" (change)="addFiles($event)"/>
     <br>
     <mat-form-field style="width: 100%;">
       <p>Titulo <input  matInput [(ngModel)]="event.title" style="margin-top: 10px; margin-bottom: 15px;"></p>

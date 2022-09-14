@@ -107,13 +107,7 @@
                   style="margin-left: 2%; width: 55%; height: 100%;" 
                   (change)="validarSeleccion()">
                   <option *ngFor="let item of roles" [value]="item.opt">{{item.opt}}</option>
-                  <option value="Estudiante">Estudiante</option>
-                  <option value="Auxialiar o técnicos de odontología">Auxialiar o técnicos de odontología</option>
-                  <option value="Odontólogo rural">Odontólogo rural</option>
-                  <option value="Odontólogo agremiado a la FOE">Odontólogo agremiado a la FOE</option>
-                  <option value="Odontólogo no agremiado a la FOE">Odontólogo no agremiado a la FOE</option>
-                  <option value="Odontólogo extranjero">Odontólogo extranjero</option>
-                </select>
+                  </select>
                 <br>
                 <small [hidden]="(ocupacion.valid || (ocupacion.pristine && !messajeForm.submitted) ) && seleccionado"
                     class="text-danger">

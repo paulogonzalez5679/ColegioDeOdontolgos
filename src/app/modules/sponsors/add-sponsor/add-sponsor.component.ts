@@ -69,5 +69,8 @@ export class AddSponsorComponent implements OnInit {
     });
     this.dialogRef.close();
   }
+  cancelar( ) {
+    
+  }
   
 }

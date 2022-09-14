@@ -20,16 +20,28 @@ export class UserRegistrationComponent implements OnInit {
   public roles: Array<Rol> = [
     {
       opt: 'Estudiante',
-      value: 20.00,
+      value: 70.00,
     },
     {
-      opt: 'Profesional externo',
-      value: 30.00,
+      opt: 'Auxialiar o técnicos de odontología',
+      value: 70.00,
     },
     {
-      opt: 'Profesional asociado',
-      value: 10.00,
+      opt: 'Odontólogo rural',
+      value: 90.00,
     },
+    {
+      opt: 'Odontólogo agremiado a la FOE',
+      value: 110.00,
+    },
+    {
+      opt: 'Odontólogo no agremiado a la FOE',
+      value: 140.00,
+    },
+    {
+      opt: 'Odontólogo extranjero',
+      value: 140.00,
+    }, 
   ]
 
   public rolSelected: Rol;

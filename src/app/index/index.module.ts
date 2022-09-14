@@ -13,7 +13,10 @@ const routes: Routes = [{ path: "", component: IndexComponent }];
 
 @NgModule({
   
-  declarations: [IndexModule, DetailEventComponent, ModalLoginComponent],
+  declarations: [
+    // DetailEventComponent, 
+    // ModalLoginComponent
+  ],
 
   imports: [
     CommonModule,

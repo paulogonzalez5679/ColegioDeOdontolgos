@@ -10,7 +10,9 @@ import { DetailEventComponent } from './detail-event/detail-event.component';
 
 
 @NgModule({
-  declarations: [DetailEventComponent],
+  declarations: [
+    DetailEventComponent
+  ],
   imports: [
     CommonModule,
     MatFormFieldModule,
