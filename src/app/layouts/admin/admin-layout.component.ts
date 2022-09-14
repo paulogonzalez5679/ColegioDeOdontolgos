@@ -24,16 +24,16 @@ export class AdminLayoutComponent implements OnInit {
     @ViewChild('sidebar') sidebar;
     @ViewChild(NavbarComponent) navbar: NavbarComponent;
     constructor( private router: Router, location:Location, private authservice: AuthService) {
-      this.location = location;
-    }
-
-    ngOnInit() {
+        this.location = location;
         this.authservice.getCurrentUser().subscribe(user => {
             if (user==null) {
                 this.redirigir();
             }
         });
-       
+    }
+
+    ngOnInit() {
+
       const elemMainPanel = <HTMLElement>document.querySelector('.main-panel');
       const elemSidebar = <HTMLElement>document.querySelector('.sidebar .sidebar-wrapper');
 

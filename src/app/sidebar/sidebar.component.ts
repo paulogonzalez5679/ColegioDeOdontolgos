@@ -42,31 +42,31 @@ export const ROUTES: RouteInfo[] = [
     path: "/events",
     title: "Eventos",
     type: "link",
-    icontype: "pe-7s-box2",
+    icontype: "pe-7s-culture",
   },
   {
     path: "/carrusel",
     title: "Carrusel",
     type: "link",
-    icontype: "pe-7s-box2",
+    icontype: "pe-7s-photo-gallery",
   },
   {
     path: "/users",
     title: "Usuarios Registrados",
     type: "link",
-    icontype: "pe-7s-box2",
+    icontype: "pe-7s-users",
   },
   {
     path: "/team",
     title: "Equipo",
     type: "link",
-    icontype: "pe-7s-box2",
+    icontype: "pe-7s-id",
   },
   {
     path: "/sponsors",
     title: "Sponsors",
     type: "link",
-    icontype: "pe-7s-box2",
+    icontype: "pe-7s-display1",
   },
   {
     path: "/message",
@@ -78,7 +78,7 @@ export const ROUTES: RouteInfo[] = [
     path: "/mision-vision",
     title: "Mision y Vision",
     type: "link",
-    icontype: "pe-7s-mail",
+    icontype: "pe-7s-pin",
   },
 ];
 
@@ -140,5 +140,6 @@ export class SidebarComponent {
   redirect(route: string) {
       this.router.navigate([`/admin/${route}`]);
   }
+  
 }
 
