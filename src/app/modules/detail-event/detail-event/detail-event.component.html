@@ -6,7 +6,7 @@
       <!-- <div [id]="event.id+'detail'" class="carousel slide" data-ride="carousel" *ngIf="event.images.length>0"> -->
         <div [id]="event.id+'detail'" class="carousel slide" data-ride="carousel" >
         
-          <!-- <div class="carousel-inner" style="max-height: 500px;">
+          <div class="carousel-inner" style="max-height: 500px;">
               <div class="item" *ngFor="let previa of event.images; let i = index"
               [ngClass]="{'active': i == 0 }" >
                 <img [src]="previa.url" style="width: 100%;">
@@ -21,7 +21,7 @@
               <span class="glyphicon glyphicon-chevron-right"></span>
               <span class="sr-only">Next</span>
             </a>
-          </div> -->
+          </div>
       </div>
       
       <mat-card-content>
