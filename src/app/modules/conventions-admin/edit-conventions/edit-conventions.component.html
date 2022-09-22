@@ -1,0 +1,41 @@
+<h1 mat-dialog-title>Editar un convenio</h1>
+<div mat-dialog-content>
+  
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+          <div class="item" *ngFor="let previa of previsualizacion; let i = index"
+          [ngClass]="{'active': i == 0 }" >
+            <img [src]="previa" class="d-block w-100">
+            <div style="margin-left: 2%;">
+                <input #editar style="visibility:hidden;" type="file" accept=".jpg,.jpeg,.png,.svg" (change)="updateImage($event);">
+                <button mat-button (click)="editar.click()">Editar</button>
+            </div>
+          </div>
+      </div>
+      
+    </div>
+    <form #messajeForm="ngForm" novalidate (ngSubmit)="updateEvent(messajeForm.value, messajeForm.valid)">
+      <mat-form-field style="width: 100%;">
+        <p>Titulo <input  name="title"  #title="ngModel" matInput [(ngModel)]="convention.title" style="margin-top: 10px; margin-bottom: 15px;"></p>
+      </mat-form-field>
+      <br>
+      <mat-form-field style="width: 100%;">
+        <p>Descripcion <textarea required name="description"  #description="ngModel" matInput [(ngModel)]="convention.description" style="margin-top: 10px; margin-bottom: 15px;"></textarea></p>
+        <small [hidden]="description.valid || (description.pristine && !messajeForm.submitted)"
+                    class="text-danger">
+                    Ingrese la descripcion
+        </small>
+      </mat-form-field>
+      <br>
+      <mat-form-field style="width: 100%;">
+        <p>URL <input  name="url"  #url="ngModel" matInput [(ngModel)]="convention.url" style="margin-top: 10px; margin-bottom: 15px;"></p>
+      </mat-form-field>
+
+      <div mat-dialog-actions>
+        <button type="button" mat-button (click)="onNoClick()">Cancelar</button>
+        <button type="submit" mat-button (click)="updateEvent()">Actualizar</button>
+      </div>
+
+    </form>
+</div>

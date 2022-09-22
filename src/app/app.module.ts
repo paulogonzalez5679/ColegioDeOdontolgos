@@ -63,7 +63,7 @@ import { ListTeamModule } from './modules/list-team/list-team.module';
         AdminLayoutComponent,
         AuthLayoutComponent,
         ModalLoginComponent,
-        IndexComponent,
+        IndexComponent
     ],
     bootstrap:    [ AppComponent ],
     providers: [ AuthService ]

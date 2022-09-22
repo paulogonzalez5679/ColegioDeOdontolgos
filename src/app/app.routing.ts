@@ -43,6 +43,10 @@ export const AppRoutes: Routes = [
         path: 'mision-vision',
         loadChildren: './modules/mision-vision/mision-vision.module#MisionVisionModule',
       },
+      {
+        path: 'conventions',
+        loadChildren: './modules/conventions-admin/conventions-admin.module#ConventionsAdminModule',
+      },
     ],
   },
 ];

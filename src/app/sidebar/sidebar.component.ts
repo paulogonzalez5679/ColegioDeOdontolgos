@@ -26,18 +26,6 @@ export interface ChildrenItems {
 }
 
 export const ROUTES: RouteInfo[] = [
-  // {
-  //   path: "/categories",
-  //   title: "Categorias",
-  //   type: "link",
-  //   icontype: "pe-7s-home",
-  // },
-  // {
-  //   path: '/events-custom',
-  //   title: 'Eventosss',
-  //   type: 'link',
-  //   icontype: 'pe-7s-mail',
-  // },
   {
     path: "/events",
     title: "Eventos",
@@ -67,6 +55,12 @@ export const ROUTES: RouteInfo[] = [
     title: "Sponsors",
     type: "link",
     icontype: "pe-7s-display1",
+  },
+  {
+    path: "/conventions",
+    title: "Conventions",
+    type: "link",
+    icontype: "pe-7s-note2",
   },
   {
     path: "/message",

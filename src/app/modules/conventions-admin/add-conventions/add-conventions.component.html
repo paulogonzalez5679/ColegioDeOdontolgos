@@ -1,0 +1,51 @@
+<h1 mat-dialog-title>Agregar un convenio</h1>
+<div mat-dialog-content>
+  
+    <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+      <!-- Wrapper for slides -->
+      <div class="carousel-inner">
+          <div class="item" *ngFor="let previa of previsualizacion; let i = index"
+          [ngClass]="{'active': i == 0 }" >
+            <img [src]="previa" class="d-block w-100">
+          </div>
+      </div>
+    
+      <!-- Left and right controls -->
+      <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+        <span class="glyphicon glyphicon-chevron-left"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="right carousel-control" href="#myCarousel" data-slide="next">
+        <span class="glyphicon glyphicon-chevron-right"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+    <form #messajeForm="ngForm" novalidate (ngSubmit)="submit(messajeForm.value, messajeForm.valid)">
+      <br>
+      <input style="margin-top: 10px; margin-bottom: 15px;" accept=".jpg,.jpeg,.png,.svg" type="file" (change)="setFiles($event)"/>
+      <br>
+      <mat-form-field style="width: 100%;">
+        <p>Titulo <input  name="title"  #title="ngModel" matInput [(ngModel)]="convention.title" style="margin-top: 10px; margin-bottom: 15px;"></p>
+      </mat-form-field>
+      <br>
+      <mat-form-field style="width: 100%;">
+        <p>Descripcion <textarea required name="description"  #description="ngModel" matInput [(ngModel)]="convention.description" style="margin-top: 10px; margin-bottom: 15px;"></textarea></p>
+        <small [hidden]="description.valid || (description.pristine && !messajeForm.submitted)"
+                    class="text-danger">
+                    Ingrese la descripcion
+        </small>
+      </mat-form-field>
+      <br>
+      <mat-form-field style="width: 100%;">
+        <p>URL <input  name="url"  #url="ngModel" matInput [(ngModel)]="convention.url" style="margin-top: 10px; margin-bottom: 15px;"></p>
+      </mat-form-field>
+
+      <div mat-dialog-actions>
+        <button mat-button (click)="onNoClick()">Cancelar</button>
+        <button mat-button (click)="submit()">Cargar</button>
+      </div>
+
+    </form>
+
+</div>
+
