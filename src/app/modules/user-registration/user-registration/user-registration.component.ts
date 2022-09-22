@@ -16,6 +16,8 @@ export class UserRegistrationComponent implements OnInit {
   public validador = true;
   seleccionado = false;
   selected = '';
+  profesion = '';
+  confirmacion=false;
 
   public roles: Array<Rol> = [
     {
@@ -69,6 +71,8 @@ export class UserRegistrationComponent implements OnInit {
   */
   onSaveUser(user: User, valid: boolean) {
     if (valid && this.validador) {
+
+      user.user_name=this.profesion+user.user_name;
 
       user.user_rol=this.selected;
       if(this.selected=='Estudiante' || this.selected=='Auxialiar o técnicos de odontología'){
@@ -149,6 +153,12 @@ export class UserRegistrationComponent implements OnInit {
   validarSeleccion() {
     this.showPpButton = false;
     this.seleccionado = true;
+    if(this.selected == "Odontólogo rural" ||  this.selected == 'Odontólogo agremiado a la FOE'){
+      this.confirmacion = true;
+    }
+    else{
+      this.confirmacion = false;
+    }
     console.log('*** validarSeleccion ***');
     console.log(this.selected);
 
@@ -163,6 +173,8 @@ export class UserRegistrationComponent implements OnInit {
 
   public async InitPaymentWhitPayphone(user: User, valid: boolean) {
     // if (valid) {
+      user.user_name=this.profesion+user.user_name;
+      console.log(user.user_name);
       this.showPpButton = false;
 
       setTimeout(async () => {

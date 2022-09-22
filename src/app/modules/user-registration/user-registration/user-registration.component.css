@@ -19,6 +19,23 @@
     color: #ffffff;
   }
 
+  .text-validarPorCorreo {
+    font-family: "Poppins";
+    font-weight: 300;
+    font-style: normal;
+    font-size: 15px;
+    color: #ffffff;
+  }
+
+  .text-textocertificado {
+    font-family: "Poppins";
+    font-weight: 300;
+    font-style: normal;
+    font-size: 10px;
+    color: #ffffff;
+    margin: 2%;
+  }
+
   .text-rol {
     font-family: "Poppins";
     font-weight: 300;
@@ -67,6 +84,15 @@
   }
 
   @media only screen and (max-width: 2000px)  and (min-width: 800px) {
+    .formulario{
+      display: grid;
+      grid-template-columns: repeat(10, 1fr);
+    }
+
+    .pos-form{
+      grid-column-start: 2;
+      grid-column-end: 10;
+    }
 
     .izqForm{
       float: left;
@@ -93,7 +119,15 @@
 
   }
 
-  
+  .group-name{
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 1em;
+  }
+  .input-name{
+    grid-column-start: 2;
+    grid-column-end: 10;
+  }
   
 
   .text-registro{

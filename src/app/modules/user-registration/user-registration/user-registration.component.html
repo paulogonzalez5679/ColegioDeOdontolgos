@@ -6,20 +6,33 @@
     <img src="../../assets/img/pagina2PDF.png">
   </div>
 </div>
-<div _ngcontent-npf-c107=""  class="row row-w-60 section-contac">
-  <div class="col-sm-12 col-md-12 col-lg-12">
+<div _ngcontent-npf-c107=""  class="formulario">
+  <div class="pos-form">
     <form #messajeForm="ngForm" novalidate (ngSubmit)="InitPaymentWhitPayphone(messajeForm.value, messajeForm.valid)">
       <div class="col-sm-12 text-registro">
         <span class="text-left text-registro">Registro</span>
       </div>
+
+      <div class="col-sm-12 text-textocertificado">
+        <span class="text-left text-registro">Recuerde que los datos ingresados se usaran para su respectivo certificado</span>
+      </div>
+
       <div class="row formularioGeneral">
         <div style="margin-top: 5rem;">
           <div class="izqForm">
             <div class="content content-form">
-              <div class=" bordeado " style="margin-bottom: 15px;">
-                <div class="form-group" style="padding: 2%;">
+              <div class=" bordeado group-name" style="margin-bottom: 15px;">
+                <div style="margin:20%;">
+                  <select 
+                  name="prof"
+                  [(ngModel)]="profesion" #prof="ngModel">
+                    <option value="Dr.">Dr.</option>
+                    <option value="Est.">Est.</option>
+                  </select>
+                </div>
+                <div class="form-group input-name" style="padding: 2%;">
                   <input type="text" name="user_name" required placeholder="Nombres"
-                    class="form-control formulario input-contact" [(ngModel)]="user.user_name" required
+                    class="form-control formulario input-name" [(ngModel)]="user.user_name" required
                     #user_name="ngModel">
                   <small [hidden]="user_name.valid || (user_name.pristine && !messajeForm.submitted)"
                     class="text-danger">
@@ -115,8 +128,14 @@
                 </small>
               </div>
             </div>
+
+            <div *ngIf="confirmacion">
+              <span class="text-left text-validarPorCorreo">*Para que su inscripcion sea valida envie su certificado correspondite al correo: odontologosazuay@gmail.com*</span>
+            </div>
+
           </div>
         </div>
+        
         <div class="row">
           <div class="col-sm-12 text-center">
             <button  mat-button type="submit" class="botonRegistrar">Continuar</button>
@@ -134,6 +153,7 @@
             <div id="pp-button"></div>
           </div>
         </div>
+        
         <ng-template #elseBlock>
         </ng-template>
       </div>
