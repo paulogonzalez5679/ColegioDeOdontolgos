@@ -22,7 +22,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<!--SECCION INICIO-->\r\n\r\n<!-- *** Navbar *** -->\r\n<section>\r\n  <div class=\"row row-w-100\">\r\n    <div class=\"col-sm-12\" style=\"padding: 0px !important; margin: 0px !important;\">\r\n      <nav #pagesnavbar class=\"navbar navbar-primary navDimensiones\">\r\n        <div class=\"container\">\r\n          <div class=\"navbar-header\" style=\"min-width: 100%;\">\r\n            <button type=\"button\" class=\"navbar-toggle\" (click)=\"sidebarToggle()\">\r\n              <span class=\"sr-only\">Toggle navigation</span>\r\n              <span class=\"icon-bar\"></span>\r\n              <span class=\"icon-bar\"></span>\r\n              <span class=\"icon-bar\"></span>\r\n            </button>\r\n          </div>\r\n          <div class=\"collapse navbar-collapse\" style=\"margin-top: 0px !important;\">\r\n            <ul class=\"nav navbar-nav  text-center\">\r\n              <li data-toggle=\"modal\" data-target=\"#modalLogin\">\r\n                <img class=\"imgNav menu\" src=\"../../assets/img/logo.png\" alt=\"logo\">\r\n              </li>\r\n              <li class=\"li-menu\">\r\n                <a (click)=\"viewRouter('#inicio', 500)\" class=\"menu opcMenu\">INICIO</a>\r\n              </li>\r\n              <li class=\"li-menu\">\r\n                <a (click)=\"viewRouter('#quienes', 700)\" class=\"menu opcMenu\">¿QUIÉNES SOMOS?</a>\r\n              </li>\r\n              <li class=\"li-menu\">\r\n                <a (click)=\"viewRouter('#productos', 900)\" class=\"menu opcMenu\">EVENTOS</a>\r\n              </li>\r\n              <li class=\"li-menu\">\r\n                <a (click)=\"viewRouter('#equipo', 1100)\" class=\"menu opcMenu\">DIRECTORIO</a>\r\n              </li>\r\n              <li class=\"li-menu\">\r\n                <a (click)=\"viewRouter('#contactos', 1100)\" class=\"menu opcMenu\">CONTACTOS</a>\r\n              </li>\r\n              <li class=\"li-menu\">\r\n                <a (click)=\"redirectRegistration()\" class=\"menu opcMenu\">REGISTRATE</a>\r\n              </li>\r\n            </ul>\r\n          </div>\r\n        </div>\r\n      </nav>\r\n    </div>\r\n  </div>\r\n</section>\r\n<!-- *** /Navbar *** -->\r\n\r\n<section id=\"registro\">\r\n  <div *ngIf=\"registrationFlag==true\">\r\n    <app-user-registration></app-user-registration>\r\n  </div>\r\n</section>\r\n\r\n<div *ngIf=\"registrationFlag==false\">\r\n  \r\n  <!-- *** Home *** -->\r\n  <section id=\"inicio\" class=\"section-init\">\r\n    <div class=\"row row-init row-w-100\">\r\n      <div class=\"col-sm-12 col-md-10 col-lg-12\">\r\n        <div class=\"row\">\r\n          <div class=\"col-sm-12 col-init\">\r\n            <!-- <img class=\"imgLogo\" data-aos=\"zoom-in\" data-aos-duration=\"1500\" src=\"../../assets/img/logo.png\"\r\n              alt=\"logo\"> -->\r\n              <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">\r\n                <!-- Wrapper for slides -->\r\n                <div class=\"carousel-inner\">\r\n                  <div class=\"item\" *ngFor=\"let previa of imagenesCarrusel | async; let i = index\"\r\n                    [ngClass]=\"{'active': i == 0 }\" >\r\n                      <img  class=\"redux-img\" [src]=\"previa.url\">\r\n                  </div>\r\n                </div>\r\n              \r\n                <!-- Left and right controls -->\r\n                <a class=\"left carousel-control\" href=\"#myCarousel\" data-slide=\"prev\">\r\n                  <span class=\"glyphicon glyphicon-chevron-left\"></span>\r\n                  <span class=\"sr-only\">Previous</span>\r\n                </a>\r\n                <a class=\"right carousel-control\" href=\"#myCarousel\" data-slide=\"next\">\r\n                  <span class=\"glyphicon glyphicon-chevron-right\"></span>\r\n                  <span class=\"sr-only\">Next</span>\r\n                </a>\r\n              </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-sm-12 col-md-4 col-lg-4\">\r\n\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <!-- *** /Home *** -->\r\n\r\n  <!-- *** Quienes somos? *** -->\r\n  <section id=\"quienes\">\r\n    <div class=\"row row-w-100\">\r\n      <div class=\"col-sm-5\" style=\"padding: 0px;\">\r\n        <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"rectangulo2 text-center\" style=\"max-width: 100%;\">\r\n          <h1 class=\"h4QuienesSomos\">\r\n            ¿Quiénes Somos?\r\n          </h1>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <!-- <div class=\"row row-w-100 quienesSomos\" style=\"min-height: 60vh;\">\r\n    <div class=\"col-sm-12 row-w-100\">\r\n      <div class=\"row row-w-90\">\r\n        <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-12 col-md-5 col-lg-5 diseñoQuienes\">\r\n          <p class=\"tituloQuienesSomos\">\r\n            REPRESENTACIÓNES\r\n            PEDRO ARANEDA FERRER E HIJOS CÍA.\r\n            LTDA.\r\n          </p>\r\n          <div class=\"text-center\">\r\n            <img class=\"logoQuienesSomos\" src=\"../../assets/img/Elementos-04.svg\" alt=\"\">\r\n          </div>\r\n        </div>\r\n        <div class=\"col-sm-12 col-md-7 col-lg-7\">\r\n          <div data-aos=\"zoom-in\" data-aos-duration=\"1500\" class=\"row\" class=\"quienesSomosDerecha\">\r\n            <img class=\"esquinaSUPERIORQUIENES\" src=\"../../assets/img/Elementos-06.svg\" alt=\"\">\r\n            <p class=\"textoQuienesSomos text-center\">El COLEGIO DE ODONTÓLOGOS DEL AZUAY, se constituye como una organización de derecho privado, con personería jurídica \r\n              propia, con patrimonio y administración autónoma, sin fines de lucro y con finalidad social y no podrá participar en actividades de carácter político, \r\n              partidista o religioso. Podrá ejercer derechos y contraer obligaciones, teniendo como marco legal el ordenamiento jurídico vigente y este estatuto.</p>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-sm-12\">\r\n          <img class=\"esquinaINFERIORQUIENES\" src=\"../../assets/img/Elementos-07.svg\" alt=\"\">\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div> -->\r\n  </section>\r\n  <!-- *** Quienes somos? *** -->\r\n\r\n  <!-- *** Mision valor valores *** -->\r\n  <section class=\"quienesSomos2\">\r\n    <div class=\"row row-w-90\">\r\n\r\n      <div data-aos=\"zoom-in\" data-aos-duration=\"1500\" class=\"col-sm-12 col-md-6 col-lg-6 text-center\">\r\n        <div class=\"fondoAzul\">\r\n          <div class=\"fondoBlanco\">\r\n            <img class=\"circulo\" src=\"../../assets/img/Elementos-10.svg\" alt=\"\">\r\n            <p class=\"p-title-mision\">MISIÓN</p>\r\n            <br><br>\r\n            <p class=\"text-center p-mision\" *ngFor=\"let mission of mision | async trackBy: trackByFn\">\r\n              {{mission.mision}}\r\n            </p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n\r\n\r\n      <div data-aos=\"zoom-in\" data-aos-duration=\"1500\" class=\"col-sm-12 col-md-6 col-lg-6 text-center\">\r\n        <div class=\"fondoAzul\">\r\n          <div class=\"fondoBlanco\">\r\n            <img class=\"circulo\" src=\"../../assets/img/Elementos-11.svg\" alt=\"\">\r\n            <p class=\"p-title-mision\">VISIÓN</p>\r\n            <br><br>\r\n            <p class=\"text-center p-mision\" *ngFor=\"let vision of vision | async trackBy: trackByFn\">\r\n              {{vision.vision}}\r\n            </p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <!-- *** Mision valor valores *** -->\r\n\r\n  <!-- *** Titulo productos *** -->\r\n  <section id=\"productos\">\r\n    <div style=\"height: 75px;\"></div>\r\n    <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"row row-w-100\">\r\n      <div class=\"col-sm-5\" style=\"padding: 0px;\">\r\n        <div class=\"rectangulo2 text-center\" style=\"max-width: 100%;\">\r\n          <h1 class=\"h4QuienesSomos\">\r\n            EVENTOS\r\n          </h1>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <!-- *** Titulo productos *** -->\r\n\r\n\r\n  <!-- *** Productos *** -->\r\n  <section>\r\n    <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"row row-w-100\">\r\n      <div class=\"col-sm-12 text-center\">\r\n        <br><br>\r\n        <div class=\"row row-w-100\">\r\n          <app-list-events></app-list-events>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <!-- *** /Productos *** -->\r\n\r\n  <!-- *** Empresas *** -->\r\n  <section style=\"margin-top: 160px;\">\r\n    <div class=\"row row-w-100\" style=\"background-color: #000000;\">\r\n      <div *ngFor=\"let sponsor of sponsors | async\" class=\"col-xs-6 col-sm-3 col-md-3 col-lg-3\">\r\n        <div *ngFor=\"let imagen of sponsor.imagen\" class=\"row div-company\">\r\n          <a [href]=\"sponsor.sponsor_url\" target=\"_blank\"><img class=\"img-company\" [src]=\"imagen.url\"></a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <!-- *** /Empresas *** -->\r\n\r\n  <!-- *** Servicios *** -->\r\n  <!-- <section class=\"fondoservicio\" id=\"servicios\" style=\"padding-top: 160px;\">\r\n    <div class=\"row row-w-100\">\r\n      <div class=\"col-sm-5\" style=\"padding: 0px;\">\r\n        <div data-aos=\"zoom-in\" data-aos-duration=\"1500\" class=\"rectangulo2 text-center\" style=\"max-width: 100%;\">\r\n          <h1 class=\"h4QuienesSomos\">\r\n            Servicios\r\n          </h1>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row row-w-100\">\r\n      <div class=\"col-sm-12\">\r\n        <div class=\"row row-w-90\">\r\n          <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-12 col-md-6 col-lg-6 serviciosRow-1\">\r\n            <h2 class=\"titutuloServicio\">ARANEDA</h2>\r\n            <h2 class=\"subtitutuloServicio\"> sigue trabajando</h2>\r\n            <p class=\"textServicio\">\r\n              Para ofrecer servicios de valor añadido que vayan\r\n              más allá de la venta y el suministro de equipos,\r\n              reactivos e insumos médicos para laboratorio clínico.\r\n            </p>\r\n            <button (click)=\"viewRouter('#contactos', 600)\" class=\"btn botonServicio\">CONTACTOS</button>\r\n          </div>\r\n          <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-12 col-md-6 col-lg-6\">\r\n            <img class=\"logoServicios\" src=\"../../assets/img/ImagenServicios.png\" alt=\"logo\">\r\n          </div>\r\n        </div>\r\n        <div class=\"row row-w-90\">\r\n          <div class=\"col-sm-12\">\r\n            <img class=\"esquina\" src=\"../../assets/img/Elementos-26.svg\" alt=\"\">\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row row-w-100 row-service\">\r\n      <div class=\"col-sm-12\">\r\n        <div class=\"row row-w-90\">\r\n          <div data-aos=\"zoom-in\" data-aos-duration=\"1500\" class=\"col-sm-12 col-md-6 col-lg-6\">\r\n            <img class=\"logoServicios\" src=\"../../assets/img/Servicio de Ingenieria.png\" alt=\"logo\">\r\n          </div>\r\n          <div data-aos=\"zoom-in\" data-aos-duration=\"1500\" class=\"col-sm-12 col-md-6 col-lg-6 serviciosRow-2\">\r\n            <h2 class=\"titutuloServicio\">Servicio de</h2>\r\n            <h2 class=\"titutuloServicio\">Ingeniería</h2>\r\n            <ul class=\"text-left textServicio\" style=\"list-style: none;\">\r\n              <li style=\"margin-top: 13px;\">– Asesoría técnica pre venta</li>\r\n              <li style=\"margin-top: 13px;\">– Instalaciones, mantenimientos preventivos,correctivos, emergentes y\r\n                predictivos\r\n              </li>\r\n              <li style=\"margin-top: 13px;\">– Servicio post venta personalizado</li>\r\n              <li style=\"margin-top: 13px;\">– Descontaminación de equipos</li>\r\n              <li style=\"margin-top: 13px;\">– Actualizaciones continuas de software</li>\r\n              <li style=\"margin-top: 13px;\">– Servicio de soporte remoto</li>\r\n              <li style=\"margin-top: 13px;\">– Servicio de soporte primer nivel 24 horas 1800110110</li>\r\n              <li style=\"margin-top: 13px;\">– Servicio de soporte de segundo y tercer nivel.</li>\r\n            </ul>\r\n            <button (click)=\"viewRouter('#contactos', 600)\" class=\"btn botonServicio\">CONTACTOS</button>\r\n\r\n          </div>\r\n        </div>\r\n        <div class=\"row row-w-90\">\r\n          <div class=\"col-sm-12\">\r\n            <img class=\"esquina-2\" src=\"../../assets/img/Elementos-27.svg\" alt=\"\">\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row row-w-100\">\r\n      <div class=\"col-sm-12\">\r\n        <div class=\"row row-w-90\">\r\n          <div data-aos=\"zoom-in\" data-aos-duration=\"1500\" class=\"col-sm-12 col-md-6 col-lg-6 serviciosRow-3\">\r\n            <h2 class=\"titutuloServicio\">Servicio de</h2>\r\n            <h2 class=\"titutuloServicio\">de aplicaciones</h2>\r\n            <ul class=\"textServicio\">\r\n              <li class=\"li-services\">– Asesoría integra pre venta y post venta</li>\r\n              <li class=\"li-services\">– Servicio de calibraciones</li>\r\n              <li class=\"li-services\">– Servicio de control de calidad</li>\r\n              <li class=\"li-services\">– Capacitaciones en el manejo correcto de <br>instrumentos de laboratorio</li>\r\n              <li class=\"li-services\">– Guiarles en el buen funcionamiento <br>de sus laboratorios</li>\r\n            </ul>\r\n            <button (click)=\"viewRouter('#contactos', 600)\" class=\"btn botonServicio\">CONTACTOS</button>\r\n\r\n          </div>\r\n          <div class=\"col-sm-12 col-md-6 col-lg-6\">\r\n            <img data-aos=\"zoom-in\" data-aos-duration=\"1500\" class=\"logoServicios\"\r\n              src=\"../../assets/img/Servicio de Aplicaciones.png\" alt=\"logo\">\r\n          </div>\r\n        </div>\r\n        <div class=\"row row-w-90\">\r\n          <div class=\"col-sm-12\">\r\n            <img class=\"esquina\" src=\"../../assets/img/Elementos-26.svg\" alt=\"\">\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <br><br> -->\r\n  <!-- *** /Servicios *** -->\r\n\r\n  <!-- *** Equipo *** -->\r\n  <section class=\"equipo\" id=\"equipo\">\r\n    <div class=\"row row-w-100\">\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-5\" style=\"padding: 0px;\">\r\n        <div class=\"rectangulo2 text-center\" style=\"max-width: 100%;\">\r\n          <h1 class=\"h4QuienesSomos\">\r\n            Nuestro equipo\r\n          </h1>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div>\r\n      <app-list-team></app-list-team>\r\n    </div>\r\n    <!-- <div class=\"row row-w-90 row-equipo\">\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-36.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-8 col-md-5\">\r\n        <ul class=\"ul-equipo\">\r\n          <li class=\"nombreEquipo\">TEC. SIST. XIMENA PAUCAR</li>\r\n          <li class=\"numeroContacto\">072814911 / 0999099339</li>\r\n          <li class=\"emailContacto\">ximena.paucar@araneda.com.ec</li>\r\n          <li> <span class=\"tituloContacto\">COMPRAS PÚBLICAS</span></li>\r\n        </ul>\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-36.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-8 col-md-5\">\r\n        <ul class=\"ul-equipo\">\r\n          <li class=\"nombreEquipo\">DRA. MARÍA JOSÉ CAMPOVERDE</li>\r\n          <li class=\"numeroContacto\">072814911 / 0968158603</li>\r\n          <li class=\"emailContacto\" style=\"font-size: 15px;\">mariajose.campoverde@araneda.com.ec</li>\r\n          <li><span class=\"tituloContacto\">COORDINADOR DE LA CALIDADL</span></li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n    <div class=\"row row-w-90 row-equipo\">\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-36.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-8 col-md-5\">\r\n        <ul class=\"ul-equipo\">\r\n          <li class=\"nombreEquipo\">ING. CPA. EULALIA CUZCO</li>\r\n          <li class=\"numeroContacto\">072814911 / 0968817095</li>\r\n          <li class=\"emailContacto\">eulalia.cuzco@araneda.com.ec</li>\r\n          <li><span class=\"tituloContacto\">CONTADOR</span></li>\r\n        </ul>\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-36.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-8 col-md-5\">\r\n        <ul class=\"ul-equipo\">\r\n          <li class=\"nombreEquipo\">ELIZABETH NAULA</li>\r\n          <li class=\"numeroContacto\">072814911 / 0984736699</li>\r\n          <li class=\"emailContacto\">eliza.naula@araneda.com.ec</li>\r\n          <li> <span class=\"tituloContacto\">AUXILIAR CONTABLE</span></li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n    <div class=\"row row-w-90 row-equipo\">\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-35.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-8 col-md-5\">\r\n        <ul class=\"ul-equipo\">\r\n          <li class=\"nombreEquipo\">ING. DIEGO NARVÁEZ</li>\r\n          <li class=\"numeroContacto\">072814911 / 0979785752</li>\r\n          <li class=\"emailContacto\">pedro.araneda@pedroaraneda.net</li>\r\n          <li><span class=\"tituloContacto\">INGENIERÍA - AZUAY</span></li>\r\n        </ul>\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-35.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-8 col-md-5\">\r\n        <ul class=\"ul-equipo\">\r\n          <li class=\"nombreEquipo\">ING. MARLON FEIJOO</li>\r\n          <li class=\"numeroContacto\">072814911 / 0991705364</li>\r\n          <li class=\"emailContacto\">marlon.feijoo@araneda.com.ec</li>\r\n          <li> <span class=\"tituloContacto\">INGENIERÍA - ORO</span></li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n    <div class=\"row row-w-90 row-equipo\">\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-35.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-8 col-md-5\">\r\n        <ul class=\"ul-equipo\">\r\n          <li class=\"nombreEquipo\">JUAN PABLO ERAZO</li>\r\n          <li class=\"numeroContacto\">072814911</li>\r\n          <li class=\"emailContacto\">juan.erazo@pedroaraneda.net</li>\r\n          <li><span class=\"tituloContacto\">INGENIERÍA - LOJA</span></li>\r\n        </ul>\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-35.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-8 col-md-5\">\r\n        <ul class=\"ul-equipo\">\r\n          <li class=\"nombreEquipo\">LIC.DAVID SÁNCHEZ</li>\r\n          <li class=\"numeroContacto\">072814911 / 0991705364</li>\r\n          <li class=\"emailContacto\">marlon.feijoo@araneda.com.ec</li>\r\n          <li> <span class=\"tituloContacto\">INGENIERÍA - AZUAY/ORO</span></li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n    <div class=\"row row-w-90 row-equipo\">\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-35.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-8 col-md-5\">\r\n        <ul class=\"ul-equipo\">\r\n          <li class=\"nombreEquipo\">LIC. ERIC CAPRILES</li>\r\n          <li class=\"numeroContacto\">072814911</li>\r\n          <li class=\"emailContacto\">juan.erazo@pedroaraneda.net</li>\r\n          <li><span class=\"tituloContacto\">INGENIERÍA - LOJA</span></li>\r\n        </ul>\r\n      </div>\r\n      <div class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-35.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div class=\"col-sm-8 col-md-5\">\r\n\r\n      </div> -->\r\n    <!-- </div> -->\r\n  </section>\r\n  <!-- *** /Equipo *** -->\r\n\r\n  <!-- *** Contactos *** -->\r\n\r\n  <br>\r\n  <section id=\"contactos\">\r\n    <div class=\"row row-w-100\">\r\n      <div data-aos=\"zoom-in\" data-aos-duration=\"1500\" class=\"col-sm-5\" style=\"padding: 0px;\">\r\n        <div class=\"rectangulo2 text-center\" style=\"max-width: 100%;\">\r\n          <h1 class=\"h4QuienesSomos\">\r\n            Contactos\r\n          </h1>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"row row-w-80 section-contac\">\r\n      <div class=\"col-sm-12 col-md-5 col-lg-5\">\r\n        <div class=\"row row-contact\">\r\n          <div class=\"col-sm-3 col-md-3 text-center\">\r\n            <img class=\"logoContactanos\" src=\"../../assets/img/Elementos-28.svg\" alt=\"logo\">\r\n          </div>\r\n          <div class=\"col-sm-9 col-md-9\">\r\n            <p class=\"textoContactanos\">\r\n              Cornelio Merchán 7-95 y Jesús Dávila esq.\r\n            </p>\r\n          </div>\r\n        </div>\r\n        <div class=\"row row-contact\">\r\n          <div class=\"col-sm-3 col-md-3 text-center\">\r\n            <img class=\"logoContactanos\" src=\"../../assets/img/Elementos-29.svg\" alt=\"logo\">\r\n          </div>\r\n          <div class=\"col-sm-9 col-md-9\">\r\n            <p class=\"textoContactanos\">\r\n              +593 (07) 2810 937\r\n              <br>\r\n              +593 99 555 2293\r\n            </p>\r\n          </div>\r\n        </div>\r\n        <div class=\"row row-contact\">\r\n          <div class=\"col-sm-3 col-md-3 text-center\">\r\n            <img class=\"logoContactanos\" src=\"../../assets/img/Elementos-30.svg\" alt=\"logo\">\r\n          </div>\r\n          <div class=\"col-sm-9 col-md-9\">\r\n            <p class=\"textoContactanos\">\r\n              Lunes - Viernes\r\n              <br>\r\n              08h00 – 18h00 \r\n            </p>\r\n          </div>\r\n        </div>\r\n        <div class=\"row row-contact\">\r\n          <div class=\"col-sm-3 col-md-3 text-center\">\r\n            <img class=\"logoContactanos\" src=\"../../assets/img/Elementos-31.svg\" alt=\"logo\">\r\n          </div>\r\n          <div class=\"col-sm-9 col-md-9\">\r\n            <br>\r\n            <p class=\"textoContactanos\">\r\n              \r\n              coaodont@hotmail.com\r\n            </p>\r\n          </div>\r\n        </div>\r\n        <div class=\"row row-contact\">\r\n          <div class=\"col-xs-4 col-sm-4 text-center\">\r\n            <a><img class=\"redesRectanguloFacebook \" src=\"../../assets/img/Elementos-32.svg\" alt=\"logo\"></a>\r\n          </div>\r\n          <div class=\"col-xs-4 col-sm-4 text-center\">\r\n            <a><img class=\"redesRectanguloTwtitter\" src=\"../../assets/img/Elementos-33.svg\" alt=\"logo\"></a>\r\n          </div>\r\n          <div class=\"col-xs-4 col-sm-4 text-center\">\r\n            <a><img class=\"redesRectanguloInstagram\" src=\"../../assets/img/Elementos-34.svg\" alt=\"logo\"></a>\r\n          </div>\r\n        </div><br>\r\n      </div>\r\n      <div class=\"col-sm-12 col-md-7 col-lg-7\">\r\n        <form #messajeForm=\"ngForm\" novalidate (ngSubmit)=\"onSaveMessage(messajeForm.value, messajeForm.valid)\">\r\n          <div class=\"row formularioGeneral\">\r\n            <div class=\"col-sm-12\">\r\n              <span class=\"text-left text-contactanos\">ESCRÍBENOS</span>\r\n            </div>\r\n            <div class=\"col-sm-12 text-left col-contact\" style=\"margin-top: 2rem;\">\r\n              <div class=\"content content-form\">\r\n                <div class=\"form-group\" style=\"margin-bottom: 15px;\">\r\n                  <input type=\"text\" name=\"message_name\" required placeholder=\"Nombres\"\r\n                    class=\"form-control formulario input-contact\" [(ngModel)]=\"message.message_name\" required\r\n                    #message_name=\"ngModel\">\r\n                  <small [hidden]=\"message_name.valid || (message_name.pristine && !messajeForm.submitted)\"\r\n                    class=\"text-danger\">\r\n                    Ingrese el nombre\r\n                  </small>\r\n                </div>\r\n                <div class=\"form-group\" style=\"margin-bottom: 15px;\">\r\n                  <input type=\"text\" name=\"message_email\" required placeholder=\"Email\"\r\n                    class=\"formulario form-control input-contact\" [(ngModel)]=\"message.message_email\" required\r\n                    #message_email=\"ngModel\" pattern=\"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$\">\r\n                  <small [hidden]=\"message_email.valid || (message_email.pristine && !messajeForm.submitted)\"\r\n                    class=\"text-danger\">\r\n                    Ingrese Email\r\n                  </small>\r\n                </div>\r\n                <div class=\"form-group\" style=\"margin-bottom: 15px;\">\r\n                  <input type=\"text\" name=\"message_phone\" placeholder=\"Teléfono\" class=\"formulario form-control input-contact\"\r\n                    [(ngModel)]=\"message.message_phone\" required #message_phone=\"ngModel\" pattern=\"\">\r\n                  <small [hidden]=\"message_phone.valid || (message_phone.pristine && !messajeForm.submitted)\"\r\n                    class=\"text-danger\">\r\n                    Ingrese el teléfono\r\n                  </small>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                  <textarea name=\"message_description\" rows=\"5\" cols=\"50\" placeholder=\"Mensaje\"\r\n                    class=\"formularioMensaje form-control input-contact\" [(ngModel)]=\"message.message_description\"\r\n                    required #message_description=\"ngModel\"></textarea>\r\n                  <small [hidden]=\"message_description.valid || (message_description.pristine && !messajeForm.submitted)\"\r\n                    class=\"text-danger\">\r\n                    Ingrese el mensaje\r\n                  </small>\r\n                </div>\r\n                <div class=\"row\">\r\n                  <div class=\"col-sm-12 text-center\">\r\n                    <button type=\"submit\" class=\"botonContactos\">Enviar</button>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          \r\n        </form>\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <!-- *** /Contactos *** -->\r\n\r\n<!-- *** Ubicacion *** -->\r\n<section style=\"margin-top: 5%;\">\r\n  <div class=\"row row-w-90\">\r\n    <div class=\"col-md-7\">\r\n      <div class=\"mapa\">\r\n        <div class=\"circulo2 text-center\">\r\n          <img class=\"iconoMapa\" src=\"../../assets/img/Elementos-40.svg\" alt=\"\">\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-md-5\">\r\n      <img class=\"esquinasuperiorMapa\" src=\"../../assets/img/Elementos-06.svg\" alt=\"\">\r\n      <div class=\"div-content-map\">\r\n        <div class=\"rectangulomapa text-center\">\r\n          <p class=\"textoMapa\">\r\n            Estamos ubicados\r\n            en la ciudad de Cuenca, contactanos y entérate de todo los beneficios\r\n            con los que podrás contar con nosotros.\r\n          </p>\r\n        </div>\r\n      </div>\r\n      <img class=\"esquinaINFERIORMapa\" src=\"../../assets/img/Elementos-07.svg\" alt=\"\">\r\n    </div>\r\n    <br><br><br>\r\n\r\n  </div>\r\n\r\n</section>\r\n<!-- *** /Ubicacion *** -->\r\n\r\n\r\n<footer class=\"fondofooter\">\r\n  <div class=\"row row-w-80 text-center\">\r\n    <div class=\"col-sm-4\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-6\">\r\n          <h1 class=\"tituloFooter text-center\">NOSOTROS</h1>\r\n        </div>\r\n        <div class=\"col-sm-6 text-center\">\r\n          <div class=\"linea\"></div>\r\n        </div>\r\n        <div class=\"row row-w-90\">\r\n          <div class=\"col-sm-12\">\r\n            <p class=\"text-left textoFooter\">\r\n              Estamos ubicados\r\n            en la ciudad de Cuenca, contactanos y entérate de todo los beneficios\r\n            con los que podrás contar con nosotros.\r\n              <br>\r\n            </p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-sm-4\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-6\">\r\n          <h1 class=\"tituloFooter text-center\">CONTACTO</h1>\r\n        </div>\r\n        <div class=\"col-sm-6 text-center\">\r\n          <div class=\"linea\"></div>\r\n        </div>\r\n      </div>\r\n      <div class=\"row row-w-90\">\r\n        <div class=\"col-sm-6 col-md-4 col-lg-4 text-left footerSubtitulos\">\r\n          Dirección:\r\n        </div>\r\n        <div class=\"col-sm-6 col-md-8 col-lg-8 text-left footerSubtitulos2\">\r\n          Cornelio Merchán 7-95 y Jesús Dávila esq.\r\n        </div>\r\n      </div>\r\n      <br>\r\n      <div class=\"row row-w-90\">\r\n        <div class=\"col-sm-6 col-md-4 col-lg-4 text-left footerSubtitulos\">\r\n          Teléfono:\r\n        </div>\r\n        <div class=\"col-sm-6 col-md-8 col-lg-8 text-left footerSubtitulos2\">\r\n          +593 (07) 2810 937\r\n          <br>\r\n          +593 99 555 2293\r\n        </div>\r\n      </div>\r\n      <br>\r\n      <div class=\"row row-w-90\">\r\n        <div class=\"col-sm-6 col-md-4 col-lg-4 text-left footerSubtitulos\">\r\n          Email:\r\n        </div>\r\n        <div class=\"col-sm-6 col-md-8 col-lg-8 text-left footerSubtitulos2\">\r\n          coaodont@hotmail.com\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-sm-4\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-8\">\r\n          <h1 class=\"tituloFooter text-center\">REDES SOCIALES</h1>\r\n        </div>\r\n        <div class=\"col-sm-4 text-center\">\r\n          <div class=\"linea\"></div>\r\n        </div>\r\n      </div>\r\n      <div class=\"row row-w-90\">\r\n        <div class=\"col-sm-12\">\r\n          <p class=\"text-justify textoFooter\">\r\n            Síguenos en nuestras redes sociales\r\n          </p>\r\n        </div>\r\n      </div>\r\n      <div class=\"row row-w-90\">\r\n        <div class=\"col-xs-2\">\r\n          <img class=\"iconoFooter\" src=\"../../assets/img/Elementos-37.svg\" alt=\"\">\r\n        </div>\r\n        <div class=\"col-xs-2\">\r\n          <img class=\"iconoFooter\" src=\"../../assets/img/Elementos-38.svg\" alt=\"\">\r\n        </div>\r\n        <div class=\"col-xs-2\">\r\n          <img class=\"iconoFooter\" src=\"../../assets/img/Elementos-39.svg\" alt=\"\">\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <br><br>\r\n \r\n</footer>\r\n\r\n  <!--MODAL PRODCUTOS-->\r\n  <div class=\"modal fade\" #modalProduct id=\"modalProduct\" tabindex=\"-1\" role=\"dialog\"\r\n    aria-labelledby=\"modalSubCategoryLabel\">\r\n    <div class=\"modal-dialog\" role=\"document\">\r\n      <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span\r\n              aria-hidden=\"true\">&times;</span></button>\r\n          <h2 class=\"modal-title\" id=\"modalSubCategoryLabel\">{{product.pro_nombre}}</h2>\r\n        </div>\r\n        <div class=\"modal-body\">\r\n          <div class=\"card mb-3 modalProd\">\r\n            <div class=\"row no-gutters\">\r\n              <div class=\"col-md-6 text-center\">\r\n                <img class=\"imgProd\" src=\"{{product.pro_url}}\" alt=\"{{product.pro_nombre}}\">\r\n              </div>\r\n              <div style=\"margin-left: 2rem;\" class=\"col-md-11 text-center\">\r\n                <div class=\"card-body\">\r\n                  <p *ngIf=\"!isLink(product.pro_description)\" class=\"card-text text-justify\">\r\n                    <span [innerHTML]='product.pro_description'></span>\r\n                    <!-- {{product.pro_description}} -->\r\n                  </p>\r\n                  <p *ngIf=\"isLink(product.pro_description)\" class=\"card-text text-justify\">\r\n                    <a href=\"{{product.pro_description}}\" target=\"_blanck\">\r\n                      Ver la descripción\r\n                    </a>\r\n                  </p>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"modal-footer\">\r\n          <button type=\"button\" class=\"btn btn-default btn-simple\" data-dismiss=\"modal\">Cerrar</button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <app-modal-login></app-modal-login>\r\n</div>\r\n\r\n\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<!--SECCION INICIO-->\r\n\r\n<!-- *** Navbar *** -->\r\n<section>\r\n  <div class=\"row row-w-100\">\r\n    <div class=\"col-sm-12\" style=\"padding: 0px !important; margin: 0px !important;\">\r\n      <nav #pagesnavbar class=\"navbar navbar-primary navDimensiones\">\r\n        <div class=\"container\">\r\n          <div class=\"navbar-header\" style=\"min-width: 100%;\">\r\n            <button type=\"button\" class=\"navbar-toggle\" (click)=\"sidebarToggle()\">\r\n              <span class=\"sr-only\">Toggle navigation</span>\r\n              <span class=\"icon-bar\"></span>\r\n              <span class=\"icon-bar\"></span>\r\n              <span class=\"icon-bar\"></span>\r\n            </button>\r\n          </div>\r\n          <div class=\"collapse navbar-collapse\" style=\"margin-top: 0px !important;\">\r\n            <ul class=\"nav navbar-nav  text-center\">\r\n              <li data-toggle=\"modal\" data-target=\"#modalLogin\">\r\n                <img class=\"imgNav menu\" src=\"../../assets/img/logo.png\" alt=\"logo\">\r\n              </li>\r\n              <li class=\"li-menu\">\r\n                <a (click)=\"viewRouter('#inicio', 500)\" class=\"menu opcMenu\">INICIO</a>\r\n              </li>\r\n              <li class=\"li-menu\">\r\n                <a (click)=\"viewRouter('#quienes', 700)\" class=\"menu opcMenu\">¿QUIÉNES SOMOS?</a>\r\n              </li>\r\n              <li class=\"li-menu\">\r\n                <a (click)=\"viewRouter('#productos', 900)\" class=\"menu opcMenu\">EVENTOS</a>\r\n              </li>\r\n              <li class=\"li-menu\">\r\n                <a (click)=\"viewRouter('#equipo', 1100)\" class=\"menu opcMenu\">DIRECTORIO</a>\r\n              </li>\r\n              <li class=\"li-menu\">\r\n                <a (click)=\"viewRouter('#contactos', 1100)\" class=\"menu opcMenu\">CONTACTOS</a>\r\n              </li>\r\n              <li class=\"li-menu\">\r\n                <a (click)=\"redirectRegistration()\" class=\"menu opcMenu\">REGISTRATE</a>\r\n              </li>\r\n            </ul>\r\n          </div>\r\n        </div>\r\n      </nav>\r\n    </div>\r\n  </div>\r\n</section>\r\n<!-- *** /Navbar *** -->\r\n\r\n<section id=\"registro\">\r\n  <div *ngIf=\"registrationFlag==true\">\r\n    <app-user-registration></app-user-registration>\r\n  </div>\r\n</section>\r\n\r\n<div *ngIf=\"registrationFlag==false\">\r\n  \r\n  <!-- *** Home *** -->\r\n  <section id=\"inicio\" class=\"section-init\">\r\n    <div class=\"row row-init row-w-100\">\r\n      <div class=\"col-sm-12 col-md-10 col-lg-12\">\r\n        <div class=\"row\">\r\n          <div class=\"col-sm-12 col-init\">\r\n            <!-- <img class=\"imgLogo\" data-aos=\"zoom-in\" data-aos-duration=\"1500\" src=\"../../assets/img/logo.png\"\r\n              alt=\"logo\"> -->\r\n              <div id=\"myCarousel\" class=\"carousel slide\" data-ride=\"carousel\">\r\n                <!-- Wrapper for slides -->\r\n                <div class=\"carousel-inner\">\r\n                  <div class=\"item\" *ngFor=\"let previa of imagenesCarrusel | async; let i = index\"\r\n                    [ngClass]=\"{'active': i == 0 }\" >\r\n                      <img  class=\"redux-img\" [src]=\"previa.url\">\r\n                  </div>\r\n                </div>\r\n              \r\n                <!-- Left and right controls -->\r\n                <a class=\"left carousel-control\" href=\"#myCarousel\" data-slide=\"prev\">\r\n                  <span class=\"glyphicon glyphicon-chevron-left\"></span>\r\n                  <span class=\"sr-only\">Previous</span>\r\n                </a>\r\n                <a class=\"right carousel-control\" href=\"#myCarousel\" data-slide=\"next\">\r\n                  <span class=\"glyphicon glyphicon-chevron-right\"></span>\r\n                  <span class=\"sr-only\">Next</span>\r\n                </a>\r\n              </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n      <div class=\"col-sm-12 col-md-4 col-lg-4\">\r\n\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <!-- *** /Home *** -->\r\n\r\n  <!-- *** Quienes somos? *** -->\r\n  <section id=\"quienes\">\r\n    <div class=\"row row-w-100\">\r\n      <div class=\"col-sm-5\" style=\"padding: 0px;\">\r\n        <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"rectangulo2 text-center\" style=\"max-width: 100%;\">\r\n          <h1 class=\"h4QuienesSomos\">\r\n            ¿Quiénes Somos?\r\n          </h1>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <!-- <div class=\"row row-w-100 quienesSomos\" style=\"min-height: 60vh;\">\r\n    <div class=\"col-sm-12 row-w-100\">\r\n      <div class=\"row row-w-90\">\r\n        <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-12 col-md-5 col-lg-5 diseñoQuienes\">\r\n          <p class=\"tituloQuienesSomos\">\r\n            REPRESENTACIÓNES\r\n            PEDRO ARANEDA FERRER E HIJOS CÍA.\r\n            LTDA.\r\n          </p>\r\n          <div class=\"text-center\">\r\n            <img class=\"logoQuienesSomos\" src=\"../../assets/img/Elementos-04.svg\" alt=\"\">\r\n          </div>\r\n        </div>\r\n        <div class=\"col-sm-12 col-md-7 col-lg-7\">\r\n          <div data-aos=\"zoom-in\" data-aos-duration=\"1500\" class=\"row\" class=\"quienesSomosDerecha\">\r\n            <img class=\"esquinaSUPERIORQUIENES\" src=\"../../assets/img/Elementos-06.svg\" alt=\"\">\r\n            <p class=\"textoQuienesSomos text-center\">El COLEGIO DE ODONTÓLOGOS DEL AZUAY, se constituye como una organización de derecho privado, con personería jurídica \r\n              propia, con patrimonio y administración autónoma, sin fines de lucro y con finalidad social y no podrá participar en actividades de carácter político, \r\n              partidista o religioso. Podrá ejercer derechos y contraer obligaciones, teniendo como marco legal el ordenamiento jurídico vigente y este estatuto.</p>\r\n          </div>\r\n        </div>\r\n        <div class=\"col-sm-12\">\r\n          <img class=\"esquinaINFERIORQUIENES\" src=\"../../assets/img/Elementos-07.svg\" alt=\"\">\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div> -->\r\n  </section>\r\n  <!-- *** Quienes somos? *** -->\r\n\r\n  <!-- *** Mision valor valores *** -->\r\n  <section class=\"quienesSomos2\">\r\n    <div class=\"row row-w-90\">\r\n\r\n      <div data-aos=\"zoom-in\" data-aos-duration=\"1500\" class=\"col-sm-12 col-md-6 col-lg-6 text-center\">\r\n        <div class=\"fondoAzul\">\r\n          <div class=\"fondoBlanco\">\r\n            <img class=\"circulo\" src=\"../../assets/img/Elementos-10.svg\" alt=\"\">\r\n            <p class=\"p-title-mision\">MISIÓN</p>\r\n            <br><br>\r\n            <p class=\"text-center p-mision\" *ngFor=\"let mission of mision | async trackBy: trackByFn\">\r\n              {{mission.mision}}\r\n            </p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n\r\n\r\n\r\n      <div data-aos=\"zoom-in\" data-aos-duration=\"1500\" class=\"col-sm-12 col-md-6 col-lg-6 text-center\">\r\n        <div class=\"fondoAzul\">\r\n          <div class=\"fondoBlanco\">\r\n            <img class=\"circulo\" src=\"../../assets/img/Elementos-11.svg\" alt=\"\">\r\n            <p class=\"p-title-mision\">VISIÓN</p>\r\n            <br><br>\r\n            <p class=\"text-center p-mision\" *ngFor=\"let vision of vision | async trackBy: trackByFn\">\r\n              {{vision.vision}}\r\n            </p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <!-- *** Mision valor valores *** -->\r\n\r\n  <!-- *** Titulo Eventos *** -->\r\n  <section id=\"productos\">\r\n    <div style=\"height: 75px;\"></div>\r\n    <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"row row-w-100\">\r\n      <div class=\"col-sm-5\" style=\"padding: 0px;\">\r\n        <div class=\"rectangulo2 text-center\" style=\"max-width: 100%;\">\r\n          <h1 class=\"h4QuienesSomos\">\r\n            EVENTOS\r\n          </h1>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <!-- *** Titulo Eventos *** -->\r\n\r\n\r\n  <!-- *** Eventos *** -->\r\n  <section>\r\n    <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"row row-w-100\">\r\n      <div class=\"col-sm-12 text-center\">\r\n        <br><br>\r\n        <div class=\"row row-w-100\">\r\n          <app-list-events></app-list-events>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <!-- *** /Eventos *** -->\r\n\r\n   <!-- *** Titulo Convenios *** -->\r\n   <section id=\"productos\">\r\n    <div style=\"height: 75px;\"></div>\r\n    <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"row row-w-100\">\r\n      <div class=\"col-sm-5\" style=\"padding: 0px;\">\r\n        <div class=\"rectangulo2 text-center\" style=\"max-width: 100%;\">\r\n          <h1 class=\"h4QuienesSomos\">\r\n            CONVENIOS\r\n          </h1>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <!-- *** Titulo Convenios *** -->\r\n\r\n  <!-- *** convenios *** -->\r\n  <section>\r\n    <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"row row-w-100\">\r\n      <div class=\"col-sm-12 text-center\">\r\n        <br><br>\r\n        <div class=\"row row-w-100\">\r\n          <app-list-conventions></app-list-conventions>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <!-- *** /Convenios *** -->\r\n\r\n  <!-- *** Sponsors *** -->\r\n  <section style=\"margin-top: 160px;\">\r\n    <div class=\"row row-w-100\" style=\"background-color: #000000;\">\r\n      <div *ngFor=\"let sponsor of sponsors | async\" class=\"col-xs-6 col-sm-3 col-md-3 col-lg-3\">\r\n        <div *ngFor=\"let imagen of sponsor.imagen\" class=\"row div-company\">\r\n          <a [href]=\"sponsor.sponsor_url\" target=\"_blank\"><img class=\"img-company\" [src]=\"imagen.url\"></a>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <!-- *** /Sponsors *** -->\r\n\r\n  <!-- *** Servicios *** -->\r\n  <!-- <section class=\"fondoservicio\" id=\"servicios\" style=\"padding-top: 160px;\">\r\n    <div class=\"row row-w-100\">\r\n      <div class=\"col-sm-5\" style=\"padding: 0px;\">\r\n        <div data-aos=\"zoom-in\" data-aos-duration=\"1500\" class=\"rectangulo2 text-center\" style=\"max-width: 100%;\">\r\n          <h1 class=\"h4QuienesSomos\">\r\n            Servicios\r\n          </h1>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row row-w-100\">\r\n      <div class=\"col-sm-12\">\r\n        <div class=\"row row-w-90\">\r\n          <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-12 col-md-6 col-lg-6 serviciosRow-1\">\r\n            <h2 class=\"titutuloServicio\">ARANEDA</h2>\r\n            <h2 class=\"subtitutuloServicio\"> sigue trabajando</h2>\r\n            <p class=\"textServicio\">\r\n              Para ofrecer servicios de valor añadido que vayan\r\n              más allá de la venta y el suministro de equipos,\r\n              reactivos e insumos médicos para laboratorio clínico.\r\n            </p>\r\n            <button (click)=\"viewRouter('#contactos', 600)\" class=\"btn botonServicio\">CONTACTOS</button>\r\n          </div>\r\n          <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-12 col-md-6 col-lg-6\">\r\n            <img class=\"logoServicios\" src=\"../../assets/img/ImagenServicios.png\" alt=\"logo\">\r\n          </div>\r\n        </div>\r\n        <div class=\"row row-w-90\">\r\n          <div class=\"col-sm-12\">\r\n            <img class=\"esquina\" src=\"../../assets/img/Elementos-26.svg\" alt=\"\">\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row row-w-100 row-service\">\r\n      <div class=\"col-sm-12\">\r\n        <div class=\"row row-w-90\">\r\n          <div data-aos=\"zoom-in\" data-aos-duration=\"1500\" class=\"col-sm-12 col-md-6 col-lg-6\">\r\n            <img class=\"logoServicios\" src=\"../../assets/img/Servicio de Ingenieria.png\" alt=\"logo\">\r\n          </div>\r\n          <div data-aos=\"zoom-in\" data-aos-duration=\"1500\" class=\"col-sm-12 col-md-6 col-lg-6 serviciosRow-2\">\r\n            <h2 class=\"titutuloServicio\">Servicio de</h2>\r\n            <h2 class=\"titutuloServicio\">Ingeniería</h2>\r\n            <ul class=\"text-left textServicio\" style=\"list-style: none;\">\r\n              <li style=\"margin-top: 13px;\">– Asesoría técnica pre venta</li>\r\n              <li style=\"margin-top: 13px;\">– Instalaciones, mantenimientos preventivos,correctivos, emergentes y\r\n                predictivos\r\n              </li>\r\n              <li style=\"margin-top: 13px;\">– Servicio post venta personalizado</li>\r\n              <li style=\"margin-top: 13px;\">– Descontaminación de equipos</li>\r\n              <li style=\"margin-top: 13px;\">– Actualizaciones continuas de software</li>\r\n              <li style=\"margin-top: 13px;\">– Servicio de soporte remoto</li>\r\n              <li style=\"margin-top: 13px;\">– Servicio de soporte primer nivel 24 horas 1800110110</li>\r\n              <li style=\"margin-top: 13px;\">– Servicio de soporte de segundo y tercer nivel.</li>\r\n            </ul>\r\n            <button (click)=\"viewRouter('#contactos', 600)\" class=\"btn botonServicio\">CONTACTOS</button>\r\n\r\n          </div>\r\n        </div>\r\n        <div class=\"row row-w-90\">\r\n          <div class=\"col-sm-12\">\r\n            <img class=\"esquina-2\" src=\"../../assets/img/Elementos-27.svg\" alt=\"\">\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"row row-w-100\">\r\n      <div class=\"col-sm-12\">\r\n        <div class=\"row row-w-90\">\r\n          <div data-aos=\"zoom-in\" data-aos-duration=\"1500\" class=\"col-sm-12 col-md-6 col-lg-6 serviciosRow-3\">\r\n            <h2 class=\"titutuloServicio\">Servicio de</h2>\r\n            <h2 class=\"titutuloServicio\">de aplicaciones</h2>\r\n            <ul class=\"textServicio\">\r\n              <li class=\"li-services\">– Asesoría integra pre venta y post venta</li>\r\n              <li class=\"li-services\">– Servicio de calibraciones</li>\r\n              <li class=\"li-services\">– Servicio de control de calidad</li>\r\n              <li class=\"li-services\">– Capacitaciones en el manejo correcto de <br>instrumentos de laboratorio</li>\r\n              <li class=\"li-services\">– Guiarles en el buen funcionamiento <br>de sus laboratorios</li>\r\n            </ul>\r\n            <button (click)=\"viewRouter('#contactos', 600)\" class=\"btn botonServicio\">CONTACTOS</button>\r\n\r\n          </div>\r\n          <div class=\"col-sm-12 col-md-6 col-lg-6\">\r\n            <img data-aos=\"zoom-in\" data-aos-duration=\"1500\" class=\"logoServicios\"\r\n              src=\"../../assets/img/Servicio de Aplicaciones.png\" alt=\"logo\">\r\n          </div>\r\n        </div>\r\n        <div class=\"row row-w-90\">\r\n          <div class=\"col-sm-12\">\r\n            <img class=\"esquina\" src=\"../../assets/img/Elementos-26.svg\" alt=\"\">\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <br><br> -->\r\n  <!-- *** /Servicios *** -->\r\n\r\n  <!-- *** Equipo *** -->\r\n  <section class=\"equipo\" id=\"equipo\">\r\n    <div class=\"row row-w-100\">\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-5\" style=\"padding: 0px;\">\r\n        <div class=\"rectangulo2 text-center\" style=\"max-width: 100%;\">\r\n          <h1 class=\"h4QuienesSomos\">\r\n            Nuestro equipo\r\n          </h1>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div>\r\n      <app-list-team></app-list-team>\r\n    </div>\r\n    <!-- <div class=\"row row-w-90 row-equipo\">\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-36.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-8 col-md-5\">\r\n        <ul class=\"ul-equipo\">\r\n          <li class=\"nombreEquipo\">TEC. SIST. XIMENA PAUCAR</li>\r\n          <li class=\"numeroContacto\">072814911 / 0999099339</li>\r\n          <li class=\"emailContacto\">ximena.paucar@araneda.com.ec</li>\r\n          <li> <span class=\"tituloContacto\">COMPRAS PÚBLICAS</span></li>\r\n        </ul>\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-36.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-8 col-md-5\">\r\n        <ul class=\"ul-equipo\">\r\n          <li class=\"nombreEquipo\">DRA. MARÍA JOSÉ CAMPOVERDE</li>\r\n          <li class=\"numeroContacto\">072814911 / 0968158603</li>\r\n          <li class=\"emailContacto\" style=\"font-size: 15px;\">mariajose.campoverde@araneda.com.ec</li>\r\n          <li><span class=\"tituloContacto\">COORDINADOR DE LA CALIDADL</span></li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n    <div class=\"row row-w-90 row-equipo\">\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-36.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-8 col-md-5\">\r\n        <ul class=\"ul-equipo\">\r\n          <li class=\"nombreEquipo\">ING. CPA. EULALIA CUZCO</li>\r\n          <li class=\"numeroContacto\">072814911 / 0968817095</li>\r\n          <li class=\"emailContacto\">eulalia.cuzco@araneda.com.ec</li>\r\n          <li><span class=\"tituloContacto\">CONTADOR</span></li>\r\n        </ul>\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-36.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-8 col-md-5\">\r\n        <ul class=\"ul-equipo\">\r\n          <li class=\"nombreEquipo\">ELIZABETH NAULA</li>\r\n          <li class=\"numeroContacto\">072814911 / 0984736699</li>\r\n          <li class=\"emailContacto\">eliza.naula@araneda.com.ec</li>\r\n          <li> <span class=\"tituloContacto\">AUXILIAR CONTABLE</span></li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n    <div class=\"row row-w-90 row-equipo\">\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-35.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-8 col-md-5\">\r\n        <ul class=\"ul-equipo\">\r\n          <li class=\"nombreEquipo\">ING. DIEGO NARVÁEZ</li>\r\n          <li class=\"numeroContacto\">072814911 / 0979785752</li>\r\n          <li class=\"emailContacto\">pedro.araneda@pedroaraneda.net</li>\r\n          <li><span class=\"tituloContacto\">INGENIERÍA - AZUAY</span></li>\r\n        </ul>\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-35.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-8 col-md-5\">\r\n        <ul class=\"ul-equipo\">\r\n          <li class=\"nombreEquipo\">ING. MARLON FEIJOO</li>\r\n          <li class=\"numeroContacto\">072814911 / 0991705364</li>\r\n          <li class=\"emailContacto\">marlon.feijoo@araneda.com.ec</li>\r\n          <li> <span class=\"tituloContacto\">INGENIERÍA - ORO</span></li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n    <div class=\"row row-w-90 row-equipo\">\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-35.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-8 col-md-5\">\r\n        <ul class=\"ul-equipo\">\r\n          <li class=\"nombreEquipo\">JUAN PABLO ERAZO</li>\r\n          <li class=\"numeroContacto\">072814911</li>\r\n          <li class=\"emailContacto\">juan.erazo@pedroaraneda.net</li>\r\n          <li><span class=\"tituloContacto\">INGENIERÍA - LOJA</span></li>\r\n        </ul>\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-35.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-8 col-md-5\">\r\n        <ul class=\"ul-equipo\">\r\n          <li class=\"nombreEquipo\">LIC.DAVID SÁNCHEZ</li>\r\n          <li class=\"numeroContacto\">072814911 / 0991705364</li>\r\n          <li class=\"emailContacto\">marlon.feijoo@araneda.com.ec</li>\r\n          <li> <span class=\"tituloContacto\">INGENIERÍA - AZUAY/ORO</span></li>\r\n        </ul>\r\n      </div>\r\n    </div>\r\n    <div class=\"row row-w-90 row-equipo\">\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-35.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"col-sm-8 col-md-5\">\r\n        <ul class=\"ul-equipo\">\r\n          <li class=\"nombreEquipo\">LIC. ERIC CAPRILES</li>\r\n          <li class=\"numeroContacto\">072814911</li>\r\n          <li class=\"emailContacto\">juan.erazo@pedroaraneda.net</li>\r\n          <li><span class=\"tituloContacto\">INGENIERÍA - LOJA</span></li>\r\n        </ul>\r\n      </div>\r\n      <div class=\"col-sm-4 col-md-1 text-center\">\r\n        <img class=\"iconoEquipo\" src=\"../../assets/img/Elementos-35.svg\" alt=\"Icono equipo\">\r\n      </div>\r\n      <div class=\"col-sm-8 col-md-5\">\r\n\r\n      </div> -->\r\n    <!-- </div> -->\r\n  </section>\r\n  <!-- *** /Equipo *** -->\r\n\r\n  <!-- *** Contactos *** -->\r\n\r\n  <br>\r\n  <section id=\"contactos\">\r\n    <div class=\"row row-w-100\">\r\n      <div data-aos=\"zoom-in\" data-aos-duration=\"1500\" class=\"col-sm-5\" style=\"padding: 0px;\">\r\n        <div class=\"rectangulo2 text-center\" style=\"max-width: 100%;\">\r\n          <h1 class=\"h4QuienesSomos\">\r\n            Contactos\r\n          </h1>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div data-aos=\"fade-up\" data-aos-duration=\"1500\" class=\"row row-w-80 section-contac\">\r\n      <div class=\"col-sm-12 col-md-5 col-lg-5\">\r\n        <div class=\"row row-contact\">\r\n          <div class=\"col-sm-3 col-md-3 text-center\">\r\n            <img class=\"logoContactanos\" src=\"../../assets/img/Elementos-28.svg\" alt=\"logo\">\r\n          </div>\r\n          <div class=\"col-sm-9 col-md-9\">\r\n            <p class=\"textoContactanos\">\r\n              Cornelio Merchán 7-95 y Jesús Dávila esq.\r\n            </p>\r\n          </div>\r\n        </div>\r\n        <div class=\"row row-contact\">\r\n          <div class=\"col-sm-3 col-md-3 text-center\">\r\n            <img class=\"logoContactanos\" src=\"../../assets/img/Elementos-29.svg\" alt=\"logo\">\r\n          </div>\r\n          <div class=\"col-sm-9 col-md-9\">\r\n            <p class=\"textoContactanos\">\r\n              +593 (07) 2810 937\r\n              <br>\r\n              +593 99 555 2293\r\n            </p>\r\n          </div>\r\n        </div>\r\n        <div class=\"row row-contact\">\r\n          <div class=\"col-sm-3 col-md-3 text-center\">\r\n            <img class=\"logoContactanos\" src=\"../../assets/img/Elementos-30.svg\" alt=\"logo\">\r\n          </div>\r\n          <div class=\"col-sm-9 col-md-9\">\r\n            <p class=\"textoContactanos\">\r\n              Lunes - Viernes\r\n              <br>\r\n              08h00 – 18h00 \r\n            </p>\r\n          </div>\r\n        </div>\r\n        <div class=\"row row-contact\">\r\n          <div class=\"col-sm-3 col-md-3 text-center\">\r\n            <img class=\"logoContactanos\" src=\"../../assets/img/Elementos-31.svg\" alt=\"logo\">\r\n          </div>\r\n          <div class=\"col-sm-9 col-md-9\">\r\n            <br>\r\n            <p class=\"textoContactanos\">\r\n              \r\n              coaodont@hotmail.com\r\n            </p>\r\n          </div>\r\n        </div>\r\n        <div class=\"row row-contact\">\r\n          <div class=\"col-xs-4 col-sm-4 text-center\">\r\n            <a><img class=\"redesRectanguloFacebook \" src=\"../../assets/img/Elementos-32.svg\" alt=\"logo\"></a>\r\n          </div>\r\n          <div class=\"col-xs-4 col-sm-4 text-center\">\r\n            <a><img class=\"redesRectanguloTwtitter\" src=\"../../assets/img/Elementos-33.svg\" alt=\"logo\"></a>\r\n          </div>\r\n          <div class=\"col-xs-4 col-sm-4 text-center\">\r\n            <a><img class=\"redesRectanguloInstagram\" src=\"../../assets/img/Elementos-34.svg\" alt=\"logo\"></a>\r\n          </div>\r\n        </div><br>\r\n      </div>\r\n      <div class=\"col-sm-12 col-md-7 col-lg-7\">\r\n        <form #messajeForm=\"ngForm\" novalidate (ngSubmit)=\"onSaveMessage(messajeForm.value, messajeForm.valid)\">\r\n          <div class=\"row formularioGeneral\">\r\n            <div class=\"col-sm-12\">\r\n              <span class=\"text-left text-contactanos\">ESCRÍBENOS</span>\r\n            </div>\r\n            <div class=\"col-sm-12 text-left col-contact\" style=\"margin-top: 2rem;\">\r\n              <div class=\"content content-form\">\r\n                <div class=\"form-group\" style=\"margin-bottom: 15px;\">\r\n                  <input type=\"text\" name=\"message_name\" required placeholder=\"Nombres\"\r\n                    class=\"form-control formulario input-contact\" [(ngModel)]=\"message.message_name\" required\r\n                    #message_name=\"ngModel\">\r\n                  <small [hidden]=\"message_name.valid || (message_name.pristine && !messajeForm.submitted)\"\r\n                    class=\"text-danger\">\r\n                    Ingrese el nombre\r\n                  </small>\r\n                </div>\r\n                <div class=\"form-group\" style=\"margin-bottom: 15px;\">\r\n                  <input type=\"text\" name=\"message_email\" required placeholder=\"Email\"\r\n                    class=\"formulario form-control input-contact\" [(ngModel)]=\"message.message_email\" required\r\n                    #message_email=\"ngModel\" pattern=\"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$\">\r\n                  <small [hidden]=\"message_email.valid || (message_email.pristine && !messajeForm.submitted)\"\r\n                    class=\"text-danger\">\r\n                    Ingrese Email\r\n                  </small>\r\n                </div>\r\n                <div class=\"form-group\" style=\"margin-bottom: 15px;\">\r\n                  <input type=\"text\" name=\"message_phone\" placeholder=\"Teléfono\" class=\"formulario form-control input-contact\"\r\n                    [(ngModel)]=\"message.message_phone\" required #message_phone=\"ngModel\" pattern=\"\">\r\n                  <small [hidden]=\"message_phone.valid || (message_phone.pristine && !messajeForm.submitted)\"\r\n                    class=\"text-danger\">\r\n                    Ingrese el teléfono\r\n                  </small>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                  <textarea name=\"message_description\" rows=\"5\" cols=\"50\" placeholder=\"Mensaje\"\r\n                    class=\"formularioMensaje form-control input-contact\" [(ngModel)]=\"message.message_description\"\r\n                    required #message_description=\"ngModel\"></textarea>\r\n                  <small [hidden]=\"message_description.valid || (message_description.pristine && !messajeForm.submitted)\"\r\n                    class=\"text-danger\">\r\n                    Ingrese el mensaje\r\n                  </small>\r\n                </div>\r\n                <div class=\"row\">\r\n                  <div class=\"col-sm-12 text-center\">\r\n                    <button type=\"submit\" class=\"botonContactos\">Enviar</button>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          \r\n        </form>\r\n      </div>\r\n    </div>\r\n  </section>\r\n  <!-- *** /Contactos *** -->\r\n\r\n<!-- *** Ubicacion *** -->\r\n<section style=\"margin-top: 5%;\">\r\n  <div class=\"row row-w-90\">\r\n    <div class=\"col-md-7\">\r\n      <div class=\"mapa\">\r\n        <div class=\"circulo2 text-center\">\r\n          <img class=\"iconoMapa\" src=\"../../assets/img/Elementos-40.svg\" alt=\"\">\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-md-5\">\r\n      <img class=\"esquinasuperiorMapa\" src=\"../../assets/img/Elementos-06.svg\" alt=\"\">\r\n      <div class=\"div-content-map\">\r\n        <div class=\"rectangulomapa text-center\">\r\n          <p class=\"textoMapa\">\r\n            Estamos ubicados\r\n            en la ciudad de Cuenca, contactanos y entérate de todo los beneficios\r\n            con los que podrás contar con nosotros.\r\n          </p>\r\n        </div>\r\n      </div>\r\n      <img class=\"esquinaINFERIORMapa\" src=\"../../assets/img/Elementos-07.svg\" alt=\"\">\r\n    </div>\r\n    <br><br><br>\r\n\r\n  </div>\r\n\r\n</section>\r\n<!-- *** /Ubicacion *** -->\r\n\r\n\r\n<footer class=\"fondofooter\">\r\n  <div class=\"row row-w-80 text-center\">\r\n    <div class=\"col-sm-4\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-6\">\r\n          <h1 class=\"tituloFooter text-center\">NOSOTROS</h1>\r\n        </div>\r\n        <div class=\"col-sm-6 text-center\">\r\n          <div class=\"linea\"></div>\r\n        </div>\r\n        <div class=\"row row-w-90\">\r\n          <div class=\"col-sm-12\">\r\n            <p class=\"text-left textoFooter\">\r\n              Estamos ubicados\r\n            en la ciudad de Cuenca, contactanos y entérate de todo los beneficios\r\n            con los que podrás contar con nosotros.\r\n              <br>\r\n            </p>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-sm-4\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-6\">\r\n          <h1 class=\"tituloFooter text-center\">CONTACTO</h1>\r\n        </div>\r\n        <div class=\"col-sm-6 text-center\">\r\n          <div class=\"linea\"></div>\r\n        </div>\r\n      </div>\r\n      <div class=\"row row-w-90\">\r\n        <div class=\"col-sm-6 col-md-4 col-lg-4 text-left footerSubtitulos\">\r\n          Dirección:\r\n        </div>\r\n        <div class=\"col-sm-6 col-md-8 col-lg-8 text-left footerSubtitulos2\">\r\n          Cornelio Merchán 7-95 y Jesús Dávila esq.\r\n        </div>\r\n      </div>\r\n      <br>\r\n      <div class=\"row row-w-90\">\r\n        <div class=\"col-sm-6 col-md-4 col-lg-4 text-left footerSubtitulos\">\r\n          Teléfono:\r\n        </div>\r\n        <div class=\"col-sm-6 col-md-8 col-lg-8 text-left footerSubtitulos2\">\r\n          +593 (07) 2810 937\r\n          <br>\r\n          +593 99 555 2293\r\n        </div>\r\n      </div>\r\n      <br>\r\n      <div class=\"row row-w-90\">\r\n        <div class=\"col-sm-6 col-md-4 col-lg-4 text-left footerSubtitulos\">\r\n          Email:\r\n        </div>\r\n        <div class=\"col-sm-6 col-md-8 col-lg-8 text-left footerSubtitulos2\">\r\n          coaodont@hotmail.com\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-sm-4\">\r\n      <div class=\"row\">\r\n        <div class=\"col-sm-8\">\r\n          <h1 class=\"tituloFooter text-center\">REDES SOCIALES</h1>\r\n        </div>\r\n        <div class=\"col-sm-4 text-center\">\r\n          <div class=\"linea\"></div>\r\n        </div>\r\n      </div>\r\n      <div class=\"row row-w-90\">\r\n        <div class=\"col-sm-12\">\r\n          <p class=\"text-justify textoFooter\">\r\n            Síguenos en nuestras redes sociales\r\n          </p>\r\n        </div>\r\n      </div>\r\n      <div class=\"row row-w-90\">\r\n        <div class=\"col-xs-2\">\r\n          <img class=\"iconoFooter\" src=\"../../assets/img/Elementos-37.svg\" alt=\"\">\r\n        </div>\r\n        <div class=\"col-xs-2\">\r\n          <img class=\"iconoFooter\" src=\"../../assets/img/Elementos-38.svg\" alt=\"\">\r\n        </div>\r\n        <div class=\"col-xs-2\">\r\n          <img class=\"iconoFooter\" src=\"../../assets/img/Elementos-39.svg\" alt=\"\">\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <br><br>\r\n \r\n</footer>\r\n\r\n  <!--MODAL PRODCUTOS-->\r\n  <div class=\"modal fade\" #modalProduct id=\"modalProduct\" tabindex=\"-1\" role=\"dialog\"\r\n    aria-labelledby=\"modalSubCategoryLabel\">\r\n    <div class=\"modal-dialog\" role=\"document\">\r\n      <div class=\"modal-content\">\r\n        <div class=\"modal-header\">\r\n          <button type=\"button\" class=\"close\" data-dismiss=\"modal\" aria-label=\"Close\"><span\r\n              aria-hidden=\"true\">&times;</span></button>\r\n          <h2 class=\"modal-title\" id=\"modalSubCategoryLabel\">{{product.pro_nombre}}</h2>\r\n        </div>\r\n        <div class=\"modal-body\">\r\n          <div class=\"card mb-3 modalProd\">\r\n            <div class=\"row no-gutters\">\r\n              <div class=\"col-md-6 text-center\">\r\n                <img class=\"imgProd\" src=\"{{product.pro_url}}\" alt=\"{{product.pro_nombre}}\">\r\n              </div>\r\n              <div style=\"margin-left: 2rem;\" class=\"col-md-11 text-center\">\r\n                <div class=\"card-body\">\r\n                  <p *ngIf=\"!isLink(product.pro_description)\" class=\"card-text text-justify\">\r\n                    <span [innerHTML]='product.pro_description'></span>\r\n                    <!-- {{product.pro_description}} -->\r\n                  </p>\r\n                  <p *ngIf=\"isLink(product.pro_description)\" class=\"card-text text-justify\">\r\n                    <a href=\"{{product.pro_description}}\" target=\"_blanck\">\r\n                      Ver la descripción\r\n                    </a>\r\n                  </p>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n        <div class=\"modal-footer\">\r\n          <button type=\"button\" class=\"btn btn-default btn-simple\" data-dismiss=\"modal\">Cerrar</button>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n\r\n  <app-modal-login></app-modal-login>\r\n</div>\r\n\r\n\r\n");
 
 /***/ }),
 
@@ -65,6 +65,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/detail-conventions/detail-conventions/detail-conventions.component.html":
+/*!***************************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modules/detail-conventions/detail-conventions/detail-conventions.component.html ***!
+  \***************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"justify-content: center; align-items: center; align-content: center; justify-items: center;\">\n    <mat-card class=\"example-card\" style=\"margin-top: 15px;\">\n        <mat-card-header>\n            <mat-card-title class=\"titulo\">{{convention.title}}</mat-card-title>\n        </mat-card-header>\n        <!-- <div [id]=\"convention.id+'detail'\" class=\"carousel slide\" data-ride=\"carousel\" *ngIf=\"convention.images.length>0\"> -->\n          <div [id]=\"convention.id+'detail'\" class=\"carousel slide\" data-ride=\"carousel\" >\n          \n            <div class=\"carousel-inner\" style=\"max-height: 500px;\">\n                <div class=\"item\" *ngFor=\"let previa of convention.image; let i = index\"\n                [ngClass]=\"{'active': i == 0 }\" >\n                  <img [src]=\"previa.url\" style=\"width: 100%;\">\n                </div>\n            </div>\n        </div>\n        \n        <mat-card-content>\n            <p style=\"margin-top: 3%; text-align: justify\">\n                {{convention.description}}\n            </p>\n        </mat-card-content>\n        <a [href]=\"convention.url\" target=\"_blank\"><button mat-button>visítanos</button></a>\n        <!-- <mat-card-actions>\n            <a [href]=\"convention.url\" target=\"_blank\"><button mat-button>Volver</button><img class=\"img-company\" [src]=\"imagen.url\"></a>\n        </mat-card-actions> -->\n    </mat-card>\n</div>");
+
+/***/ }),
+
 /***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/detail-event/detail-event/detail-event.component.html":
 /*!*********************************************************************************************************************!*\
   !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modules/detail-event/detail-event/detail-event.component.html ***!
@@ -88,6 +101,19 @@ __webpack_require__.r(__webpack_exports__);
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony default export */ __webpack_exports__["default"] = ("<!-- <div (click)=\"redirigir()\"></div> -->\n<div>\n    <a (click)=\"redirigir()\"><img id=\"imgPromo\" src=\"assets/img/bienvenida.png\"></a>\n</div>\n<div class=\"col-sm-12 text-center\" style=\"margin-top: 2%;\">\n    <button  mat-button (click)=\"redirigir()\" class=\"botonRegistrar\">Registrarse</button>\n</div>");
+
+/***/ }),
+
+/***/ "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/list-conventions/list-conventions/list-conventions.component.html":
+/*!*********************************************************************************************************************************!*\
+  !*** ./node_modules/raw-loader/dist/cjs.js!./src/app/modules/list-conventions/list-conventions/list-conventions.component.html ***!
+  \*********************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = ("<div style=\"justify-content: center; align-items: center; align-content: center; justify-items: center;\">\n    <div class=\"container\">\n      <div class=\"col-lg-12\">\n          <div class=\"row\" >\n              <!-- <a><img class=\"card-img-top\" src=\"./assets/img/angular.jpg\" alt=\"Card image cap\"></a> -->\n              <div *ngFor=\"let convention of conventions | async\" class=\"col-sm-12 col-md-8 col-lg-4\">\n                  <mat-card class=\"example-card dorado\" style=\"margin-top: 15px;\">\n                    \n                      <mat-card-header>\n                          <!-- <mat-card-title>{{presentation.title}}</mat-card-title> -->\n                          <div class=\"module line-clamp\">\n                            <mat-card-title class=\"titulos\">{{convention.title}}</mat-card-title>\n                          </div>\n                      </mat-card-header>\n\n                      <div [id]=\"convention.id\" class=\"carousel slide\" data-ride=\"carousel\" >\n                          <div class=\"carousel-inner\" style=\"max-height: 150px;\" >\n                              <div class=\"item\" *ngFor=\"let previa of convention.image; let i = index\"\n                              [ngClass]=\"{'active': i == 0 }\">\n                                <div>\n                                  <img [src]=\"previa.url\" style=\"width: 100%; height: 125px; object-fit: cover;\" (click)=\"viewConvention(convention)\">\n                                </div>                                \n                              </div>\n                          </div>\n                      </div>\n  \n                      <!-- <mat-card-content>\n                          <p>\n                              {{presentation.description}}\n                          </p>\n                      </mat-card-content> -->\n                  </mat-card>\n              </div>\n          </div>\n      </div>\n  </div>\n</div>");
 
 /***/ }),
 
@@ -126,7 +152,7 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\r\n  <div style=\"margin: 2%;\">\r\n    <img src=\"../../assets/img/pagina1Pdf.png\">\r\n  </div>\r\n  <div style=\"margin: 2%;\">\r\n    <img src=\"../../assets/img/pagina2PDF.png\">\r\n  </div>\r\n</div>\r\n<div _ngcontent-npf-c107=\"\"  class=\"formulario\">\r\n  <div class=\"pos-form\">\r\n    <form #messajeForm=\"ngForm\" novalidate (ngSubmit)=\"InitPaymentWhitPayphone(messajeForm.value, messajeForm.valid)\">\r\n      <div class=\"col-sm-12 text-registro\">\r\n        <span class=\"text-left text-registro\">Registro</span>\r\n      </div>\r\n\r\n      <div class=\"col-sm-12 text-textocertificado\">\r\n        <span class=\"text-left text-registro\">Recuerde que los datos ingresados se usaran para su respectivo certificado</span>\r\n      </div>\r\n\r\n      <div class=\"row formularioGeneral\">\r\n        <div style=\"margin-top: 5rem;\">\r\n          <div class=\"izqForm\">\r\n            <div class=\"content content-form\">\r\n              <div class=\" bordeado group-name\" style=\"margin-bottom: 15px;\">\r\n                <div style=\"margin:20%;\">\r\n                  <select \r\n                  name=\"prof\"\r\n                  [(ngModel)]=\"profesion\" #prof=\"ngModel\">\r\n                    <option value=\"Dr.\">Dr.</option>\r\n                    <option value=\"Est.\">Est.</option>\r\n                  </select>\r\n                </div>\r\n                <div class=\"form-group input-name\" style=\"padding: 2%;\">\r\n                  <input type=\"text\" name=\"user_name\" required placeholder=\"Nombres\"\r\n                    class=\"form-control formulario input-name\" [(ngModel)]=\"user.user_name\" required\r\n                    #user_name=\"ngModel\">\r\n                  <small [hidden]=\"user_name.valid || (user_name.pristine && !messajeForm.submitted)\"\r\n                    class=\"text-danger\">\r\n                    Ingrese su Nombre\r\n                  </small>\r\n                </div>\r\n              </div>\r\n    \r\n              <div class=\"form-group bordeado\" style=\"margin-bottom: 15px;\">\r\n                <div class=\"form-group\" style=\"padding: 2%;\">\r\n                  <input type=\"text\" name=\"user_lastname\" required placeholder=\"Apellidos\"\r\n                    class=\"form-control formulario input-contact\" [(ngModel)]=\"user.user_lastname\" required\r\n                    #user_lastname=\"ngModel\">\r\n                  <small [hidden]=\"user_lastname.valid || (user_lastname.pristine && !messajeForm.submitted)\"\r\n                    class=\"text-danger\">\r\n                    Ingrese su Apellido\r\n                  </small>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group bordeado\" style=\"margin-bottom: 15px;\">\r\n                <div class=\"form-group\" style=\"padding: 2%;\">\r\n                  <input placeholder=\"Cedula\" \r\n                  name=\"user_ci\"\r\n                  class=\"formulario form-control input-contact\" \r\n                  type=\"text\" [(ngModel)]=\"user.user_ci\" \r\n                  required #user_ci=\"ngModel\"\r\n                  onkeypress=\"return /[0-9]|\\./i.test(event.key)\" maxlength=\"10\"\r\n                  (change)=\"validadorDeCedula()\"/>\r\n                  <small [hidden]=\"(user_ci.valid || (user_ci.pristine && !messajeForm.submitted) ) && validador\"\r\n                    class=\"text-danger\">\r\n                    Ingrese una cedula valida\r\n                  </small>\r\n                </div>\r\n                <!-- <small *ngIf=\"!validador\" class=\"text-danger\">Cedula Invalida</small> -->\r\n              </div>\r\n    \r\n              <div class=\"form-group bordeado\" style=\"margin-bottom: 15px;\">\r\n                <div class=\"form-group\" style=\"padding: 2%;\">\r\n                  <input type=\"text\" name=\"user_email\" required placeholder=\"E-Mail\"\r\n                    class=\"formulario form-control input-contact\" [(ngModel)]=\"user.user_email\" required\r\n                    #user_email=\"ngModel\" pattern=\"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$\">\r\n                  <small [hidden]=\"user_email.valid || (user_email.pristine && !messajeForm.submitted)\"\r\n                    class=\"text-danger\">\r\n                    Ingrese  un Email valido\r\n                  </small>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"derForm\">\r\n            <div class=\"form-group bordeado\" style=\"margin-bottom: 15px;\">\r\n              <div class=\"form-group\" style=\"padding: 2%;\">\r\n                <input placeholder=\"Teléfono\" \r\n                  name=\"user_phone\"\r\n                  class=\"formulario form-control input-contact\" \r\n                  type=\"text\" [(ngModel)]=\"user.user_phone\" \r\n                  required #user_phone=\"ngModel\" pattern=\"^((\\\\+91-?)|0)?[0-9]{9}$\" \r\n                  onkeypress=\"return /[0-9]|\\./i.test(event.key)\" maxlength=\"10\"/>\r\n                  <small [hidden]=\"user_phone.valid || (user_phone.pristine && !messajeForm.submitted)\"\r\n                    class=\"text-danger\">\r\n                    Ingrese un número de teléfono valido\r\n                  </small>\r\n              </div>\r\n            </div>\r\n  \r\n            <div class=\"form-group bordeado\" style=\"margin-bottom: 15px;\">\r\n              <div class=\"form-group\" style=\"padding: 2%;\">\r\n                <input type=\"text\" name=\"user_direction\" required placeholder=\"Dirección\"\r\n                  class=\"form-control formulario input-contact\" [(ngModel)]=\"user.user_direction\" required\r\n                  #user_direction=\"ngModel\">\r\n                <small [hidden]=\"user_direction.valid || (user_direction.pristine && !messajeForm.submitted)\"\r\n                  class=\"text-danger\">\r\n                  Ingrese su Dirección\r\n                </small>\r\n              </div>\r\n              \r\n            </div>\r\n            <div class=\"form-group bordeado\" style=\"margin-bottom: 15px;\">\r\n              <div class=\"form-group\" style=\"padding: 2%;\">\r\n                <label class=\"text-left text-rol\">Ocupación</label>\r\n                <select class=\"btn-group bootstrap-select dropup\" \r\n                  name=\"ocupacion\"\r\n                  [(ngModel)]=\"selected\" #ocupacion=\"ngModel\" \r\n                  style=\"margin-left: 2%; width: 55%; height: 100%;\" \r\n                  (change)=\"validarSeleccion()\">\r\n                  <option *ngFor=\"let item of roles\" [value]=\"item.opt\">{{item.opt}}</option>\r\n                  </select>\r\n                <br>\r\n                <small [hidden]=\"(ocupacion.valid || (ocupacion.pristine && !messajeForm.submitted) ) && seleccionado\"\r\n                    class=\"text-danger\">\r\n                    Seleccione una ocupación\r\n                </small>\r\n              </div>\r\n            </div>\r\n\r\n            <div *ngIf=\"confirmacion\">\r\n              <span class=\"text-left text-validarPorCorreo\">*Para que su inscripcion sea valida envie su certificado correspondite al correo: odontologosazuay@gmail.com*</span>\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n        \r\n        <div class=\"row\">\r\n          <div class=\"col-sm-12 text-center\">\r\n            <button  mat-button type=\"submit\" class=\"botonRegistrar\">Continuar</button>\r\n          </div>\r\n        </div>\r\n\r\n\r\n        <div *ngIf=\"showPpButton; else elseBlock\"> <hr>\r\n          <p class=\"text-center text-info\">\r\n            Para finalizar el registro por favor realice el pago correspondiente a:\r\n            ${{rolSelected.value}}\r\n          </p>\r\n\r\n          <div class=\" card-form col-sm-12 pt-2 p-5 text-center\">\r\n            <div id=\"pp-button\"></div>\r\n          </div>\r\n        </div>\r\n        \r\n        <ng-template #elseBlock>\r\n        </ng-template>\r\n      </div>\r\n    </form>\r\n\r\n    <!-- *** Form Payphone *** -->\r\n\r\n  </div>\r\n</div>\r\n");
+/* harmony default export */ __webpack_exports__["default"] = ("<div class=\"container\">\r\n  <div style=\"margin: 2%;\">\r\n    <img src=\"../../assets/img/pagina1Pdf.png\">\r\n  </div>\r\n  <div style=\"margin: 2%;\">\r\n    <img src=\"../../assets/img/pagina2PDF.png\">\r\n  </div>\r\n</div>\r\n<div _ngcontent-npf-c107=\"\"  class=\"formulario\">\r\n  <div class=\"pos-form\">\r\n    <form #messajeForm=\"ngForm\" novalidate (ngSubmit)=\"InitPaymentWhitPayphone(messajeForm.value, messajeForm.valid)\">\r\n      <div class=\"col-sm-12 text-registro\">\r\n        <span class=\"text-left text-registro\">Registro</span>\r\n      </div>\r\n\r\n      <div class=\"col-sm-12 text-textocertificado\">\r\n        <span class=\"text-left text-registro\">Recuerde que los datos ingresados se usaran para su respectivo certificado</span>\r\n      </div>\r\n\r\n      <div class=\"row formularioGeneral\">\r\n        <div style=\"margin-top: 5rem;\">\r\n          <div class=\"izqForm\">\r\n            <div class=\"content content-form\">\r\n              \r\n\r\n              <div class=\"form-group bordeado\" style=\"margin-bottom: 15px;\">\r\n                <div class=\"form-group\" style=\"padding: 2%;\">\r\n                  <label class=\"text-left text-rol\">Profesión</label>\r\n                  <select class=\"btn-group bootstrap-select dropup\" \r\n                    name=\"prof\"\r\n                    [(ngModel)]=\"profesion\" #prof=\"ngModel\" \r\n                    style=\"margin-left: 2%; width: 55%; height: 100%;\" \r\n                    (change)=\"validarSeleccionProf()\">\r\n                      <option value=\"Dr.\">Doctor</option>\r\n                      <option value=\"Est.\">Odontólogo</option>\r\n                      <option value=\"Est.\">Estudiante</option>\r\n                    </select>\r\n                  <br>\r\n                  <small [hidden]=\"(prof.valid || (prof.pristine && !messajeForm.submitted) ) && profSeleccionado\"\r\n                      class=\"text-danger\">\r\n                      Seleccione una profesión\r\n                  </small>\r\n                </div>\r\n              </div>\r\n\r\n              <div class=\"form-group bordeado\" style=\"margin-bottom: 15px;\">\r\n                <div class=\"form-group\" style=\"padding: 2%;\">\r\n                  <input type=\"text\" name=\"user_name\" required placeholder=\"Nombres\"\r\n                    class=\"form-control formulario \" [(ngModel)]=\"user.user_name\" required\r\n                    #user_name=\"ngModel\">\r\n                  <small [hidden]=\"user_name.valid || (user_name.pristine && !messajeForm.submitted)\"\r\n                    class=\"text-danger\">\r\n                    Ingrese su Nombre\r\n                  </small>\r\n                </div>\r\n              </div>\r\n    \r\n              <div class=\"form-group bordeado\" style=\"margin-bottom: 15px;\">\r\n                <div class=\"form-group\" style=\"padding: 2%;\">\r\n                  <input type=\"text\" name=\"user_lastname\" required placeholder=\"Apellidos\"\r\n                    class=\"form-control formulario input-contact\" [(ngModel)]=\"user.user_lastname\" required\r\n                    #user_lastname=\"ngModel\">\r\n                  <small [hidden]=\"user_lastname.valid || (user_lastname.pristine && !messajeForm.submitted)\"\r\n                    class=\"text-danger\">\r\n                    Ingrese su Apellido\r\n                  </small>\r\n                </div>\r\n              </div>\r\n  \r\n              <div class=\"form-group bordeado\" style=\"margin-bottom: 15px;\">\r\n                <div class=\"form-group\" style=\"padding: 2%;\">\r\n                  <input placeholder=\"Cedula\" \r\n                  name=\"user_ci\"\r\n                  class=\"formulario form-control input-contact\" \r\n                  type=\"text\" [(ngModel)]=\"user.user_ci\" \r\n                  required #user_ci=\"ngModel\"\r\n                  onkeypress=\"return /[0-9]|\\./i.test(event.key)\" maxlength=\"10\"\r\n                  (change)=\"validadorDeCedula()\"/>\r\n                  <small [hidden]=\"(user_ci.valid || (user_ci.pristine && !messajeForm.submitted) ) && validador\"\r\n                    class=\"text-danger\">\r\n                    Ingrese una cedula valida\r\n                  </small>\r\n                </div>\r\n                <!-- <small *ngIf=\"!validador\" class=\"text-danger\">Cedula Invalida</small> -->\r\n              </div>\r\n            </div>\r\n          </div>\r\n          <div class=\"derForm\">\r\n\r\n            <div class=\"form-group bordeado\" style=\"margin-bottom: 15px;\">\r\n              <div class=\"form-group\" style=\"padding: 2%;\">\r\n                <input type=\"text\" name=\"user_email\" required placeholder=\"E-Mail\"\r\n                  class=\"formulario form-control input-contact\" [(ngModel)]=\"user.user_email\" required\r\n                  #user_email=\"ngModel\" pattern=\"^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$\">\r\n                <small [hidden]=\"user_email.valid || (user_email.pristine && !messajeForm.submitted)\"\r\n                  class=\"text-danger\">\r\n                  Ingrese  un Email valido\r\n                </small>\r\n              </div>\r\n            </div>\r\n\r\n            <div class=\"form-group bordeado\" style=\"margin-bottom: 15px;\">\r\n              <div class=\"form-group\" style=\"padding: 2%;\">\r\n                <input placeholder=\"Teléfono\" \r\n                  name=\"user_phone\"\r\n                  class=\"formulario form-control input-contact\" \r\n                  type=\"text\" [(ngModel)]=\"user.user_phone\" \r\n                  required #user_phone=\"ngModel\" pattern=\"^((\\\\+91-?)|0)?[0-9]{9}$\" \r\n                  onkeypress=\"return /[0-9]|\\./i.test(event.key)\" maxlength=\"10\"/>\r\n                  <small [hidden]=\"user_phone.valid || (user_phone.pristine && !messajeForm.submitted)\"\r\n                    class=\"text-danger\">\r\n                    Ingrese un número de teléfono valido\r\n                  </small>\r\n              </div>\r\n            </div>\r\n  \r\n            <div class=\"form-group bordeado\" style=\"margin-bottom: 15px;\">\r\n              <div class=\"form-group\" style=\"padding: 2%;\">\r\n                <input type=\"text\" name=\"user_direction\" required placeholder=\"Dirección\"\r\n                  class=\"form-control formulario input-contact\" [(ngModel)]=\"user.user_direction\" required\r\n                  #user_direction=\"ngModel\">\r\n                <small [hidden]=\"user_direction.valid || (user_direction.pristine && !messajeForm.submitted)\"\r\n                  class=\"text-danger\">\r\n                  Ingrese su Dirección\r\n                </small>\r\n              </div>\r\n              \r\n            </div>\r\n            <div class=\"form-group bordeado\" style=\"margin-bottom: 15px;\">\r\n              <div class=\"form-group\" style=\"padding: 2%;\">\r\n                <label class=\"text-left text-rol\">Ocupación</label>\r\n                <select class=\"btn-group bootstrap-select dropup\" \r\n                  name=\"ocupacion\"\r\n                  [(ngModel)]=\"selected\" #ocupacion=\"ngModel\" \r\n                  style=\"margin-left: 2%; width: 55%; height: 100%;\" \r\n                  (change)=\"validarSeleccion()\">\r\n                  <option *ngFor=\"let item of roles\" [value]=\"item.opt\">{{item.opt}}</option>\r\n                  </select>\r\n                <br>\r\n                <small [hidden]=\"(ocupacion.valid || (ocupacion.pristine && !messajeForm.submitted) ) && seleccionado\"\r\n                    class=\"text-danger\">\r\n                    Seleccione una ocupación\r\n                </small>\r\n              </div>\r\n            </div>\r\n\r\n            <div *ngIf=\"confirmacionRural\">\r\n              <span class=\"text-left text-validarPorCorreo\">*Recuerde enviar una copia de su carnet/certificado que valide su modalidad de \"odontologo rural\" posterior al pago.\r\n                Enviar al correo ondontologosazuay@gmail.com*</span>\r\n            </div>\r\n\r\n            <div *ngIf=\"confirmacionAgremiado\">\r\n              <span class=\"text-left text-validarPorCorreo\">*Recuerde enviar una copia de su carnet/certificado que valide su modalidad de \"odontologo agremiado a la FOE\" posterior al pago.\r\n                Enviar al correo ondontologosazuay@gmail.com*</span>\r\n            </div>\r\n\r\n          </div>\r\n        </div>\r\n        \r\n        <div class=\"row\">\r\n          <div class=\"col-sm-12 text-center\">\r\n            <button  mat-button type=\"submit\" class=\"botonRegistrar\">Continuar</button>\r\n          </div>\r\n        </div>\r\n\r\n\r\n        <div *ngIf=\"showPpButton; else elseBlock\"> <hr>\r\n          <p class=\"text-center text-info\">\r\n            Para finalizar el registro por favor realice el pago correspondiente a:\r\n            ${{rolSelected.value}}\r\n          </p>\r\n\r\n          <div class=\" card-form col-sm-12 pt-2 p-5 text-center\">\r\n            <div id=\"pp-button\"></div>\r\n          </div>\r\n        </div>\r\n        \r\n        <ng-template #elseBlock>\r\n        </ng-template>\r\n      </div>\r\n    </form>\r\n\r\n    <!-- *** Form Payphone *** -->\r\n\r\n  </div>\r\n</div>\r\n");
 
 /***/ }),
 
@@ -210,6 +236,10 @@ var map = {
 	"./modules/categories/categories.module": [
 		"./src/app/modules/categories/categories.module.ts",
 		"modules-categories-categories-module"
+	],
+	"./modules/conventions-admin/conventions-admin.module": [
+		"./src/app/modules/conventions-admin/conventions-admin.module.ts",
+		"modules-conventions-admin-conventions-admin-module"
 	],
 	"./modules/events-admin/events-admin.module": [
 		"./src/app/modules/events-admin/events-admin.module.ts",
@@ -347,6 +377,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_list_events_list_events_module__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./modules/list-events/list-events.module */ "./src/app/modules/list-events/list-events.module.ts");
 /* harmony import */ var _modules_user_registration_user_registration_module__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./modules/user-registration/user-registration.module */ "./src/app/modules/user-registration/user-registration.module.ts");
 /* harmony import */ var _modules_list_team_list_team_module__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./modules/list-team/list-team.module */ "./src/app/modules/list-team/list-team.module.ts");
+/* harmony import */ var _modules_list_conventions_list_conventions_module__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./modules/list-conventions/list-conventions.module */ "./src/app/modules/list-conventions/list-conventions.module.ts");
+/* harmony import */ var _modules_detail_conventions_detail_conventions_module__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./modules/detail-conventions/detail-conventions.module */ "./src/app/modules/detail-conventions/detail-conventions.module.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -384,12 +416,16 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 
 
+
+
 var AppModule = /** @class */ (function () {
     function AppModule() {
     }
     AppModule = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             imports: [
+                _modules_detail_conventions_detail_conventions_module__WEBPACK_IMPORTED_MODULE_29__["DetailConventionsModule"],
+                _modules_list_conventions_list_conventions_module__WEBPACK_IMPORTED_MODULE_28__["ListConventionsModule"],
                 _modules_list_team_list_team_module__WEBPACK_IMPORTED_MODULE_27__["ListTeamModule"],
                 _modules_user_registration_user_registration_module__WEBPACK_IMPORTED_MODULE_26__["UserRegistrationModule"],
                 _modules_detail_event_detail_event_module__WEBPACK_IMPORTED_MODULE_24__["DetailEventModule"],
@@ -418,7 +454,7 @@ var AppModule = /** @class */ (function () {
                 _layouts_admin_admin_layout_component__WEBPACK_IMPORTED_MODULE_11__["AdminLayoutComponent"],
                 _layouts_auth_auth_layout_component__WEBPACK_IMPORTED_MODULE_12__["AuthLayoutComponent"],
                 _index_modal_login_modal_login_component__WEBPACK_IMPORTED_MODULE_20__["ModalLoginComponent"],
-                _index_index_component__WEBPACK_IMPORTED_MODULE_21__["IndexComponent"],
+                _index_index_component__WEBPACK_IMPORTED_MODULE_21__["IndexComponent"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_5__["AppComponent"]],
             providers: [_services_auth_auth_auth_service__WEBPACK_IMPORTED_MODULE_17__["AuthService"]]
@@ -489,6 +525,10 @@ var AppRoutes = [
             {
                 path: 'mision-vision',
                 loadChildren: './modules/mision-vision/mision-vision.module#MisionVisionModule',
+            },
+            {
+                path: 'conventions',
+                loadChildren: './modules/conventions-admin/conventions-admin.module#ConventionsAdminModule',
             },
         ],
     },
@@ -1217,6 +1257,134 @@ var AuthLayoutComponent = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "./src/app/modules/detail-conventions/detail-conventions.module.ts":
+/*!*************************************************************************!*\
+  !*** ./src/app/modules/detail-conventions/detail-conventions.module.ts ***!
+  \*************************************************************************/
+/*! exports provided: DetailConventionsModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetailConventionsModule", function() { return DetailConventionsModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
+/* harmony import */ var _detail_conventions_detail_conventions_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./detail-conventions/detail-conventions.component */ "./src/app/modules/detail-conventions/detail-conventions/detail-conventions.component.ts");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/forms */ "./node_modules/@angular/forms/__ivy_ngcc__/fesm5/forms.js");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/button.js");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/card.js");
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/form-field */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/form-field.js");
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material/input */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/input.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+
+
+
+
+
+
+var DetailConventionsModule = /** @class */ (function () {
+    function DetailConventionsModule() {
+    }
+    DetailConventionsModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            declarations: [_detail_conventions_detail_conventions_component__WEBPACK_IMPORTED_MODULE_2__["DetailConventionsComponent"]],
+            imports: [
+                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                _angular_material_form_field__WEBPACK_IMPORTED_MODULE_6__["MatFormFieldModule"],
+                _angular_material_input__WEBPACK_IMPORTED_MODULE_7__["MatInputModule"],
+                _angular_material_button__WEBPACK_IMPORTED_MODULE_4__["MatButtonModule"],
+                _angular_material_card__WEBPACK_IMPORTED_MODULE_5__["MatCardModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["FormsModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_3__["ReactiveFormsModule"]
+            ]
+        })
+    ], DetailConventionsModule);
+    return DetailConventionsModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/modules/detail-conventions/detail-conventions/detail-conventions.component.css":
+/*!************************************************************************************************!*\
+  !*** ./src/app/modules/detail-conventions/detail-conventions/detail-conventions.component.css ***!
+  \************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".titulo{\r\n    text-align: center;\r\n    text-transform: uppercase;\r\n    font-weight: bold;\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9kZXRhaWwtY29udmVudGlvbnMvZGV0YWlsLWNvbnZlbnRpb25zL2RldGFpbC1jb252ZW50aW9ucy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksa0JBQWtCO0lBQ2xCLHlCQUF5QjtJQUN6QixpQkFBaUI7QUFDckIiLCJmaWxlIjoic3JjL2FwcC9tb2R1bGVzL2RldGFpbC1jb252ZW50aW9ucy9kZXRhaWwtY29udmVudGlvbnMvZGV0YWlsLWNvbnZlbnRpb25zLmNvbXBvbmVudC5jc3MiLCJzb3VyY2VzQ29udGVudCI6WyIudGl0dWxve1xyXG4gICAgdGV4dC1hbGlnbjogY2VudGVyO1xyXG4gICAgdGV4dC10cmFuc2Zvcm06IHVwcGVyY2FzZTtcclxuICAgIGZvbnQtd2VpZ2h0OiBib2xkO1xyXG59Il19 */");
+
+/***/ }),
+
+/***/ "./src/app/modules/detail-conventions/detail-conventions/detail-conventions.component.ts":
+/*!***********************************************************************************************!*\
+  !*** ./src/app/modules/detail-conventions/detail-conventions/detail-conventions.component.ts ***!
+  \***********************************************************************************************/
+/*! exports provided: DetailConventionsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "DetailConventionsComponent", function() { return DetailConventionsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/dialog.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (undefined && undefined.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+var DetailConventionsComponent = /** @class */ (function () {
+    function DetailConventionsComponent(dialogRef, convention) {
+        this.dialogRef = dialogRef;
+        this.convention = convention;
+    }
+    DetailConventionsComponent.prototype.ngOnInit = function () {
+    };
+    DetailConventionsComponent.ctorParameters = function () { return [
+        { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"] },
+        { type: undefined, decorators: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"], args: [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"],] }] }
+    ]; };
+    DetailConventionsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-detail-conventions',
+            template: __importDefault(__webpack_require__(/*! raw-loader!./detail-conventions.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/detail-conventions/detail-conventions/detail-conventions.component.html")).default,
+            styles: [__importDefault(__webpack_require__(/*! ./detail-conventions.component.css */ "./src/app/modules/detail-conventions/detail-conventions/detail-conventions.component.css")).default]
+        }),
+        __param(1, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MAT_DIALOG_DATA"])),
+        __metadata("design:paramtypes", [_angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"], Object])
+    ], DetailConventionsComponent);
+    return DetailConventionsComponent;
+}());
+
+
+
+/***/ }),
+
 /***/ "./src/app/modules/detail-event/detail-event.module.ts":
 /*!*************************************************************!*\
   !*** ./src/app/modules/detail-event/detail-event.module.ts ***!
@@ -1637,6 +1805,141 @@ var InitPromoComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialogRef"]])
     ], InitPromoComponent);
     return InitPromoComponent;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/modules/list-conventions/list-conventions.module.ts":
+/*!*********************************************************************!*\
+  !*** ./src/app/modules/list-conventions/list-conventions.module.ts ***!
+  \*********************************************************************/
+/*! exports provided: ListConventionsModule */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListConventionsModule", function() { return ListConventionsModule; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common */ "./node_modules/@angular/common/__ivy_ngcc__/fesm5/common.js");
+/* harmony import */ var _list_conventions_list_conventions_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./list-conventions/list-conventions.component */ "./src/app/modules/list-conventions/list-conventions/list-conventions.component.ts");
+/* harmony import */ var _angular_material_button__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material/button */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/button.js");
+/* harmony import */ var _angular_material_card__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/material/card */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/card.js");
+/* harmony import */ var _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material/form-field */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/form-field.js");
+/* harmony import */ var _angular_material_input__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material/input */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/input.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+
+
+
+
+
+var ListConventionsModule = /** @class */ (function () {
+    function ListConventionsModule() {
+    }
+    ListConventionsModule = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
+            declarations: [_list_conventions_list_conventions_component__WEBPACK_IMPORTED_MODULE_2__["ListConventionsComponent"]],
+            imports: [
+                _angular_material_form_field__WEBPACK_IMPORTED_MODULE_5__["MatFormFieldModule"],
+                _angular_material_input__WEBPACK_IMPORTED_MODULE_6__["MatInputModule"],
+                _angular_material_button__WEBPACK_IMPORTED_MODULE_3__["MatButtonModule"],
+                _angular_common__WEBPACK_IMPORTED_MODULE_1__["CommonModule"],
+                _angular_material_card__WEBPACK_IMPORTED_MODULE_4__["MatCardModule"],
+            ],
+            exports: [_list_conventions_list_conventions_component__WEBPACK_IMPORTED_MODULE_2__["ListConventionsComponent"]]
+        })
+    ], ListConventionsModule);
+    return ListConventionsModule;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/modules/list-conventions/list-conventions/list-conventions.component.css":
+/*!******************************************************************************************!*\
+  !*** ./src/app/modules/list-conventions/list-conventions/list-conventions.component.css ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (".module {\r\n    width: 250px;\r\n    margin: 0 0 1em 0;\r\n    overflow: hidden;\r\n  }\r\n  \r\n.module mat-card-title{\r\nmargin: 0;\r\n}\r\n  \r\n.line-clamp {\r\ndisplay: -webkit-box;\r\n-webkit-line-clamp: 1;\r\n-webkit-box-orient: vertical;\r\n}\r\n  \r\n.dorado{\r\nbackground: rgb(174,134,37);\r\nbackground: -webkit-gradient(linear, left top, left bottom, from(rgba(174,134,37,1)), color-stop(33%, rgba(247,239,138,1)), color-stop(81%, rgba(210,172,71,1)));\r\nbackground: linear-gradient(180deg, rgba(174,134,37,1) 0%, rgba(247,239,138,1) 33%, rgba(210,172,71,1) 81%);\r\ncursor:pointer;\r\n}\r\n  \r\n.titulos{\r\ncolor: #ffffff;\r\ntext-transform: capitalize;\r\n}\r\n  \r\n.my-class{\r\nbackground-color: rgb(173, 31, 31) ;\r\ncolor: rgba(0,0,0,0.8);\r\npadding: 20px;\r\n    \r\n    /* Add more css styles */\r\n}\r\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hcHAvbW9kdWxlcy9saXN0LWNvbnZlbnRpb25zL2xpc3QtY29udmVudGlvbnMvbGlzdC1jb252ZW50aW9ucy5jb21wb25lbnQuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0lBQ0ksWUFBWTtJQUNaLGlCQUFpQjtJQUNqQixnQkFBZ0I7RUFDbEI7O0FBRUY7QUFDQSxTQUFTO0FBQ1Q7O0FBRUE7QUFDQSxvQkFBb0I7QUFDcEIscUJBQXFCO0FBQ3JCLDRCQUE0QjtBQUM1Qjs7QUFFQTtBQUNBLDJCQUEyQjtBQUMzQixnS0FBMkc7QUFBM0csMkdBQTJHO0FBQzNHLGNBQWM7QUFDZDs7QUFFQTtBQUNBLGNBQWM7QUFDZCwwQkFBMEI7QUFDMUI7O0FBRUE7QUFDQSxtQ0FBbUM7QUFDbkMsc0JBQXNCO0FBQ3RCLGFBQWE7O0lBRVQsd0JBQXdCO0FBQzVCIiwiZmlsZSI6InNyYy9hcHAvbW9kdWxlcy9saXN0LWNvbnZlbnRpb25zL2xpc3QtY29udmVudGlvbnMvbGlzdC1jb252ZW50aW9ucy5jb21wb25lbnQuY3NzIiwic291cmNlc0NvbnRlbnQiOlsiLm1vZHVsZSB7XHJcbiAgICB3aWR0aDogMjUwcHg7XHJcbiAgICBtYXJnaW46IDAgMCAxZW0gMDtcclxuICAgIG92ZXJmbG93OiBoaWRkZW47XHJcbiAgfVxyXG4gIFxyXG4ubW9kdWxlIG1hdC1jYXJkLXRpdGxle1xyXG5tYXJnaW46IDA7XHJcbn1cclxuXHJcbi5saW5lLWNsYW1wIHtcclxuZGlzcGxheTogLXdlYmtpdC1ib3g7XHJcbi13ZWJraXQtbGluZS1jbGFtcDogMTtcclxuLXdlYmtpdC1ib3gtb3JpZW50OiB2ZXJ0aWNhbDtcclxufVxyXG5cclxuLmRvcmFkb3tcclxuYmFja2dyb3VuZDogcmdiKDE3NCwxMzQsMzcpO1xyXG5iYWNrZ3JvdW5kOiBsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCByZ2JhKDE3NCwxMzQsMzcsMSkgMCUsIHJnYmEoMjQ3LDIzOSwxMzgsMSkgMzMlLCByZ2JhKDIxMCwxNzIsNzEsMSkgODElKTtcclxuY3Vyc29yOnBvaW50ZXI7XHJcbn1cclxuXHJcbi50aXR1bG9ze1xyXG5jb2xvcjogI2ZmZmZmZjtcclxudGV4dC10cmFuc2Zvcm06IGNhcGl0YWxpemU7XHJcbn1cclxuXHJcbi5teS1jbGFzc3tcclxuYmFja2dyb3VuZC1jb2xvcjogcmdiKDE3MywgMzEsIDMxKSA7XHJcbmNvbG9yOiByZ2JhKDAsMCwwLDAuOCk7XHJcbnBhZGRpbmc6IDIwcHg7XHJcbiAgICBcclxuICAgIC8qIEFkZCBtb3JlIGNzcyBzdHlsZXMgKi9cclxufSJdfQ== */");
+
+/***/ }),
+
+/***/ "./src/app/modules/list-conventions/list-conventions/list-conventions.component.ts":
+/*!*****************************************************************************************!*\
+  !*** ./src/app/modules/list-conventions/list-conventions/list-conventions.component.ts ***!
+  \*****************************************************************************************/
+/*! exports provided: ListConventionsComponent */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ListConventionsComponent", function() { return ListConventionsComponent; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/material/dialog */ "./node_modules/@angular/material/__ivy_ngcc__/fesm5/dialog.js");
+/* harmony import */ var app_modules_detail_conventions_detail_conventions_detail_conventions_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! app/modules/detail-conventions/detail-conventions/detail-conventions.component */ "./src/app/modules/detail-conventions/detail-conventions/detail-conventions.component.ts");
+/* harmony import */ var app_services_conventions_conventions_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! app/services/conventions/conventions.service */ "./src/app/services/conventions/conventions.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+
+
+
+
+var ListConventionsComponent = /** @class */ (function () {
+    function ListConventionsComponent(conventionsService, dialog) {
+        this.conventionsService = conventionsService;
+        this.dialog = dialog;
+    }
+    ListConventionsComponent.prototype.ngOnInit = function () {
+        this.conventions = this.conventionsService.getConventions();
+        console.log(this.conventions);
+    };
+    ListConventionsComponent.prototype.viewConvention = function (component) {
+        this.dialog.open(app_modules_detail_conventions_detail_conventions_detail_conventions_component__WEBPACK_IMPORTED_MODULE_2__["DetailConventionsComponent"], {
+            width: '700px',
+            height: '700px',
+            data: component,
+            panelClass: 'events-class'
+        });
+    };
+    ListConventionsComponent.ctorParameters = function () { return [
+        { type: app_services_conventions_conventions_service__WEBPACK_IMPORTED_MODULE_3__["ConventionsService"] },
+        { type: _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialog"] }
+    ]; };
+    ListConventionsComponent = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
+            selector: 'app-list-conventions',
+            template: __importDefault(__webpack_require__(/*! raw-loader!./list-conventions.component.html */ "./node_modules/raw-loader/dist/cjs.js!./src/app/modules/list-conventions/list-conventions/list-conventions.component.html")).default,
+            styles: [__importDefault(__webpack_require__(/*! ./list-conventions.component.css */ "./src/app/modules/list-conventions/list-conventions/list-conventions.component.css")).default]
+        }),
+        __metadata("design:paramtypes", [app_services_conventions_conventions_service__WEBPACK_IMPORTED_MODULE_3__["ConventionsService"], _angular_material_dialog__WEBPACK_IMPORTED_MODULE_1__["MatDialog"]])
+    ], ListConventionsComponent);
+    return ListConventionsComponent;
 }());
 
 
@@ -2069,9 +2372,11 @@ var UserRegistrationComponent = /** @class */ (function () {
         this.userService = userService;
         this.validador = true;
         this.seleccionado = false;
+        this.profSeleccionado = false;
         this.selected = '';
         this.profesion = '';
-        this.confirmacion = false;
+        this.confirmacionRural = false;
+        this.confirmacionAgremiado = false;
         this.roles = [
             {
                 opt: 'Estudiante',
@@ -2103,6 +2408,7 @@ var UserRegistrationComponent = /** @class */ (function () {
     UserRegistrationComponent.prototype.ngOnInit = function () {
         this.user = {
             user_id: '',
+            user_profesion: '',
             user_name: '',
             user_lastname: '',
             user_ci: '',
@@ -2120,7 +2426,6 @@ var UserRegistrationComponent = /** @class */ (function () {
     UserRegistrationComponent.prototype.onSaveUser = function (user, valid) {
         var _this = this;
         if (valid && this.validador) {
-            user.user_name = this.profesion + user.user_name;
             user.user_rol = this.selected;
             if (this.selected == 'Estudiante' || this.selected == 'Auxialiar o técnicos de odontología') {
                 user.user_pay = 70;
@@ -2135,6 +2440,7 @@ var UserRegistrationComponent = /** @class */ (function () {
                 user.user_pay = 140;
             }
             user.user_id = Object(uuid__WEBPACK_IMPORTED_MODULE_3__["v4"])();
+            user.user_profesion = this.profesion;
             this.userService.createUser(user).then(function () {
                 sweetalert2__WEBPACK_IMPORTED_MODULE_2___default()("OK", "Su registro ha sido extoso", "success");
                 _this.user = {
@@ -2202,18 +2508,27 @@ var UserRegistrationComponent = /** @class */ (function () {
         }
         // console.log(this.validador);
     };
+    UserRegistrationComponent.prototype.validarSeleccionProf = function () {
+        this.profSeleccionado = true;
+    };
     UserRegistrationComponent.prototype.validarSeleccion = function () {
         var _this = this;
         this.showPpButton = false;
         this.seleccionado = true;
-        if (this.selected == "Odontólogo rural" || this.selected == 'Odontólogo agremiado a la FOE') {
-            this.confirmacion = true;
+        if (this.selected == "Odontólogo rural") {
+            this.confirmacionRural = true;
+            this.confirmacionAgremiado = false;
+        }
+        else if (this.selected == 'Odontólogo agremiado a la FOE') {
+            this.confirmacionRural = false;
+            this.confirmacionAgremiado = true;
         }
         else {
-            this.confirmacion = false;
+            this.confirmacionRural = false;
+            this.confirmacionAgremiado = false;
         }
-        console.log('*** validarSeleccion ***');
-        console.log(this.selected);
+        // console.log('*** validarSeleccion ***');
+        // console.log(this.selected);
         this.roles.forEach(function (rol) {
             if (rol.opt == _this.selected) {
                 console.log(rol.opt);
@@ -2227,8 +2542,6 @@ var UserRegistrationComponent = /** @class */ (function () {
             var _this = this;
             return __generator(this, function (_a) {
                 // if (valid) {
-                user.user_name = this.profesion + user.user_name;
-                console.log(user.user_name);
                 this.showPpButton = false;
                 setTimeout(function () { return __awaiter(_this, void 0, void 0, function () {
                     var _this = this;
@@ -2685,6 +2998,224 @@ var CategoriesService = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_1__["AngularFirestore"]])
     ], CategoriesService);
     return CategoriesService;
+}());
+
+
+
+/***/ }),
+
+/***/ "./src/app/services/conventions/conventions.service.ts":
+/*!*************************************************************!*\
+  !*** ./src/app/services/conventions/conventions.service.ts ***!
+  \*************************************************************/
+/*! exports provided: ConventionsService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ConventionsService", function() { return ConventionsService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/__ivy_ngcc__/fesm5/core.js");
+/* harmony import */ var _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/fire/firestore */ "./node_modules/@angular/fire/__ivy_ngcc__/fesm5/angular-fire-firestore.js");
+/* harmony import */ var _angular_fire_storage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/fire/storage */ "./node_modules/@angular/fire/__ivy_ngcc__/fesm5/angular-fire-storage.js");
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! uuid */ "./node_modules/uuid/index.js");
+/* harmony import */ var uuid__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(uuid__WEBPACK_IMPORTED_MODULE_3__);
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+var __importDefault = (undefined && undefined.__importDefault) || function (mod) {
+  return (mod && mod.__esModule) ? mod : { "default": mod };
+};
+var __asyncValues = (undefined && undefined.__asyncValues) || function (o) {
+    if (!Symbol.asyncIterator) throw new TypeError("Symbol.asyncIterator is not defined.");
+    var m = o[Symbol.asyncIterator], i;
+    return m ? m.call(o) : (o = typeof __values === "function" ? __values(o) : o[Symbol.iterator](), i = {}, verb("next"), verb("throw"), verb("return"), i[Symbol.asyncIterator] = function () { return this; }, i);
+    function verb(n) { i[n] = o[n] && function (v) { return new Promise(function (resolve, reject) { v = o[n](v), settle(resolve, reject, v.done, v.value); }); }; }
+    function settle(resolve, reject, d, v) { Promise.resolve(v).then(function(v) { resolve({ value: v, done: d }); }, reject); }
+};
+
+
+
+
+var ConventionsService = /** @class */ (function () {
+    function ConventionsService(db, storage) {
+        this.db = db;
+        this.storage = storage;
+    }
+    ConventionsService.prototype.getConventions = function () {
+        return this.db.collection('convenios').valueChanges();
+    };
+    ConventionsService.prototype.getConventionById = function (id) {
+        return this.db.collection('convenios').doc(id).valueChanges();
+    };
+    ConventionsService.prototype.getImgConvention = function () {
+        return this.db.collection('imagenesConvenios').valueChanges();
+    };
+    ConventionsService.prototype.createConvention = function (id, event) {
+        return this.db.collection('convenios').doc(id).set(__assign(__assign({}, event), { id: id }));
+    };
+    ConventionsService.prototype.updateConvention = function (id, event) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                return [2 /*return*/, this.db.collection('convenios').doc(id).update(event)];
+            });
+        });
+    };
+    ConventionsService.prototype.deleteConvention = function (id) {
+        return this.db.collection('convenios').doc(id).delete();
+    };
+    ConventionsService.prototype.deleteImagesConvention = function (id) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.db.collection('imagenesConvenios').doc(id).delete()];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ConventionsService.prototype.deleteAllConventions = function () {
+        var _this = this;
+        return this.db.collection('convenios').get().toPromise().then(function (snapshot) { return __awaiter(_this, void 0, void 0, function () {
+            var _a, _b, doc, e_1_1;
+            var e_1, _c;
+            return __generator(this, function (_d) {
+                switch (_d.label) {
+                    case 0:
+                        _d.trys.push([0, 6, 7, 12]);
+                        _a = __asyncValues(snapshot.docs);
+                        _d.label = 1;
+                    case 1: return [4 /*yield*/, _a.next()];
+                    case 2:
+                        if (!(_b = _d.sent(), !_b.done)) return [3 /*break*/, 5];
+                        doc = _b.value;
+                        return [4 /*yield*/, doc.ref.delete()];
+                    case 3:
+                        _d.sent();
+                        _d.label = 4;
+                    case 4: return [3 /*break*/, 1];
+                    case 5: return [3 /*break*/, 12];
+                    case 6:
+                        e_1_1 = _d.sent();
+                        e_1 = { error: e_1_1 };
+                        return [3 /*break*/, 12];
+                    case 7:
+                        _d.trys.push([7, , 10, 11]);
+                        if (!(_b && !_b.done && (_c = _a.return))) return [3 /*break*/, 9];
+                        return [4 /*yield*/, _c.call(_a)];
+                    case 8:
+                        _d.sent();
+                        _d.label = 9;
+                    case 9: return [3 /*break*/, 11];
+                    case 10:
+                        if (e_1) throw e_1.error;
+                        return [7 /*endfinally*/];
+                    case 11: return [7 /*endfinally*/];
+                    case 12: return [2 /*return*/];
+                }
+            });
+        }); });
+    };
+    ConventionsService.prototype.uploadImages = function (files) {
+        var _this = this;
+        return new Promise(function (resolve, reject) {
+            var urls = [];
+            var _loop_1 = function (file) {
+                var id = Object(uuid__WEBPACK_IMPORTED_MODULE_3__["v4"])();
+                var filePath = "Convenios/" + id;
+                var task = _this.storage.upload(filePath, file);
+                task.then(function (t) {
+                    t.ref.getDownloadURL().then(function (url) {
+                        urls.push({ url: url, id: id });
+                        if (urls.length === files.length) {
+                            resolve(urls);
+                        }
+                    });
+                }).catch(function (e) { return reject(e); });
+            };
+            for (var _i = 0, files_1 = files; _i < files_1.length; _i++) {
+                var file = files_1[_i];
+                _loop_1(file);
+            }
+        });
+    };
+    ConventionsService.prototype.deleteImageById = function (id) {
+        return __awaiter(this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.storage.ref("Convenios/" + id).delete().toPromise()];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    ConventionsService.ctorParameters = function () { return [
+        { type: _angular_fire_firestore__WEBPACK_IMPORTED_MODULE_1__["AngularFirestore"] },
+        { type: _angular_fire_storage__WEBPACK_IMPORTED_MODULE_2__["AngularFireStorage"] }
+    ]; };
+    ConventionsService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])({
+            providedIn: 'root'
+        }),
+        __metadata("design:paramtypes", [_angular_fire_firestore__WEBPACK_IMPORTED_MODULE_1__["AngularFirestore"], _angular_fire_storage__WEBPACK_IMPORTED_MODULE_2__["AngularFireStorage"]])
+    ], ConventionsService);
+    return ConventionsService;
 }());
 
 
@@ -4035,18 +4566,6 @@ var __importDefault = (undefined && undefined.__importDefault) || function (mod)
 
 
 var ROUTES = [
-    // {
-    //   path: "/categories",
-    //   title: "Categorias",
-    //   type: "link",
-    //   icontype: "pe-7s-home",
-    // },
-    // {
-    //   path: '/events-custom',
-    //   title: 'Eventosss',
-    //   type: 'link',
-    //   icontype: 'pe-7s-mail',
-    // },
     {
         path: "/events",
         title: "Eventos",
@@ -4076,6 +4595,12 @@ var ROUTES = [
         title: "Sponsors",
         type: "link",
         icontype: "pe-7s-display1",
+    },
+    {
+        path: "/conventions",
+        title: "Conventions",
+        type: "link",
+        icontype: "pe-7s-note2",
     },
     {
         path: "/message",

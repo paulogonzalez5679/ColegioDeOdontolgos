@@ -64,7 +64,7 @@
 /******/
 /******/ 	// script path function
 /******/ 	function jsonpScriptSrc(chunkId) {
-/******/ 		return __webpack_require__.p + "" + ({"firebase-auth":"firebase-auth","modules-admin-carrusel-admin-carrusel-module":"modules-admin-carrusel-admin-carrusel-module","modules-categories-categories-module":"modules-categories-categories-module","modules-events-admin-events-admin-module":"modules-events-admin-events-admin-module","modules-list-users-list-users-module":"modules-list-users-list-users-module","modules-message-message-module":"modules-message-message-module","modules-mision-vision-mision-vision-module":"modules-mision-vision-mision-vision-module","modules-sponsors-sponsors-module":"modules-sponsors-sponsors-module","modules-team-team-module":"modules-team-team-module"}[chunkId]||chunkId) + ".js"
+/******/ 		return __webpack_require__.p + "" + ({"firebase-auth":"firebase-auth","modules-admin-carrusel-admin-carrusel-module":"modules-admin-carrusel-admin-carrusel-module","modules-categories-categories-module":"modules-categories-categories-module","modules-conventions-admin-conventions-admin-module":"modules-conventions-admin-conventions-admin-module","modules-events-admin-events-admin-module":"modules-events-admin-events-admin-module","modules-list-users-list-users-module":"modules-list-users-list-users-module","modules-message-message-module":"modules-message-message-module","modules-mision-vision-mision-vision-module":"modules-mision-vision-mision-vision-module","modules-sponsors-sponsors-module":"modules-sponsors-sponsors-module","modules-team-team-module":"modules-team-team-module"}[chunkId]||chunkId) + ".js"
 /******/ 	}
 /******/
 /******/ 	// The require function

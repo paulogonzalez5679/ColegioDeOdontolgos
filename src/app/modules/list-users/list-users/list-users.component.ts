@@ -27,12 +27,13 @@ export class ListUsersComponent implements OnInit {
     this.dataTable = {
       headerRow: [
         "#",
+        "PROFESIÓN",
         "NOMBRE",
         "APELLIDO",
         "CEDULA",
         "EMAIL",
         "TELEFONO",
-        "DIRECCION",
+        "DIRECCIÓN",
         "ROL",
         "PAGO"
       ],
