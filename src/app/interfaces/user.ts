@@ -1,5 +1,6 @@
 declare interface User {
     user_id?: string;
+    user_profesion?: string;
     user_name?: string;
     user_lastname?: string;
     user_ci?: string;

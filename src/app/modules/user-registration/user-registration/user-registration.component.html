@@ -21,18 +21,32 @@
         <div style="margin-top: 5rem;">
           <div class="izqForm">
             <div class="content content-form">
-              <div class=" bordeado group-name" style="margin-bottom: 15px;">
-                <div style="margin:20%;">
-                  <select 
-                  name="prof"
-                  [(ngModel)]="profesion" #prof="ngModel">
-                    <option value="Dr.">Dr.</option>
-                    <option value="Est.">Est.</option>
-                  </select>
+              
+
+              <div class="form-group bordeado" style="margin-bottom: 15px;">
+                <div class="form-group" style="padding: 2%;">
+                  <label class="text-left text-rol">Profesión</label>
+                  <select class="btn-group bootstrap-select dropup" 
+                    name="prof"
+                    [(ngModel)]="profesion" #prof="ngModel" 
+                    style="margin-left: 2%; width: 55%; height: 100%;" 
+                    (change)="validarSeleccionProf()">
+                      <option value="Dr.">Doctor</option>
+                      <option value="Est.">Odontólogo</option>
+                      <option value="Est.">Estudiante</option>
+                    </select>
+                  <br>
+                  <small [hidden]="(prof.valid || (prof.pristine && !messajeForm.submitted) ) && profSeleccionado"
+                      class="text-danger">
+                      Seleccione una profesión
+                  </small>
                 </div>
-                <div class="form-group input-name" style="padding: 2%;">
+              </div>
+
+              <div class="form-group bordeado" style="margin-bottom: 15px;">
+                <div class="form-group" style="padding: 2%;">
                   <input type="text" name="user_name" required placeholder="Nombres"
-                    class="form-control formulario input-name" [(ngModel)]="user.user_name" required
+                    class="form-control formulario " [(ngModel)]="user.user_name" required
                     #user_name="ngModel">
                   <small [hidden]="user_name.valid || (user_name.pristine && !messajeForm.submitted)"
                     class="text-danger">
@@ -69,21 +83,22 @@
                 </div>
                 <!-- <small *ngIf="!validador" class="text-danger">Cedula Invalida</small> -->
               </div>
-    
-              <div class="form-group bordeado" style="margin-bottom: 15px;">
-                <div class="form-group" style="padding: 2%;">
-                  <input type="text" name="user_email" required placeholder="E-Mail"
-                    class="formulario form-control input-contact" [(ngModel)]="user.user_email" required
-                    #user_email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
-                  <small [hidden]="user_email.valid || (user_email.pristine && !messajeForm.submitted)"
-                    class="text-danger">
-                    Ingrese  un Email valido
-                  </small>
-                </div>
-              </div>
             </div>
           </div>
           <div class="derForm">
+
+            <div class="form-group bordeado" style="margin-bottom: 15px;">
+              <div class="form-group" style="padding: 2%;">
+                <input type="text" name="user_email" required placeholder="E-Mail"
+                  class="formulario form-control input-contact" [(ngModel)]="user.user_email" required
+                  #user_email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
+                <small [hidden]="user_email.valid || (user_email.pristine && !messajeForm.submitted)"
+                  class="text-danger">
+                  Ingrese  un Email valido
+                </small>
+              </div>
+            </div>
+
             <div class="form-group bordeado" style="margin-bottom: 15px;">
               <div class="form-group" style="padding: 2%;">
                 <input placeholder="Teléfono" 
@@ -129,8 +144,14 @@
               </div>
             </div>
 
-            <div *ngIf="confirmacion">
-              <span class="text-left text-validarPorCorreo">*Para que su inscripcion sea valida envie su certificado correspondite al correo: odontologosazuay@gmail.com*</span>
+            <div *ngIf="confirmacionRural">
+              <span class="text-left text-validarPorCorreo">*Recuerde enviar una copia de su carnet/certificado que valide su modalidad de "odontologo rural" posterior al pago.
+                Enviar al correo ondontologosazuay@gmail.com*</span>
+            </div>
+
+            <div *ngIf="confirmacionAgremiado">
+              <span class="text-left text-validarPorCorreo">*Recuerde enviar una copia de su carnet/certificado que valide su modalidad de "odontologo agremiado a la FOE" posterior al pago.
+                Enviar al correo ondontologosazuay@gmail.com*</span>
             </div>
 
           </div>

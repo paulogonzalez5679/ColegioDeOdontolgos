@@ -31,9 +31,13 @@ import { DetailEventModule } from './modules/detail-event/detail-event.module';
 import { ListEventsModule } from './modules/list-events/list-events.module';
 import { UserRegistrationModule } from './modules/user-registration/user-registration.module';
 import { ListTeamModule } from './modules/list-team/list-team.module';
+import { ListConventionsModule } from './modules/list-conventions/list-conventions.module';
+import { DetailConventionsModule } from './modules/detail-conventions/detail-conventions.module';
 
 @NgModule({
     imports:      [
+        DetailConventionsModule,
+        ListConventionsModule,
         ListTeamModule,
         UserRegistrationModule,
         DetailEventModule,

@@ -34,7 +34,7 @@ export class EventsComponent implements OnInit {
         let id = uuidv4();
         return this.eventsService.createEvent(id,{
             title: `Evento ${numEvento}`,
-            description: 'Descripcion del evento 1'
+            description: 'Descripción del evento 1'
         }).then(() => alert('Guardado')).catch((e) => alert(e.message));
     }
 

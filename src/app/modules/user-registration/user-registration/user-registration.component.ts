@@ -15,9 +15,11 @@ export class UserRegistrationComponent implements OnInit {
   public user: User;
   public validador = true;
   seleccionado = false;
+  profSeleccionado = false;
   selected = '';
   profesion = '';
-  confirmacion=false;
+  confirmacionRural=false;
+  confirmacionAgremiado=false;
 
   public roles: Array<Rol> = [
     {
@@ -54,6 +56,7 @@ export class UserRegistrationComponent implements OnInit {
   ngOnInit(): void {
     this.user = {
       user_id: '',
+      user_profesion: '',
       user_name: '',
       user_lastname: '',
       user_ci: '',
@@ -72,8 +75,6 @@ export class UserRegistrationComponent implements OnInit {
   onSaveUser(user: User, valid: boolean) {
     if (valid && this.validador) {
 
-      user.user_name=this.profesion+user.user_name;
-
       user.user_rol=this.selected;
       if(this.selected=='Estudiante' || this.selected=='Auxialiar o técnicos de odontología'){
         user.user_pay=70;
@@ -86,6 +87,7 @@ export class UserRegistrationComponent implements OnInit {
       }
 
       user.user_id = uuidv4();
+      user.user_profesion = this.profesion;
       this.userService.createUser(user).then(() => {
         swal("OK", "Su registro ha sido extoso", "success");
         this.user = {
@@ -150,17 +152,27 @@ export class UserRegistrationComponent implements OnInit {
     // console.log(this.validador);
   }
 
+  validarSeleccionProf(){
+    this.profSeleccionado = true;
+  }
+
   validarSeleccion() {
     this.showPpButton = false;
     this.seleccionado = true;
-    if(this.selected == "Odontólogo rural" ||  this.selected == 'Odontólogo agremiado a la FOE'){
-      this.confirmacion = true;
+    if(this.selected == "Odontólogo rural"){
+      this.confirmacionRural=true;
+      this.confirmacionAgremiado=false;
+    }
+    else if(this.selected == 'Odontólogo agremiado a la FOE'){
+      this.confirmacionRural=false;
+      this.confirmacionAgremiado=true;
     }
     else{
-      this.confirmacion = false;
+      this.confirmacionRural=false;
+      this.confirmacionAgremiado=false;
     }
-    console.log('*** validarSeleccion ***');
-    console.log(this.selected);
+    // console.log('*** validarSeleccion ***');
+    // console.log(this.selected);
 
     this.roles.forEach((rol: Rol) => {
       if (rol.opt == this.selected) {
@@ -173,8 +185,6 @@ export class UserRegistrationComponent implements OnInit {
 
   public async InitPaymentWhitPayphone(user: User, valid: boolean) {
     // if (valid) {
-      user.user_name=this.profesion+user.user_name;
-      console.log(user.user_name);
       this.showPpButton = false;
 
       setTimeout(async () => {

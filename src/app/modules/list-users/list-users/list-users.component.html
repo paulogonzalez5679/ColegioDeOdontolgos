@@ -19,11 +19,13 @@
                                         <th class="text-center">{{ dataTable.headerRow[6] }}</th>
                                         <th class="text-center">{{ dataTable.headerRow[7] }}</th>
                                         <th class="text-center">{{ dataTable.headerRow[8] }}</th>
+                                        <th class="text-center">{{ dataTable.headerRow[9] }}</th>
                                     </tr>
                                 </thead>
                                 <tbody id="tBodyCountry">
                                     <tr *ngFor="let user of arrayUsers; let i = index">
                                         <td>{{i+1}}</td>
+                                        <td class="text-center">{{user.user_profesion}}</td>
                                         <td class="text-center">{{user.user_name}}</td>
                                         <td class="text-center">{{user.user_lastname}}</td>
                                         <td class="text-center">{{user.user_ci}}</td>

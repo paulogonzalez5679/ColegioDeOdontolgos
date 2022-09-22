@@ -1,0 +1,34 @@
+.module {
+    width: 250px;
+    margin: 0 0 1em 0;
+    overflow: hidden;
+  }
+  
+.module mat-card-title{
+margin: 0;
+}
+
+.line-clamp {
+display: -webkit-box;
+-webkit-line-clamp: 1;
+-webkit-box-orient: vertical;
+}
+
+.dorado{
+background: rgb(174,134,37);
+background: linear-gradient(180deg, rgba(174,134,37,1) 0%, rgba(247,239,138,1) 33%, rgba(210,172,71,1) 81%);
+cursor:pointer;
+}
+
+.titulos{
+color: #ffffff;
+text-transform: capitalize;
+}
+
+.my-class{
+background-color: rgb(173, 31, 31) ;
+color: rgba(0,0,0,0.8);
+padding: 20px;
+    
+    /* Add more css styles */
+}

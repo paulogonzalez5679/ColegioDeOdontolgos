@@ -1,0 +1,27 @@
+<div style="justify-content: center; align-items: center; align-content: center; justify-items: center;">
+    <mat-card class="example-card" style="margin-top: 15px;">
+        <mat-card-header>
+            <mat-card-title class="titulo">{{convention.title}}</mat-card-title>
+        </mat-card-header>
+        <!-- <div [id]="convention.id+'detail'" class="carousel slide" data-ride="carousel" *ngIf="convention.images.length>0"> -->
+          <div [id]="convention.id+'detail'" class="carousel slide" data-ride="carousel" >
+          
+            <div class="carousel-inner" style="max-height: 500px;">
+                <div class="item" *ngFor="let previa of convention.image; let i = index"
+                [ngClass]="{'active': i == 0 }" >
+                  <img [src]="previa.url" style="width: 100%;">
+                </div>
+            </div>
+        </div>
+        
+        <mat-card-content>
+            <p style="margin-top: 3%; text-align: justify">
+                {{convention.description}}
+            </p>
+        </mat-card-content>
+        <a [href]="convention.url" target="_blank"><button mat-button>visítanos</button></a>
+        <!-- <mat-card-actions>
+            <a [href]="convention.url" target="_blank"><button mat-button>Volver</button><img class="img-company" [src]="imagen.url"></a>
+        </mat-card-actions> -->
+    </mat-card>
+</div>
