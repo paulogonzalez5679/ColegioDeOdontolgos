@@ -90,3 +90,26 @@ body {
     overflow-y: hidden;
     overflow-x: hidden;
 }
+
+
+@media only screen and (max-width: 800px) { 
+
+
+    .events-class .mat-dialog-container{
+        background: rgb(174,134,37) !important;
+        background: linear-gradient(180deg, rgba(174,134,37,1) 0%, rgba(247,239,138,1) 33%, rgba(210,172,71,1) 81%) !important;
+        height: 500px !important;
+        
+    }
+    
+    .promo-dialog .mat-dialog-container{
+        background: rgb(174,134,37) !important;
+        background: linear-gradient(180deg, rgba(174,134,37,1) 0%, rgba(247,239,138,1) 33%, rgba(210,172,71,1) 81%) !important;
+        /* Other CSS Styles */
+        overflow-y: hidden;
+        overflow-x: hidden;
+
+        height: 600px !important;
+    }
+  
+}

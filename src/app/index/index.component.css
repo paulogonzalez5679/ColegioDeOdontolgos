@@ -1870,15 +1870,15 @@
 @media (max-width: 300px) {
 }
 
-@media only screen and (max-width: 2000px)  and (min-width: 800px) {
+@media only screen and (max-width: 2000px)  and (min-width: 1500px) {
 
   #myCarousel{
     margin-top: 5%;
-    height: 700px !important;
+    height: 900px !important;
   }
 
   .redux-img{
-    height: 700px !important;
+    height: 900px !important;
     width: 1800px !important;
   }
 
@@ -1887,22 +1887,90 @@
   }
 }
 
-@media only screen and (max-width: 800px) { 
+@media only screen and (max-width: 1500px)  and (min-width: 850px) {
+
+  .item{
+    height: 700px !important;
+    width: 800px !important;
+  }
 
   #myCarousel{
     margin-top: 5%;
-    height: 400px !important;
+    height: 700px !important;
   }
 
   .redux-img{
-    height: 400px !important;
-    width: 1800px !important;
+    height: 700px !important;
+    width: 800px !important;
   }
 
   .row-init {
-    min-height: 50vh;
+    min-height: 40vh;
   }
 }
+
+@media only screen and (max-width: 1500px)  and (min-width: 1000px) {
+
+  .item{
+    height: 700px !important;
+    width: 1300px !important;
+  }
+
+  #myCarousel{
+    margin-top: 5%;
+    height: 700px !important;
+  }
+
+  .redux-img{
+    height: 700px !important;
+    width: 1300px !important;
+  }
+
+  .row-init {
+    min-height: 80vh;
+  }
+}
+
+
+
+
+@media only screen and (max-width: 849px)  and (min-width: 800px) {
+
+  .item{
+    height: 700px !important;
+    width: 800px !important;
+  }
+
+  #myCarousel{
+    margin-top: 5%;
+    height: 700px !important;
+  }
+
+  .redux-img{
+    height: 700px !important;
+    width: 800px !important;
+  }
+
+  .row-init {
+    min-height: 40vh;
+  }
+}
+
+  @media only screen and (max-width: 800px) { 
+
+
+    #myCarousel{
+      margin-top: 10%;
+      margin-bottom: -15%;
+      height: 200px !important;
+    }
+
+    .redux-img{
+      height: 200px !important;
+      width: 1800px !important;
+    }
+
+  }
 
 
 
