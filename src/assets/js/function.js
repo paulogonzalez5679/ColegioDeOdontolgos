@@ -18,7 +18,7 @@ $(document).ready(function () {
   firestore = firebase.firestore();
 });
 
-export function InitPaymentWhitPayphone(total, id, order_transaccion_id) {
+export function InitPaymentWhitPayphone(total, id, order_transaccion_id, user) {
   console.log(id.toString());
   console.log(total);
   console.log(total.toFixed(0));
@@ -46,21 +46,22 @@ export function InitPaymentWhitPayphone(total, id, order_transaccion_id) {
               console.log(value);
               return value;
               // ***AQUI***
-              // var ref = firestore.collection("orders").doc(order_transaccion_id).collection('payment').doc(id.toString());
-              // ref.set(
-              //     value
-              // ).then(function () {
-              //     if (value.transactionStatus == "Approved") {
-              //         alert('Su orden ha sido generado correctamente!');
-              //         window.location.assign("https://4woman.ec/"),
-              //             localStorage.removeItem("arrayProductCartCache");
-              //         localStorage.removeItem("order");
-              //     } else {
-              //         alert('Se ha presentado un error: ' + value.transactionStatus + ': ' + value.message);
-              //     }
-              // }).catch(function (e) {
-              //     console.log(e);
-              // });
+              var ref = firestore.collection("ususrios").doc(user['user_id']);
+              ref.update(
+                {
+                  data_payment: value,
+                }
+              ).then(function () {
+                  if (value.transactionStatus == "Approved") {
+                      alert('Su pafo ha sido procesado correctamente!');
+                      window.location.assign("http://localhost:4200/");
+                      // localStorage.removeItem("order");
+                  } else {
+                      alert('Se ha presentado un error: ' + value.transactionStatus + ': ' + value.message);
+                  }
+              }).catch(function (e) {
+                  console.log(e);
+              });
           }).catch(function (err) {
               console.log('*** Respuesta ERROR de payphone despues de pagar ***');
               console.log(err);

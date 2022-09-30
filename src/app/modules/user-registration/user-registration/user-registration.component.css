@@ -162,3 +162,15 @@
     display: grid;
     grid-template-columns: 50% 50%;
   }
+
+  .logo {
+    width: 90px;
+}
+
+.modal-dialog {
+  min-width: 70% !important;
+}
+
+.border {
+  border: #e0e0e0 solid 1px;
+}

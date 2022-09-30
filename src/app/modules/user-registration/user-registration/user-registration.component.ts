@@ -4,6 +4,8 @@ import { UserService } from 'app/services/user/user.service';
 import swal from 'sweetalert2';
 import { v4 as uuidv4 } from 'uuid';
 import * as archivePayment from "./../../../../assets/js/function.js";
+declare var $: any;
+
 
 @Component({
   selector: 'app-user-registration',
@@ -56,13 +58,24 @@ export class UserRegistrationComponent implements OnInit {
   ngOnInit(): void {
     this.user = {
       user_id: '',
-      user_profesion: '',
-      user_name: '',
-      user_lastname: '',
-      user_ci: '',
-      user_direction: '',
-      user_email: '',
-      user_phone: ''
+      user_profesion: 'Dr.',
+      user_name: 'test',
+      user_lastname: 'test',
+      user_ci: '0151950045',
+      user_direction: 'Cuenca',
+      user_email: 'test@test.com',
+      user_phone: '0987654321',
+      user_rol: 'Estudiante',
+      user_pay: 40,
+
+      // user_id: '',
+      // user_profesion: '',
+      // user_name: '',
+      // user_lastname: '',
+      // user_ci: '',
+      // user_direction: '',
+      // user_email: '',
+      // user_phone: ''
     };
   }
 
@@ -88,19 +101,23 @@ export class UserRegistrationComponent implements OnInit {
 
       user.user_id = uuidv4();
       user.user_profesion = this.profesion;
+      this.user = user;
       this.userService.createUser(user).then(() => {
-        swal("OK", "Su registro ha sido extoso", "success");
-        this.user = {
-          user_id: '',
-          user_name: '',
-          user_lastname: '',
-          user_ci: '',
-          user_direction: '',
-          user_email: '',
-          user_phone: '',
-          user_rol: '',
-          user_pay: 0
-        };
+        swal("OK", "Su registro ha sido extoso, por favor ingrese su forma de pago para finalizar", "success");
+        this.InitPaymentWhitPayphone();
+
+
+        // this.user = {
+        //   user_id: '',
+        //   user_name: '',
+        //   user_lastname: '',
+        //   user_ci: '',
+        //   user_direction: '',
+        //   user_email: '',
+        //   user_phone: '',
+        //   user_rol: '',
+        //   user_pay: 0
+        // };
       });
     }
   }
@@ -183,22 +200,26 @@ export class UserRegistrationComponent implements OnInit {
     });
   }
 
-  public async InitPaymentWhitPayphone(user: User, valid: boolean) {
+  public async InitPaymentWhitPayphone() {
+    console.log('*** InitPaymentWhitPayphone ***');
     // if (valid) {
       this.showPpButton = false;
 
       setTimeout(async () => {
+        $('#modalPayment').modal('show');
+
         this.showPpButton = true;
         setTimeout(async () => {
           var idd = new Date().getTime();
           console.log(this.rolSelected.value);
           var response = await archivePayment.InitPaymentWhitPayphone(
-            (this.rolSelected.value * 100), idd, idd,
+            // (this.rolSelected.value * 100), idd, idd, this.user
+            (1 * 100), idd, idd, this.user
           );
           console.log('*** response ***');
           console.log(response);
           
-        }, 200);
+        }, 300);
       }, 100);
     // }
   }

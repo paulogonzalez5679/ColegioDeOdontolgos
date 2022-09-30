@@ -6,55 +6,52 @@
     <img src="../../assets/img/pagina2PDF.png">
   </div>
 </div>
-<div _ngcontent-npf-c107=""  class="formulario">
+<div _ngcontent-npf-c107="" class="formulario">
   <div class="pos-form">
-    <form #messajeForm="ngForm" novalidate (ngSubmit)="InitPaymentWhitPayphone(messajeForm.value, messajeForm.valid)">
+    <form #messajeForm="ngForm" novalidate (ngSubmit)="onSaveUser(messajeForm.value, messajeForm.valid)">
       <div class="col-sm-12 text-registro">
         <span class="text-left text-registro">Registro</span>
       </div>
 
       <div class="col-sm-12 text-textocertificado">
-        <span class="text-left text-registro">Recuerde que los datos ingresados se usaran para su respectivo certificado</span>
+        <span class="text-left text-registro">Recuerde que los datos ingresados se usaran para su respectivo
+          certificado</span>
       </div>
 
       <div class="row formularioGeneral">
         <div style="margin-top: 5rem;">
           <div class="izqForm">
             <div class="content content-form">
-              
+
 
               <div class="form-group bordeado" style="margin-bottom: 15px;">
                 <div class="form-group" style="padding: 2%;">
                   <label class="text-left text-rol">Profesión</label>
-                  <select class="btn-group bootstrap-select dropup" 
-                    name="prof"
-                    [(ngModel)]="profesion" #prof="ngModel" 
-                    style="margin-left: 2%; width: 55%; height: 100%;" 
-                    (change)="validarSeleccionProf()">
-                      <option value="Dr.">Doctor</option>
-                      <option value="Est.">Odontólogo</option>
-                      <option value="Est.">Estudiante</option>
-                    </select>
+                  <select class="btn-group bootstrap-select dropup" name="prof" [(ngModel)]="profesion" #prof="ngModel"
+                    style="margin-left: 2%; width: 55%; height: 100%;" (change)="validarSeleccionProf()">
+                    <option value="Dr.">Doctor</option>
+                    <option value="Est.">Odontólogo</option>
+                    <option value="Est.">Estudiante</option>
+                  </select>
                   <br>
                   <small [hidden]="(prof.valid || (prof.pristine && !messajeForm.submitted) ) && profSeleccionado"
-                      class="text-danger">
-                      Seleccione una profesión
+                    class="text-danger">
+                    Seleccione una profesión
                   </small>
                 </div>
               </div>
 
               <div class="form-group bordeado" style="margin-bottom: 15px;">
                 <div class="form-group" style="padding: 2%;">
-                  <input type="text" name="user_name" required placeholder="Nombres"
-                    class="form-control formulario " [(ngModel)]="user.user_name" required
-                    #user_name="ngModel">
+                  <input type="text" name="user_name" required placeholder="Nombres" class="form-control formulario "
+                    [(ngModel)]="user.user_name" required #user_name="ngModel">
                   <small [hidden]="user_name.valid || (user_name.pristine && !messajeForm.submitted)"
                     class="text-danger">
                     Ingrese su Nombre
                   </small>
                 </div>
               </div>
-    
+
               <div class="form-group bordeado" style="margin-bottom: 15px;">
                 <div class="form-group" style="padding: 2%;">
                   <input type="text" name="user_lastname" required placeholder="Apellidos"
@@ -66,16 +63,12 @@
                   </small>
                 </div>
               </div>
-  
+
               <div class="form-group bordeado" style="margin-bottom: 15px;">
                 <div class="form-group" style="padding: 2%;">
-                  <input placeholder="Cedula" 
-                  name="user_ci"
-                  class="formulario form-control input-contact" 
-                  type="text" [(ngModel)]="user.user_ci" 
-                  required #user_ci="ngModel"
-                  onkeypress="return /[0-9]|\./i.test(event.key)" maxlength="10"
-                  (change)="validadorDeCedula()"/>
+                  <input placeholder="Cedula" name="user_ci" class="formulario form-control input-contact" type="text"
+                    [(ngModel)]="user.user_ci" required #user_ci="ngModel"
+                    onkeypress="return /[0-9]|\./i.test(event.key)" maxlength="10" (change)="validadorDeCedula()" />
                   <small [hidden]="(user_ci.valid || (user_ci.pristine && !messajeForm.submitted) ) && validador"
                     class="text-danger">
                     Ingrese una cedula valida
@@ -94,26 +87,23 @@
                   #user_email="ngModel" pattern="^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$">
                 <small [hidden]="user_email.valid || (user_email.pristine && !messajeForm.submitted)"
                   class="text-danger">
-                  Ingrese  un Email valido
+                  Ingrese un Email valido
                 </small>
               </div>
             </div>
 
             <div class="form-group bordeado" style="margin-bottom: 15px;">
               <div class="form-group" style="padding: 2%;">
-                <input placeholder="Teléfono" 
-                  name="user_phone"
-                  class="formulario form-control input-contact" 
-                  type="text" [(ngModel)]="user.user_phone" 
-                  required #user_phone="ngModel" pattern="^((\\+91-?)|0)?[0-9]{9}$" 
-                  onkeypress="return /[0-9]|\./i.test(event.key)" maxlength="10"/>
-                  <small [hidden]="user_phone.valid || (user_phone.pristine && !messajeForm.submitted)"
-                    class="text-danger">
-                    Ingrese un número de teléfono valido
-                  </small>
+                <input placeholder="Teléfono" name="user_phone" class="formulario form-control input-contact"
+                  type="text" [(ngModel)]="user.user_phone" required #user_phone="ngModel"
+                  pattern="^((\\+91-?)|0)?[0-9]{9}$" onkeypress="return /[0-9]|\./i.test(event.key)" maxlength="10" />
+                <small [hidden]="user_phone.valid || (user_phone.pristine && !messajeForm.submitted)"
+                  class="text-danger">
+                  Ingrese un número de teléfono valido
+                </small>
               </div>
             </div>
-  
+
             <div class="form-group bordeado" style="margin-bottom: 15px;">
               <div class="form-group" style="padding: 2%;">
                 <input type="text" name="user_direction" required placeholder="Dirección"
@@ -124,63 +114,115 @@
                   Ingrese su Dirección
                 </small>
               </div>
-              
+
             </div>
             <div class="form-group bordeado" style="margin-bottom: 15px;">
               <div class="form-group" style="padding: 2%;">
                 <label class="text-left text-rol">Ocupación</label>
-                <select class="btn-group bootstrap-select dropup" 
-                  name="ocupacion"
-                  [(ngModel)]="selected" #ocupacion="ngModel" 
-                  style="margin-left: 2%; width: 55%; height: 100%;" 
-                  (change)="validarSeleccion()">
+                <select class="btn-group bootstrap-select dropup" name="ocupacion" [(ngModel)]="selected"
+                  #ocupacion="ngModel" style="margin-left: 2%; width: 55%; height: 100%;" (change)="validarSeleccion()">
                   <option *ngFor="let item of roles" [value]="item.opt">{{item.opt}}</option>
-                  </select>
+                </select>
                 <br>
                 <small [hidden]="(ocupacion.valid || (ocupacion.pristine && !messajeForm.submitted) ) && seleccionado"
-                    class="text-danger">
-                    Seleccione una ocupación
+                  class="text-danger">
+                  Seleccione una ocupación
                 </small>
               </div>
             </div>
 
             <div *ngIf="confirmacionRural">
-              <span class="text-left text-validarPorCorreo">*Recuerde enviar una copia de su carnet/certificado que valide su modalidad de "odontologo rural" posterior al pago.
+              <span class="text-left text-validarPorCorreo">*Recuerde enviar una copia de su carnet/certificado que
+                valide su modalidad de "odontologo rural" posterior al pago.
                 Enviar al correo ondontologosazuay@gmail.com*</span>
             </div>
 
             <div *ngIf="confirmacionAgremiado">
-              <span class="text-left text-validarPorCorreo">*Recuerde enviar una copia de su carnet/certificado que valide su modalidad de "odontologo agremiado a la FOE" posterior al pago.
+              <span class="text-left text-validarPorCorreo">*Recuerde enviar una copia de su carnet/certificado que
+                valide su modalidad de "odontologo agremiado a la FOE" posterior al pago.
                 Enviar al correo ondontologosazuay@gmail.com*</span>
             </div>
 
           </div>
         </div>
-        
+
         <div class="row">
           <div class="col-sm-12 text-center">
-            <button  mat-button type="submit" class="botonRegistrar">Continuar</button>
+            <button mat-button type="submit" class="botonRegistrar">Continuar</button>
           </div>
         </div>
 
 
-        <div *ngIf="showPpButton; else elseBlock"> <hr>
+        <!-- <div *ngIf="showPpButton; else elseBlock">
+          <hr>
           <p class="text-center text-info">
             Para finalizar el registro por favor realice el pago correspondiente a:
             ${{rolSelected.value}}
           </p>
 
-          <div class=" card-form col-sm-12 pt-2 p-5 text-center">
-            <div id="pp-button"></div>
-          </div>
+
         </div>
-        
+
         <ng-template #elseBlock>
-        </ng-template>
+        </ng-template> -->
       </div>
     </form>
 
     <!-- *** Form Payphone *** -->
 
+  </div>
+</div>
+
+
+<div class="modal fade" #modalPayment id="modalPayment" tabindex="-1" role="dialog"
+  aria-labelledby="modalCategoryLabel">
+  <div class="modal-dialog" role="document">
+    <!-- *ngIf='!islogging' -->
+    <div class="modal-content col-info">
+      <div class="modal-body">
+        <div class="" style="padding: 50px;">
+          <div class="header text-center">
+            <div class="text-center">
+              <img class="logo" src="../../../assets/img/logo.png" alt="logo">
+            </div>
+            <h2>
+              Por favor seleccione su método de pago
+            </h2>
+            <p *ngIf="showPpButton" class="text-center text-info">
+              Para finalizar el registro por favor realice el pago correspondiente a:
+              ${{rolSelected.value}}
+            </p>
+          </div>
+          <div class="row">
+            <div class="col-sm-6  text-center">
+              <div class="div-info border">
+                <h3>Transferencia</h3>
+                <hr>
+                <ul class="text-left">
+                  <li>Banco: XXXXXX</li>
+                  <li>Tipo de Cuenta: XXXXXX</li>
+                  <li>Nro de Cuenta: XXXXXX</li>
+                  <li>Titular: XXXXXX</li>
+                  <li>Email: XXXXXX</li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-sm-6 text-center border">
+              <div class="div-info ">
+                <h3>Payphone</h3>
+                <hr>
+                <div *ngIf="showPpButton; else elseBlock">
+                  <div class="card-form col-sm-12 pt-2 p-5 text-center">
+                    <div id="pp-button"></div>
+                  </div>
+                </div>
+                <ng-template #elseBlock>
+                </ng-template>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
