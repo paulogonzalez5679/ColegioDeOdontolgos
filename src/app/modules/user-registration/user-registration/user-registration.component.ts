@@ -58,24 +58,14 @@ export class UserRegistrationComponent implements OnInit {
   ngOnInit(): void {
     this.user = {
       user_id: '',
-      user_profesion: 'Dr.',
-      user_name: 'test',
-      user_lastname: 'test',
-      user_ci: '0151950045',
-      user_direction: 'Cuenca',
-      user_email: 'test@test.com',
-      user_phone: '0987654321',
-      user_rol: 'Estudiante',
-      user_pay: 40,
-
-      // user_id: '',
-      // user_profesion: '',
-      // user_name: '',
-      // user_lastname: '',
-      // user_ci: '',
-      // user_direction: '',
-      // user_email: '',
-      // user_phone: ''
+      user_profesion: '',
+      user_name: '',
+      user_lastname: '',
+      user_ci: '',
+      user_direction: '',
+      user_email: '',
+      user_phone: '',
+      user_rol: '',
     };
   }
 
@@ -105,19 +95,6 @@ export class UserRegistrationComponent implements OnInit {
       this.userService.createUser(user).then(() => {
         swal("OK", "Su registro ha sido extoso, por favor ingrese su forma de pago para finalizar", "success");
         this.InitPaymentWhitPayphone();
-
-
-        // this.user = {
-        //   user_id: '',
-        //   user_name: '',
-        //   user_lastname: '',
-        //   user_ci: '',
-        //   user_direction: '',
-        //   user_email: '',
-        //   user_phone: '',
-        //   user_rol: '',
-        //   user_pay: 0
-        // };
       });
     }
   }
@@ -213,8 +190,7 @@ export class UserRegistrationComponent implements OnInit {
           var idd = new Date().getTime();
           console.log(this.rolSelected.value);
           var response = await archivePayment.InitPaymentWhitPayphone(
-            // (this.rolSelected.value * 100), idd, idd, this.user
-            (1 * 100), idd, idd, this.user
+            (this.rolSelected.value * 100), idd, idd, this.user
           );
           console.log('*** response ***');
           console.log(response);

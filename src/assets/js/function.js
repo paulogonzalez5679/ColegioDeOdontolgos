@@ -44,16 +44,15 @@ export function InitPaymentWhitPayphone(total, id, order_transaccion_id, user) {
           }).then(function (value) {
               console.log('*** Respuesta de payphone despues de pagar ***');
               console.log(value);
-              return value;
               // ***AQUI***
-              var ref = firestore.collection("ususrios").doc(user['user_id']);
+              var ref = firestore.collection("usuarios").doc(user['user_id']);
               ref.update(
                 {
                   data_payment: value,
                 }
               ).then(function () {
                   if (value.transactionStatus == "Approved") {
-                      alert('Su pafo ha sido procesado correctamente!');
+                      alert('Su pago ha sido procesado correctamente!');
                       window.location.assign("http://localhost:4200/");
                       // localStorage.removeItem("order");
                   } else {
@@ -62,6 +61,8 @@ export function InitPaymentWhitPayphone(total, id, order_transaccion_id, user) {
               }).catch(function (e) {
                   console.log(e);
               });
+              return value;
+
           }).catch(function (err) {
               console.log('*** Respuesta ERROR de payphone despues de pagar ***');
               console.log(err);
