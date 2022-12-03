@@ -97,20 +97,8 @@ export class IndexComponent implements OnInit {
     //COLEGIO DE ODONTOLOGOS
     this.getMision();
     this.getVision();
-    this.promo();
     this.getSponsors();
 
-
-    //se obtiene el parametro de true o false para mostrar el modal de registro
-    this.rutaActiva.queryParams
-      .filter(params => params.registro)
-      .subscribe(params => {
-        // console.log(params.registro); 
-        if (params.registro){
-          this.redirectRegistration();
-        }
-      }
-    );
   }
   
   
@@ -274,13 +262,6 @@ export class IndexComponent implements OnInit {
 
   getSponsors(){
     this.sponsors= this.sponsorService.getSponsor();
-  }
-
-  redirectRegistration() {
-    
-    this.registrationFlag=true;
-    // this.viewRouter('#registro', 500)
-    // this.router.navigate([`/registration`]);
   }
 
   promo(): void {

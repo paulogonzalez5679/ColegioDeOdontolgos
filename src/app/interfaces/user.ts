@@ -9,4 +9,5 @@ declare interface User {
     user_phone?: string;
     user_rol?: string;
     user_pay?: number;
+    user_fecha?: string;
 }

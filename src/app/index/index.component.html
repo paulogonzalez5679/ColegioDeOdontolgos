@@ -37,9 +37,6 @@
               <li class="li-menu">
                 <a (click)="viewRouter('#contactos', 1100)" class="menu opcMenu">CONTACTOS</a>
               </li>
-              <li class="li-menu">
-                <a (click)="redirectRegistration()" class="menu opcMenu">REGISTRATE</a>
-              </li>
             </ul>
           </div>
         </div>
@@ -49,11 +46,6 @@
 </section>
 <!-- *** /Navbar *** -->
 
-<section id="registro">
-  <div *ngIf="registrationFlag==true">
-    <app-user-registration></app-user-registration>
-  </div>
-</section>
 
 <div *ngIf="registrationFlag==false">
   

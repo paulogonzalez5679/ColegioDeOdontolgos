@@ -60,7 +60,6 @@ import { DetailConventionsModule } from './modules/detail-conventions/detail-con
         AngularFireAuthModule,
         AngularFireStorageModule,
         MatSliderModule,
-
     ],
     declarations: [
         AppComponent,

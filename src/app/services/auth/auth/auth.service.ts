@@ -27,7 +27,7 @@ export class AuthService {
         password
       );
       $("#modalLogin").modal("hide");
-      this.router.navigate(['/admin']);
+      this.router.navigate(['/admin/events']);
       // console.log("Accedio");
 
       

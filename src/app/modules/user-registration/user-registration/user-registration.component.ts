@@ -4,6 +4,9 @@ import { UserService } from 'app/services/user/user.service';
 import swal from 'sweetalert2';
 import { v4 as uuidv4 } from 'uuid';
 import * as archivePayment from "./../../../../assets/js/function.js";
+import { MessageService } from "app/services/message/message.service";
+import { DatePipe } from '@angular/common';
+
 declare var $: any;
 
 
@@ -13,6 +16,9 @@ declare var $: any;
   styleUrls: ['./user-registration.component.css']
 })
 export class UserRegistrationComponent implements OnInit {
+  today: Date = new Date();
+  pipe = new DatePipe('en-US');
+  todayWithPipe = null;
 
   public user: User;
   public validador = true;
@@ -53,9 +59,10 @@ export class UserRegistrationComponent implements OnInit {
   public rolSelected: Rol;
   public showPpButton: boolean = false;
 
-  constructor(private userService: UserService) { }
+  constructor(private userService: UserService, private messageService: MessageService,) { }
 
   ngOnInit(): void {
+    this.todayWithPipe = this.pipe.transform(Date.now(), 'M/d/yy, h:mm a');
     this.user = {
       user_id: '',
       user_profesion: '',
@@ -76,27 +83,39 @@ export class UserRegistrationComponent implements OnInit {
   * @param valid
   */
   onSaveUser(user: User, valid: boolean) {
-    if (valid && this.validador) {
+    swal({
+      title: "Registro",
+      text: "Recuerda solo podras registrarte una vez",
+      type: 'warning',
+      showConfirmButton: true,
+      showCancelButton: true     
+    }) .then((willDelete) => {
+        if(willDelete.value){
+          user.user_rol=this.selected;
+          if(this.selected=='Estudiante' || this.selected=='Auxialiar o técnicos de odontología'){
+            user.user_pay=70;
+          }else if(this.selected=='Odontólogo rural'){
+            user.user_pay=90;
+          }else if(this.selected=='Odontólogo agremiado a la FOE'){
+            user.user_pay=110;
+          }else if(this.selected=='Odontólogo no agremiado a la FOE' || this.selected=='Odontólogo extranjero'){
+            user.user_pay=140;
+          }
+          user.user_fecha=this.todayWithPipe;
+          user.user_id = uuidv4();
+          user.user_profesion = this.profesion;
+          this.user = user;
+          this.userService.createUser(user).then(() => {
+            swal("OK", "Su registro ha sido extoso, por favor ingrese su forma de pago para finalizar", "success");
+            this.InitPaymentWhitPayphone();
+          });
+          swal("Su registro se ha realizado con exito");
+        }
+    });
+    // if (valid && this.validador) {
 
-      user.user_rol=this.selected;
-      if(this.selected=='Estudiante' || this.selected=='Auxialiar o técnicos de odontología'){
-        user.user_pay=70;
-      }else if(this.selected=='Odontólogo rural'){
-        user.user_pay=90;
-      }else if(this.selected=='Odontólogo agremiado a la FOE'){
-        user.user_pay=110;
-      }else if(this.selected=='Odontólogo no agremiado a la FOE' || this.selected=='Odontólogo extranjero'){
-        user.user_pay=140;
-      }
-
-      user.user_id = uuidv4();
-      user.user_profesion = this.profesion;
-      this.user = user;
-      this.userService.createUser(user).then(() => {
-        swal("OK", "Su registro ha sido extoso, por favor ingrese su forma de pago para finalizar", "success");
-        this.InitPaymentWhitPayphone();
-      });
-    }
+  
+    // }
   }
 
   validadorDeCedula() {
@@ -143,6 +162,7 @@ export class UserRegistrationComponent implements OnInit {
     } else {
       this.validador = false;
     }
+    this.validador = true;
     // console.log(this.validador);
   }
 

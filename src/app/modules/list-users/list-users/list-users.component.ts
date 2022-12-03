@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { UserService } from 'app/services/user/user.service';
 import * as XLSX from 'xlsx';
 
+
 export interface DataTable {
-  headerRow: string[];
+  headerRow?: string[];
   footerRow?: string[];
-  dataRows: string[][];
+  dataRows?: string[][];
 }
 
 declare var $: any;
@@ -21,12 +22,18 @@ export class ListUsersComponent implements OnInit {
   public arrayUsers: Array<User> = [];
   public tablaDatos;
 
+  
+
+
   constructor(private userService:UserService) { }
 
   ngOnInit(): void {
+    
+    
     this.dataTable = {
       headerRow: [
         "#",
+        "FECHA REG.",
         "PROFESIÓN",
         "NOMBRE",
         "APELLIDO",
@@ -48,7 +55,6 @@ export class ListUsersComponent implements OnInit {
       // console.log(m);
       this.arrayUsers = m;
     })
-
     this.initDataTable()
   }
 
